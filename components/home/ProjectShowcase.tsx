@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import resumeData from "@/data/resume.json";
+import Link from "next/link";
+import Image from "next/image";
+import projectsData from "@/data/projects.json";
 
 const ProjectShowcase = () => {
-  const { projects } = resumeData;
+  const projects = projectsData;
 
   return (
     <section className="py-24 bg-white dark:bg-black">
@@ -29,12 +31,20 @@ const ProjectShowcase = () => {
               transition={{ duration: 0.8 }}
               className="group relative grid md:grid-cols-2 gap-12 items-center"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-indigo-500/20 group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <span className="text-4xl font-bold text-zinc-300 dark:text-zinc-700">{project.title}</span>
-                </div>
-                {/* Fallback for when we don't have images */}
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl group">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-indigo-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {project.banner ? (
+                  <Image
+                    src={project.banner}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800">
+                    <span className="text-4xl font-bold text-zinc-300 dark:text-zinc-700">{project.title}</span>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col">
@@ -51,15 +61,13 @@ const ProjectShowcase = () => {
                 <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
                   {project.description}
                 </p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/projects/${project.slug}`}
                   className="inline-flex items-center gap-2 text-lg font-bold text-zinc-900 dark:text-white hover:text-primary transition-colors group/link"
                 >
                   View Case Study
                   <ArrowUpRight className="w-6 h-6 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
