@@ -4,7 +4,7 @@
       "headline": "Engineering <span class=\"text-primary italic\">Scalable</span> Frontend Solutions",
       "subheadline": "Senior Frontend Engineer specializing in building high-performance web applications with React, Next.js, and TypeScript. Focused on performance, accessibility, and clean architecture.",
       "cta": "Explore My Work",
-      "image": "/images/my-image.png"
+      "image": "/images/home-banner.png"
    },
    "stats": [
       { "label": "Years Experience", "value": "8+" },
