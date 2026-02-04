@@ -1,108 +1,126 @@
 [
-  {
-    "slug": "artunity",
-    "title": "Artunity",
-    "category": "Marketplace",
-    "description": "Democratizing fine art ownership through a secure, transparent digital marketplace.",
-    "about": "Artunity was born from the need to make high-end art accessible to a broader audience while ensuring artists receive fair compensation. Traditional galleries often impose high fees and geographical limitations. Artunity solves this by providing a decentralized platform where artists can list their work directly to collectors worldwide.\n\nThe platform features real-time bidding for auctions, secure escrow payments, and a high-fidelity image viewer that allows collectors to inspect brushwork and texture before purchasing. The minimalist design philosophy ensures that the UI never distracts from the artwork itself.",
-    "banner": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=2000&auto=format&fit=crop",
-    "liveLink": "https://artunity.art",
-    "githubLink": "https://github.com/mohammadreza-taghimomeni/artunity",
-    "role": "Lead Full Stack Engineer",
-    "roleDescription": "Architected the entire backend and led the frontend development team of 3.",
-    "timeline": "8 Months",
-    "launchedDate": "Late 2023",
-    "technologies": ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Stripe API", "Redis", "Tailwind CSS"],
-    "achievements": [
-      {
-        "metric": "300%",
-        "title": "User Growth in Q1",
-        "description": "Scaled infrastructure to handle rapid influx of new artist registrations and collector sign-ups."
-      },
-      {
-        "metric": "40%",
-        "title": "Performance Boost",
-        "description": "Implemented next-gen image optimization and edge caching to reduce LCP across the site."
-      },
-      {
-        "metric": "$2.5M+",
-        "title": "Transaction Volume Processed",
-        "description": "Built a robust payment system using Stripe Connect, ensuring secure and compliant fund transfers for high-value items."
-      }
-    ],
-    "gallery": [
-      {
-        "src": "https://images.unsplash.com/photo-1541462608141-ad43b0ebad96?q=80&w=1000&auto=format&fit=crop",
-        "label": "Marketplace Browsing",
-        "description": "Grid view with advanced filtering capabilities."
-      },
-      {
-        "src": "https://images.unsplash.com/photo-1554188248-986adbb73be4?q=80&w=1000&auto=format&fit=crop",
-        "label": "Live Auction Room",
-        "description": "WebSocket-powered real-time bidding interface."
-      }
-    ]
-  },
-  {
-    "slug": "nexus",
-    "title": "Nexus",
-    "category": "Enterprise Platform",
-    "description": "A scalable communication platform designed to streamline enterprise workflows and reduce information silos.",
-    "about": "Nexus was developed to address the fragmentation in enterprise communication tools. Large organizations often struggle with information silos and delayed responses. Nexus provides a unified platform that integrates chat, task management, and document sharing, all with a focus on enterprise-grade security and scalability.",
-    "banner": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
-    "liveLink": "https://nexus-demo.example.com",
-    "githubLink": "https://github.com/mohammadreza-taghimomeni/nexus",
-    "role": "Senior Frontend Developer",
-    "roleDescription": "Led the development of the desktop and mobile applications, ensuring a consistent user experience.",
-    "timeline": "12 Months",
-    "launchedDate": "Mid 2023",
-    "technologies": ["React Native", "Electron", "Node.js", "Express", "PostgreSQL", "Redis", "OAuth 2.0", "JWT"],
-    "achievements": [
-      {
-        "metric": "60%",
-        "title": "Email Reduction",
-        "description": "Reduction in internal email volume within the first quarter."
-      },
-      {
-        "metric": "35%",
-        "title": "Faster Turnaround",
-        "description": "Projects saw significantly faster completion due to real-time tools."
-      },
-      {
-        "metric": "90%",
-        "title": "User Adoption",
-        "description": "Achieved across 5 distinct departments in two weeks."
-      }
-    ],
-    "architecture": [
-      {
-        "label": "FRONTEND FRAMEWORK",
-        "value": "React Native & Electron"
-      },
-      {
-        "label": "BACKEND API",
-        "value": "Node.js with Express"
-      },
-      {
-        "label": "DATABASE",
-        "value": "PostgreSQL & Redis"
-      },
-      {
-        "label": "SECURITY & AUTH",
-        "value": "OAuth 2.0, JWT, End-to-End Encryption"
-      }
-    ],
-    "gallery": [
-      {
-        "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-        "label": "Main Dashboard",
-        "description": "High-fidelity mockups of the management dashboard."
-      },
-      {
-        "src": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-        "label": "Mobile View",
-        "description": "Streamlined mobile interface for on-the-go communication."
-      }
-    ]
-  }
+   {
+      "slug": "artunity",
+      "title": "Artunity",
+      "category": "Marketplace",
+      "description": "Democratizing fine art ownership through a secure, transparent digital marketplace.",
+      "about": "Artunity was born from the need to make high-end art accessible to a broader audience while ensuring artists receive fair compensation. Traditional galleries often impose high fees and geographical limitations. Artunity solves this by providing a decentralized platform where artists can list their work directly to collectors worldwide.\n\nThe platform features real-time bidding for auctions, secure escrow payments, and a high-fidelity image viewer that allows collectors to inspect brushwork and texture before purchasing. The minimalist design philosophy ensures that the UI never distracts from the artwork itself.",
+      "banner": "/projects/artunity/banner.jpg",
+      "liveLink": "https://artunity.art",
+      "githubLink": "",
+      "role": "Lead Full Stack Engineer",
+      "roleDescription": "Architected the entire backend and led the frontend development team of 3.",
+      "timeline": "8 Months",
+      "launchedDate": "Late 2023",
+      "technologies": [
+         "Next.js",
+         "TypeScript",
+         "Node.js",
+         "PostgreSQL",
+         "Prisma",
+         "Stripe API",
+         "Redis",
+         "Tailwind CSS"
+      ],
+      "achievements": [
+         {
+            "metric": "300%",
+            "title": "User Growth in Q1",
+            "description": "Scaled infrastructure to handle rapid influx of new artist registrations and collector sign-ups."
+         },
+         {
+            "metric": "40%",
+            "title": "Performance Boost",
+            "description": "Implemented next-gen image optimization and edge caching to reduce LCP across the site."
+         },
+         {
+            "metric": "$2.5M+",
+            "title": "Transaction Volume Processed",
+            "description": "Built a robust payment system using Stripe Connect, ensuring secure and compliant fund transfers for high-value items."
+         }
+      ],
+      "gallery": [
+         {
+            "src": "/projects/artunity/banner.jpg",
+            "label": "Marketplace Browsing",
+            "description": "Grid view with advanced filtering capabilities."
+         },
+         {
+            "src": "/projects/artunity/banner.jpg",
+            "label": "Live Auction Room",
+            "description": "WebSocket-powered real-time bidding interface."
+         }
+      ]
+   },
+   {
+      "slug": "nexus",
+      "title": "Nexus",
+      "category": "Enterprise Platform",
+      "description": "A scalable communication platform designed to streamline enterprise workflows and reduce information silos.",
+      "about": "Nexus was developed to address the fragmentation in enterprise communication tools. Large organizations often struggle with information silos and delayed responses. Nexus provides a unified platform that integrates chat, task management, and document sharing, all with a focus on enterprise-grade security and scalability.",
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "liveLink": "",
+      "githubLink": "",
+      "role": "Senior Frontend Developer",
+      "roleDescription": "Led the development of the desktop and mobile applications, ensuring a consistent user experience.",
+      "timeline": "12 Months",
+      "launchedDate": "Mid 2023",
+      "technologies": [
+         "React Native",
+         "Electron",
+         "Node.js",
+         "Express",
+         "PostgreSQL",
+         "Redis",
+         "OAuth 2.0",
+         "JWT"
+      ],
+      "achievements": [
+         {
+            "metric": "60%",
+            "title": "Email Reduction",
+            "description": "Reduction in internal email volume within the first quarter."
+         },
+         {
+            "metric": "35%",
+            "title": "Faster Turnaround",
+            "description": "Projects saw significantly faster completion due to real-time tools."
+         },
+         {
+            "metric": "90%",
+            "title": "User Adoption",
+            "description": "Achieved across 5 distinct departments in two weeks."
+         }
+      ],
+      "architecture": [
+         {
+            "label": "FRONTEND FRAMEWORK",
+            "value": "React Native & Electron"
+         },
+         {
+            "label": "BACKEND API",
+            "value": "Node.js with Express"
+         },
+         {
+            "label": "DATABASE",
+            "value": "PostgreSQL & Redis"
+         },
+         {
+            "label": "SECURITY & AUTH",
+            "value": "OAuth 2.0, JWT, End-to-End Encryption"
+         }
+      ],
+      "gallery": [
+         {
+            "src": "/projects/nexus/desktop-chat-light.png",
+            "label": "Main Dashboard",
+            "description": "High-fidelity mockups of the management dashboard."
+         },
+         {
+            "src": "/projects/nexus/desktop-chat-dark.png",
+            "label": "Mobile View",
+            "description": "Streamlined mobile interface for on-the-go communication."
+         }
+      ]
+   }
 ]

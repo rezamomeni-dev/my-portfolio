@@ -42,14 +42,6 @@
    ],
    "projects": [
       {
-         "id": "artunity",
-         "title": "Artunity",
-         "description": "A specialized social network for artists to showcase their work, connect with other artists, and find opportunities. Features include portfolio management, networking tools, and an event calendar.",
-         "technologies": ["React", "Next.js", "Tailwind CSS"],
-         "link": "https://artunity.art",
-         "banner": "/projects/artunity/banner.png"
-      },
-      {
          "id": "nexus",
          "title": "Nexus",
          "description": "Communication service",
