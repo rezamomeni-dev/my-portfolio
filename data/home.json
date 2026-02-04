@@ -53,14 +53,24 @@
       "subtitle": "What engineering leaders and peers say about my work.",
       "items": [
          {
-            "name": "Sarah Chen",
-            "role": "CTO at TechFlow",
-            "content": "One of the most technically gifted frontend engineers I've worked with. Their focus on performance and architecture is unparalleled."
+            "name": "Amin Shahnazari",
+            "role": "Co-Founder & CTO@NexusWorkpace",
+            "content": "I was particularly impressed by Mohammad Reza’s ability to handle even the toughest problems. I’ve had the pleasure of knowing Mohammad reza for 4 years, during which he lead one of our Front-End team in Kasra co. His wide experices in modern technologies such as Angular, React and generaly JavaScript helps us in developing enterprise level products. Any company would be lucky to have Mohammad Reza as a Software Developer.\n It was a pleasure to work with Mohammad Reza."
          },
          {
-            "name": "James Wilson",
-            "role": "Engineering Manager at Innovate",
-            "content": "A true leader. Not only did they deliver high-quality code, but they also significantly improved our team's engineering culture."
+            "name": "Mahdi Forghani",
+            "role": "Platform Team Lead @ Nexus Workplace",
+            "content": "Energetic, Good Natured, Committed! These three words are everything that I needed to describe Mohammadreza. As a co-worker, I enjoy working with him and I am sure that employers also enjoy working with him."
+         },
+         {
+            "name": "Rana Yavari",
+            "role": "Android Engineer @ Trivago",
+            "content": "Mohammad Reza is very good-natured, supportive and responsible.\n Has a lot of perseverance in solving challenges and problems. And being energetic and his positive vibe improve the atmosphere of the team.\n I am happy and enjoy working with him"
+         },
+         {
+            "name": "Fatemeh Yousefi",
+            "role": "Junior iOS Developer | UX Specialist at adidas",
+            "content": "There is no funniest colleague than Mohammad Reza. He is one of the most dedicated professionals I’ve worked with and is willing to put that extra help whenever you need it. His expertise as a developer is considerable, He is positive and energetic person and I highly recommend Mohammad Reza."
          }
       ]
    },
