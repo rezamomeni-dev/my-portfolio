@@ -89,7 +89,7 @@
       ]
    },
    "contactCTA": {
-      "title": "Ready to build something <span class=\"text-primary italic\">exceptional</span>?",
+      "title": "Ready to build something <span class=\"opacity-80 italic\">exceptional</span>?",
       "subtitle": "I'm currently looking for new opportunities to lead and innovate.",
       "cta": "Get In Touch"
    }
