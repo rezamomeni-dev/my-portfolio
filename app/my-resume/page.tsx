@@ -16,49 +16,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-[#09090b] text-white selection:bg-white selection:text-black font-sans">
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media print {
-          @page {
-            margin: 15mm;
-          }
-          body {
-            background: white !important;
-            color: black !important;
-          }
-          .print\\:hidden {
-            display: none !important;
-          }
-          section {
-            page-break-inside: avoid;
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-          }
-          h1, h2, h3, h4, p, span, li {
-            color: black !important;
-          }
-          .bg-zinc-900, .bg-zinc-950, .bg-black, .bg-\\[\\#09090b\\] {
-            background: transparent !important;
-            border-color: #ddd !important;
-          }
-          .border-zinc-800 {
-            border-color: #ddd !important;
-          }
-          .text-zinc-400, .text-zinc-500, .text-zinc-600 {
-            color: #444 !important;
-          }
-          a {
-            text-decoration: none !important;
-            color: black !important;
-          }
-          /* Ensure text is selectable and crisp */
-          * {
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-        }
-      `}} />
-
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300">
       <Header name={resumeData.personalInfo.name} />
 
       <main className="max-w-screen-xl mx-auto">

@@ -18,8 +18,8 @@ const Skills = ({ core, tools }: SkillsProps) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-8">Technical Skills</h2>
-          <div className="h-px bg-zinc-800 w-full mb-12"></div>
+          <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">Technical Skills</h2>
+          <div className="h-px bg-zinc-200 dark:bg-zinc-800 w-full mb-12"></div>
 
           <div className="space-y-12">
             <div>
@@ -28,7 +28,7 @@ const Skills = ({ core, tools }: SkillsProps) => {
                 {core.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-sm text-white font-medium hover:border-zinc-700 transition-colors"
+                    className="px-4 py-2 bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded-lg text-sm text-primary font-semibold hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
                   >
                     {skill}
                   </span>
@@ -42,7 +42,7 @@ const Skills = ({ core, tools }: SkillsProps) => {
                 {tools.map((tool) => (
                   <span
                     key={tool}
-                    className="px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-sm text-white font-medium hover:border-zinc-700 transition-colors"
+                    className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-700 dark:text-white font-medium hover:border-primary/30 transition-colors"
                   >
                     {tool}
                   </span>
