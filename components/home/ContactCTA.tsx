@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import resumeData from "@/data/resume.json";
+import homeData from "@/data/home.json";
 
 const ContactCTA = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { email, phone, location } = resumeData.personalInfo;
+  const { contactCTA } = homeData;
 
   return (
     <section className="py-24 bg-white dark:bg-black overflow-hidden relative">
@@ -31,9 +33,8 @@ const ContactCTA = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
-              >
-                Ready to start your <span className="italic opacity-80">project?</span>
-              </motion.h2>
+                dangerouslySetInnerHTML={{ __html: contactCTA.title }}
+              />
 
               <div className="space-y-6">
                 <a href={`mailto:${email}`} className="flex items-center gap-4 group">
@@ -98,7 +99,7 @@ const ContactCTA = () => {
                     type="submit"
                     className="w-full py-4 rounded-xl bg-primary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"} <Send className="w-5 h-5" />
+                    {isSubmitting ? "Sending..." : contactCTA.cta} <Send className="w-5 h-5" />
                   </button>
                 </form>
               ) : (

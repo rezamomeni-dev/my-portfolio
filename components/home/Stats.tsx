@@ -2,37 +2,53 @@
 
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import homeData from "@/data/home.json";
 
 interface StatItemProps {
    label: string;
-   value: number;
-   suffix?: string;
+   valueString: string;
 }
 
-const StatItem = ({ label, value, suffix = "" }: StatItemProps) => {
+const StatItem = ({ label, valueString }: StatItemProps) => {
    const ref = useRef(null);
-   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const isInView = useInView(ref, { once: true, amount: 0.2 });
    const [displayValue, setDisplayValue] = useState(0);
+
+   // Parse value and suffix (e.g., "8+" -> { value: 8, suffix: "+" })
+   const numericMatch = valueString.match(/(\d+)(.*)/);
+   const value = numericMatch ? parseInt(numericMatch[1]) : 0;
+   const suffix = numericMatch ? numericMatch[2] : "";
 
    useEffect(() => {
       if (isInView) {
          const start = 0;
          const end = value;
          const duration = 2000;
-         const startTime = performance.now();
+         let startTime: number | null = null;
+         let frameId: number;
 
          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            const current = Math.floor(progress * (end - start) + start);
+
+            // Easing function: easeOutExpo
+            const easeOutExpo = (x: number): number => {
+               return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+            };
+
+            const easedProgress = easeOutExpo(progress);
+            const current = Math.floor(easedProgress * (end - start) + start);
+
             setDisplayValue(current);
 
             if (progress < 1) {
-               requestAnimationFrame(animate);
+               frameId = requestAnimationFrame(animate);
             }
          };
 
-         requestAnimationFrame(animate);
+         frameId = requestAnimationFrame(animate);
+         return () => cancelAnimationFrame(frameId);
       }
    }, [isInView, value]);
 
@@ -57,10 +73,9 @@ const Stats = () => {
       <section className="py-20 bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
          <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-               <StatItem label="Years Experience" value={8} suffix="+" />
-               <StatItem label="Projects Completed" value={44} suffix="+" />
-               <StatItem label="Technologies" value={10} suffix="+" />
-               <StatItem label="Happy Clients" value={100} suffix="%" />
+               {homeData.stats.map((stat, index) => (
+                  <StatItem key={index} label={stat.label} valueString={stat.value} />
+               ))}
             </div>
          </div>
       </section>
