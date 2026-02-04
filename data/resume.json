@@ -52,7 +52,7 @@
       {
          "id": "nexus",
          "title": "Nexus",
-         "description": "A specialized social network for artists to showcase their work, connect with other artists, and find opportunities. Features include portfolio management, networking tools, and an event calendar.",
+         "description": "Communication service",
          "technologies": ["React", "Next.js", "DDD"],
          "achievements": [
             "Engineered 10+ responsive web applications and admin dashboards using React/Redux and Angular, incorporating 100+ reusable components alongside valuable development tools like plugins, mixins, and directives.",
