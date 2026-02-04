@@ -42,10 +42,11 @@
    ],
    "projects": [
       {
+         "id": "artunity",
          "title": "Artunity",
          "description": "A specialized social network for artists to showcase their work, connect with other artists, and find opportunities. Features include portfolio management, networking tools, and an event calendar.",
          "technologies": ["React", "Next.js", "Tailwind CSS"],
-         "link": "https://artunity.ir"
+         "link": "https://artunity.art"
       }
    ],
    "education": [
@@ -58,10 +59,14 @@
    ],
    "skills": {
       "core": [
-         "JavaScript (ES6+)",
-         "TypeScript",
          "React.js",
          "Next.js",
+         "Vue.js",
+         "ASP.Net",
+         "TypeScript",
+         "Angular",
+         "JavaScript (ES6+)",
+         "TypeScript",
          "HTML5",
          "CSS3"
       ],
@@ -69,10 +74,15 @@
          "Clean Architecture",
          "TDD",
          "Git",
+         "Zustand",
          "Redux",
          "Tailwind CSS",
          "Jest",
-         "Storybook"
+         "Storybook",
+         "Tanstack react query",
+         "Tanstack router",
+         "MUI",
+         "Antd"
       ]
    }
 }
