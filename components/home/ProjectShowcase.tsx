@@ -2,30 +2,30 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import resumeData from "@/data/resume.json";
+import homeData from "@/data/home.json";
 
 const ProjectShowcase = () => {
-  const { projects } = resumeData;
+  const { projectShowcase } = homeData;
+  const project = projectShowcase.project;
 
   return (
     <section className="py-24 bg-white dark:bg-black">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Projects That <span className="text-primary italic">Inspire</span>
-          </h2>
+          <h2
+            className="text-4xl md:text-6xl font-bold mb-6"
+            dangerouslySetInnerHTML={{ __html: projectShowcase.title }}
+          />
           <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto">
-            Turning complex ideas into stunning digital realities. Here is a featured project from my portfolio.
+            {projectShowcase.subtitle}
           </p>
         </div>
 
         <div className="grid gap-16">
-          {projects.map((project, index) => (
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8 }}
               className="group relative grid md:grid-cols-2 gap-12 items-center"
             >
@@ -34,12 +34,11 @@ const ProjectShowcase = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                    <span className="text-4xl font-bold text-zinc-300 dark:text-zinc-700">{project.title}</span>
                 </div>
-                {/* Fallback for when we don't have images */}
               </div>
 
               <div className="flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, i) => (
+                  {project.tags.map((tech: string, i: number) => (
                     <span key={i} className="px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm font-medium">
                       {tech}
                     </span>
@@ -62,7 +61,6 @@ const ProjectShowcase = () => {
                 </a>
               </div>
             </motion.div>
-          ))}
         </div>
       </div>
     </section>
