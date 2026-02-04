@@ -1,0 +1,63 @@
+{
+  "personalInfo": {
+    "name": "Mohammad Reza Taghimomeni",
+    "role": "Senior Frontend Developer",
+    "bio": "Specializing in creating high-quality, scalable web applications with modern frontend technologies.",
+    "aboutMe": "I am a Senior Frontend Developer with extensive experience in React.js and Next.js, and a strong advocate for Clean Architecture and Test-Driven Development (TDD). My passion lies in building scalable, maintainable, and high-performance web applications. I thrive in collaborative environments, mentoring junior developers, and continuously learning new technologies to deliver the best user experiences.",
+    "email": "mrm.tm95@gmail.com",
+    "phone": "+98 913 698 3056",
+    "location": "Tehran, Iran",
+    "linkedin": "https://www.linkedin.com/in/mohammadreza-taghimomeni",
+    "github": "https://github.com/mohammadreza-taghimomeni",
+    "twitter": "https://twitter.com/mrm_tm",
+    "image": "/profile.svg"
+  },
+  "experience": [
+    {
+      "role": "Senior Frontend Developer",
+      "company": "Today",
+      "location": "Tehran, Iran (Hybrid)",
+      "period": "Sep 2023 — Present",
+      "description": [
+        "Architected and implemented a comprehensive component library using React, TypeScript, and Storybook, improving development speed by 40% and ensuring UI consistency across multiple projects.",
+        "Led the migration of a legacy AngularJS application to Next.js, resulting in a 60% improvement in initial load time and significantly better SEO performance.",
+        "Mentored junior developers, conducting code reviews and pair programming sessions to foster best practices and improve code quality.",
+        "Collaborated with product managers and designers to translate requirements into technical specifications and user-friendly interfaces."
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "Storybook"]
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "Kasra",
+      "location": "Isfahan, Iran",
+      "period": "Mar 2021 — Sep 2023",
+      "description": [
+        "Developed and maintained features for a high-traffic enterprise application using React and Redux, handling complex state management and data synchronization.",
+        "Optimized application performance by implementing code splitting, lazy loading, and memoization techniques.",
+        "Integrated RESTful APIs and WebSockets for real-time data updates and interactive user experiences.",
+        "Participated in agile development processes, including daily stand-ups, sprint planning, and retrospectives."
+      ],
+      "technologies": ["React", "Redux", "REST API"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Artunity",
+      "description": "A specialized social network for artists to showcase their work, connect with other artists, and find opportunities. Features include portfolio management, networking tools, and an event calendar.",
+      "technologies": ["React", "Next.js", "Tailwind CSS"],
+      "link": "https://artunity.ir"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Isfahan",
+      "degree": "Bachelor's Degree in Computer Engineering",
+      "period": "2017 — 2021",
+      "location": "Isfahan, Iran"
+    }
+  ],
+  "skills": {
+    "core": ["JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "HTML5", "CSS3"],
+    "tools": ["Clean Architecture", "TDD", "Git", "Redux", "Tailwind CSS", "Jest", "Storybook"]
+  }
+}
