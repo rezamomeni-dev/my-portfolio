@@ -40,16 +40,9 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <ThemeSwitcher />
           <a
-            href="/resume.pdf"
+            href="/MohammadTaghimomeni_Resume.pdf"
+            download
             className="bg-primary text-primary-foreground px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
-            onClick={(e) => {
-              // Only trigger print if we are on the resume page, otherwise it might be confusing
-              // But for now, let's keep the user's logic
-              if (window.location.pathname === '/my-resume') {
-                e.preventDefault();
-                window.print();
-              }
-            }}
           >
             <span className="hidden sm:inline">Resume</span> <FileText className="w-4 h-4" />
           </a>

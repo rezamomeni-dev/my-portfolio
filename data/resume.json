@@ -6,11 +6,11 @@
       "aboutMe": "I am a Senior Frontend Developer with extensive experience in React.js and Next.js, and a strong advocate for Clean Architecture and Test-Driven Development (TDD). My passion lies in building scalable, maintainable, and high-performance web applications. I thrive in collaborative environments, mentoring junior developers, and continuously learning new technologies to deliver the best user experiences.",
       "email": "mrm.tm95@gmail.com",
       "phone": "+98 913 698 3056",
-      "location": "Tehran, Iran",
+      "location": "Isfahan, Iran",
       "linkedin": "https://www.linkedin.com/in/mohammadreza-taghimomeni",
       "github": "https://github.com/mohammadreza-taghimomeni",
       "twitter": "https://twitter.com/mrm_tm",
-      "image": "/my-image.png"
+      "image": "/images/my-image.png"
    },
    "experience": [
       {
