@@ -35,12 +35,9 @@ const Header = ({ name }: HeaderProps) => {
         </NavigationMenu.Root>
 
         <a
-          href="/resume.pdf"
+          href="/MohammadTaghimomeni_Resume.pdf"
+          download
           className="bg-primary text-primary-foreground px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
-          onClick={(e) => {
-            e.preventDefault();
-            window.print();
-          }}
         >
           Resume <FileText className="w-4 h-4" />
         </a>
