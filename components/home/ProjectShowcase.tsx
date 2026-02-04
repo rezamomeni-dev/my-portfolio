@@ -5,9 +5,10 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
+import homeData from "@/data/home.json";
 
 const ProjectShowcase = () => {
-  const projects = projectsData;
+  const { projectShowcase } = homeData;
 
   return (
     <section className="py-24 bg-white dark:bg-black">
@@ -23,7 +24,9 @@ const ProjectShowcase = () => {
         </div>
 
         <div className="grid gap-16">
+          {projectsData.map((project) => (
             <motion.div
+              key={project.slug}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
@@ -48,7 +51,7 @@ const ProjectShowcase = () => {
 
               <div className="flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tech: string, i: number) => (
+                  {project.technologies.map((tech: string, i: number) => (
                     <span key={i} className="px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm font-medium">
                       {tech}
                     </span>
@@ -69,6 +72,7 @@ const ProjectShowcase = () => {
                 </Link>
               </div>
             </motion.div>
+          ))}
         </div>
       </div>
     </section>
