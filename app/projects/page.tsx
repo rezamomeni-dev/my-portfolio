@@ -1,9 +1,15 @@
 import ProjectShowcase from "@/components/home/ProjectShowcase";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | Senior Frontend Engineer",
+  description: "A showcase of technical excellence and business value through engineering scalable frontend solutions.",
+};
 
 export default function ProjectsPage() {
   return (
-    <div className="pb-16">
+    <main className="min-h-screen pt-20 pb-16">
       <ProjectShowcase />
-    </div>
+    </main>
   );
 }
