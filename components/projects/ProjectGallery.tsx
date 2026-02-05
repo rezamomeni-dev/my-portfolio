@@ -1,13 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import Lightbox from "./Lightbox";
 
 interface GalleryItem {
   src: string;
   label: string;
   description: string;
+  isMobile?: boolean;
 }
 
 interface ProjectGalleryProps {
@@ -15,6 +18,8 @@ interface ProjectGalleryProps {
 }
 
 const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
   return (
     <section className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="max-w-7xl mx-auto px-6">
@@ -30,7 +35,7 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
           </p>
         </div>
 
-        <div className="grid gap-12">
+        <div className="grid gap-24">
            {gallery.map((item, index) => (
               <motion.div
                 key={index}
@@ -39,13 +44,21 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
                 viewport={{ once: true }}
                 className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
-                 <div className={`relative aspect-video rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                 <div
+                    onClick={() => setSelectedImageIndex(index)}
+                    className={`relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group cursor-pointer ${index % 2 === 1 ? 'md:order-2' : ''} ${item.isMobile ? 'aspect-[9/18] max-w-[300px] mx-auto' : 'aspect-video'}`}
+                 >
                     <Image
                       src={item.src}
                       alt={item.label}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className={`${item.isMobile ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-700`}
                     />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                       <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 dark:bg-zinc-900/90 p-3 rounded-full shadow-lg text-zinc-900 dark:text-white">
+                          <ImageIcon className="w-6 h-6" />
+                       </div>
+                    </div>
                  </div>
                  <div className={index % 2 === 1 ? 'md:order-1' : ''}>
                     <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">{item.label}</h3>
@@ -57,6 +70,14 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
            ))}
         </div>
       </div>
+
+      <Lightbox
+        isOpen={selectedImageIndex !== null}
+        onClose={() => setSelectedImageIndex(null)}
+        images={gallery}
+        currentIndex={selectedImageIndex ?? 0}
+        onNavigate={(index) => setSelectedImageIndex(index)}
+      />
     </section>
   );
 };

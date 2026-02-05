@@ -49,22 +49,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             Ready to streamline your enterprise?
           </h2>
           <p className="text-xl text-zinc-400 mb-12">
-             Experience the future of management communication today.
+            {project.liveLink
+              ? "Experience the future of management communication today."
+              : "Some details of this project are restricted due to confidentiality agreements. Contact me to learn more about my enterprise solutions."}
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-             <a
-               href={project.liveLink}
-               target="_blank"
-               rel="noopener noreferrer"
-               className="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105"
-             >
-               View Live Demo
-             </a>
+             {project.liveLink && (
+               <a
+                 href={project.liveLink}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105"
+               >
+                 View Live Demo
+               </a>
+             )}
              <Link
                href="/"
                className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all hover:scale-105"
              >
-               Return Home
+               {project.liveLink ? "Return Home" : "Back to Home"}
              </Link>
           </div>
         </div>
