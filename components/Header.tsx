@@ -22,6 +22,16 @@ const Header = () => {
 
         <NavigationMenu.Root className="relative flex">
           <NavigationMenu.List className="flex items-center gap-1">
+            <NavigationMenu.Item>
+              <NavigationMenu.Link
+                asChild
+                className="text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-3 py-1.5 text-sm transition-colors cursor-pointer font-medium"
+              >
+                <Link href="/blog">
+                  Blog
+                </Link>
+              </NavigationMenu.Link>
+            </NavigationMenu.Item>
             {["About", "Experience", "Projects", "Education", "Skills"].map((item) => (
               <NavigationMenu.Item key={item}>
                 <NavigationMenu.Link
