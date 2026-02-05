@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
+import homeData from "@/data/home.json";
 
 const ProjectShowcase = () => {
    const projects = projectsData;
