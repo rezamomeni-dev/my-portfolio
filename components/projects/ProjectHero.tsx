@@ -18,7 +18,7 @@ interface ProjectHeroProps {
 
 const ProjectHero = ({ project }: ProjectHeroProps) => {
    return (
-      <section className="relative pt-12 pb-20 overflow-hidden">
+      <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 overflow-hidden">
          <div className="max-w-7xl mx-auto px-6">
             {/* Breadcrumb */}
             <motion.div
@@ -27,7 +27,7 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 mb-8"
             >
                <Link
-                  href="/my-resume#projects"
+                  href="/projects"
                   className="hover:text-primary transition-colors"
                >
                   Projects
@@ -84,7 +84,7 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                   transition={{ duration: 0.8 }}
                   className="relative"
                >
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-100 dark:bg-zinc-900">
+                  <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-100 dark:bg-zinc-900">
                      {/* Browser UI Mockup */}
                      <div className="absolute top-0 left-0 right-0 h-8 bg-zinc-200/50 dark:bg-zinc-800/50 backdrop-blur-md border-b border-zinc-300 dark:border-zinc-700 flex items-center px-4 gap-1.5 z-10">
                         <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -100,9 +100,9 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                         />
                      </div>
                   </div>
-                  {/* Background blobs for visual interest */}
-                  <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
-                  <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
+                  {/* Background blobs for visual interest - reduced on mobile */}
+                  <div className="absolute -top-10 -right-10 w-32 md:w-64 h-32 md:h-64 bg-primary/10 md:bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
+                  <div className="absolute -bottom-10 -left-10 w-32 md:w-64 h-32 md:h-64 bg-indigo-500/10 md:bg-indigo-500/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
                </motion.div>
             </div>
          </div>

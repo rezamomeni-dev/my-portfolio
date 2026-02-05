@@ -28,7 +28,7 @@ const Skills = ({ core, tools }: SkillsProps) => {
                 {core.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded-lg text-sm text-primary font-semibold hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+                    className="px-4 py-2 bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded-xl text-sm text-primary font-semibold hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
                   >
                     {skill}
                   </span>
@@ -42,7 +42,7 @@ const Skills = ({ core, tools }: SkillsProps) => {
                 {tools.map((tool) => (
                   <span
                     key={tool}
-                    className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-700 dark:text-white font-medium hover:border-primary/30 transition-colors"
+                    className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-700 dark:text-white font-medium hover:border-primary/30 transition-colors"
                   >
                     {tool}
                   </span>

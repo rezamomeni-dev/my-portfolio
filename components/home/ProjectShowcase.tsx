@@ -4,15 +4,16 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import homeData from "@/data/home.json";
 import projectsData from "@/data/projects.json";
 
 const ProjectShowcase = () => {
    const projects = projectsData;
 
    return (
-      <section className="py-24 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16 md:mb-20">
                <h2 className="text-4xl md:text-6xl font-bold mb-6">
                   Projects That{" "}
                   <span className="text-primary italic">Inspire</span>
@@ -23,40 +24,34 @@ const ProjectShowcase = () => {
                </p>
             </div>
 
-            <div className="grid gap-16">
+            <div className="grid gap-16 md:gap-24">
                {projects.map((project, index) => (
                   <motion.div
-                     key={index}
+                     key={project.slug}
                      initial={{ opacity: 0, y: 40 }}
                      whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true }}
+                     viewport={{ once: true, amount: 0.1 }}
                      transition={{ duration: 0.8 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
                   >
-                     <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl group">
+                     <div
+                        className={`relative aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl group ${index % 2 === 1 ? "md:order-last" : ""}`}
+                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-indigo-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        {project.banner ? (
-                           <Image
-                              src={project.banner}
-                              alt={project.title}
-                              fill
-                              className="object-cover object-top  group-hover:scale-110 transition-transform duration-700"
-                           />
-                        ) : (
-                           <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800">
-                              <span className="text-4xl font-bold text-zinc-300 dark:text-zinc-700">
-                                 {project.title}
-                              </span>
-                           </div>
-                        )}
+                        <Image
+                           src={project.banner}
+                           alt={project.title}
+                           fill
+                           className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
                      </div>
 
                      <div className="flex flex-col">
                         <div className="flex flex-wrap gap-2 mb-6">
-                           {project.technologies.map((tech, i) => (
+                           {project.technologies.slice(0, 4).map((tech, i) => (
                               <span
                                  key={i}
-                                 className="px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm font-medium"
+                                 className="px-4 py-1.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm font-medium"
                               >
                                  {tech}
                               </span>
@@ -78,6 +73,16 @@ const ProjectShowcase = () => {
                      </div>
                   </motion.div>
                ))}
+            </div>
+
+            <div className="mt-16 text-center">
+               <Link
+                  href="/my-resume#projects"
+                  className="inline-flex items-center gap-2 text-zinc-500 hover:text-primary font-bold transition-colors"
+               >
+                  See all projects in resume{" "}
+                  <ArrowUpRight className="w-5 h-5" />
+               </Link>
             </div>
          </div>
       </section>

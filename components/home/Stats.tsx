@@ -55,7 +55,7 @@ const StatItem = ({ label, valueString }: StatItemProps) => {
    return (
       <div
          ref={ref}
-         className="flex flex-col items-center justify-center p-6 border-r border-zinc-200 dark:border-zinc-800 last:border-r-0"
+         className="flex flex-col items-center justify-center p-6 border-zinc-200 dark:border-zinc-800 odd:border-r md:odd:border-r md:border-r md:last:border-r-0"
       >
          <div className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-2">
             {displayValue}
@@ -70,9 +70,9 @@ const StatItem = ({ label, valueString }: StatItemProps) => {
 
 const Stats = () => {
    return (
-      <section className="py-20 bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
+      <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-8">
                {homeData.stats.map((stat, index) => (
                   <StatItem key={index} label={stat.label} valueString={stat.value} />
                ))}

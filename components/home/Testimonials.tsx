@@ -8,7 +8,7 @@ const Testimonials = () => {
   const { testimonials } = homeData;
 
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-zinc-900/30">
+    <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/30">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2

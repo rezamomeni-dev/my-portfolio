@@ -13,11 +13,11 @@ const ContactCTA = () => {
    const { contactCTA } = homeData;
 
    return (
-      <section className="py-24 bg-white dark:bg-black overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-black overflow-hidden relative">
          {/* Background decoration */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full -z-10">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px]" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[80px] md:blur-[100px]" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[80px] md:blur-[100px]" />
          </div>
 
          <div className="max-w-5xl mx-auto px-6">
