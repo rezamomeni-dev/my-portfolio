@@ -16,14 +16,14 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
-    <section className="py-20 bg-zinc-50 dark:bg-zinc-900/50">
+    <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-16">
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             className="lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -41,7 +41,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             className="space-y-10"
           >
             {/* Tech Stack */}
@@ -54,7 +54,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium shadow-sm hover:border-primary/50 transition-colors"
+                    className="px-3 py-1.5 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium shadow-sm hover:border-primary/50 transition-colors"
                   >
                     {tech}
                   </span>

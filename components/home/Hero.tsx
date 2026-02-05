@@ -12,11 +12,11 @@ const Hero = () => {
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
    return (
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 px-6">
+      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-16 md:py-24 px-6">
          {/* Background Elements */}
          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] animate-pulse delay-700" />
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse" />
+            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse delay-700" />
          </div>
 
          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">

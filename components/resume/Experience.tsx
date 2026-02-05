@@ -57,7 +57,7 @@ const Experience = ({ items }: ExperienceProps) => {
 
                   <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded text-xs text-primary font-medium">
+                      <span key={tech} className="px-3 py-1 bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded-xl text-xs text-primary font-medium">
                         {tech}
                       </span>
                     ))}
