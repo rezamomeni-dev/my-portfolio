@@ -3,14 +3,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Palette } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
+   slug: string;
    title: string;
    description: string;
    technologies: string[];
    link?: string;
-   banner: string;
-   achievements?: string[];
+   banner?: string;
+   achievements?: {
+      metric: string;
+      title: string;
+      description: string;
+   }[];
    images?: {
       src: string;
       alt: string;
@@ -38,15 +45,22 @@ const Projects = ({ items }: ProjectsProps) => {
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {items.map((project, index) => (
-                     <a
+                     <Link
                         key={index}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`/projects/${project.slug}`}
                         className="group block bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg dark:hover:bg-zinc-900"
                      >
-                        <div className="aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800">
-                           <Palette className="w-12 h-12 text-zinc-300 dark:text-zinc-800 group-hover:text-primary transition-colors" />
+                        <div className="aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800 relative">
+                           {project.banner ? (
+                              <Image
+                                 src={project.banner}
+                                 alt={project.title}
+                                 fill
+                                 className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                           ) : (
+                              <Palette className="w-12 h-12 text-zinc-300 dark:text-zinc-800 group-hover:text-primary transition-colors" />
+                           )}
                         </div>
                         <div className="p-6">
                            <div className="flex items-center justify-between mb-2">
@@ -69,7 +83,7 @@ const Projects = ({ items }: ProjectsProps) => {
                               ))}
                            </div>
                         </div>
-                     </a>
+                     </Link>
                   ))}
                </div>
             </motion.div>

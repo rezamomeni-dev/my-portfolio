@@ -5,6 +5,7 @@ import Projects from "@/components/resume/Projects";
 import Education from "@/components/resume/Education";
 import Skills from "@/components/resume/Skills";
 import resumeData from "@/data/resume.json";
+import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export default function ResumePage() {
 
         <Experience items={resumeData.experience} />
 
-        <Projects items={resumeData.projects} />
+        <Projects items={projectsData} />
 
         <Education items={resumeData.education} />
 

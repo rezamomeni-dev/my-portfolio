@@ -131,13 +131,13 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "easeInOut",
                      }}
-                     className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800"
+                     className="relative w-full h-full overflow-hidden shadow-2xl rounded-full border-4 border-white dark:border-zinc-800"
                   >
                      <Image
                         src={hero.image}
                         alt="Professional portrait"
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-top rounded-full"
                         priority
                      />
                   </motion.div>
@@ -168,9 +168,7 @@ const Hero = () => {
                      className="absolute -bottom-6 -left-6 bg-white dark:bg-zinc-800 p-4 rounded-xl shadow-xl border border-zinc-100 dark:border-zinc-700"
                   >
                      <div className="text-xs text-zinc-500 mb-1">Focus</div>
-                     <div className="font-bold text-indigo-500">
-                        Architecture
-                     </div>
+                     <div className="font-bold text-indigo-500">Frontend</div>
                   </motion.div>
                </div>
             </motion.div>
