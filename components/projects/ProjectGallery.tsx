@@ -5,81 +5,100 @@ import { motion } from "framer-motion";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
+import clsx from "clsx";
 
 interface GalleryItem {
-  src: string;
-  label: string;
-  description: string;
-  isMobile?: boolean;
+   src: string;
+   label: string;
+   description: string;
+   isMobile?: boolean;
 }
 
 interface ProjectGalleryProps {
-  gallery: GalleryItem[];
+   gallery: GalleryItem[];
 }
 
 const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+      null,
+   );
 
-  return (
-    <section className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col mb-16">
-          <div className="flex items-center gap-3 mb-4">
-             <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <ImageIcon className="w-6 h-6" />
-             </div>
-             <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">Interface Previews</h2>
-          </div>
-          <p className="text-zinc-600 dark:text-zinc-400 text-lg">
-             A closer look at the user experience and interface design.
-          </p>
-        </div>
+   return (
+      <section className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col mb-16">
+               <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                     <ImageIcon className="w-6 h-6" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">
+                     Interface Previews
+                  </h2>
+               </div>
+               <p className="text-zinc-600 dark:text-zinc-400 text-lg">
+                  A closer look at the user experience and interface design.
+               </p>
+            </div>
 
-        <div className="grid gap-24">
-           {gallery.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
-              >
-                 <div
-                    onClick={() => setSelectedImageIndex(index)}
-                    className={`relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group cursor-pointer ${index % 2 === 1 ? 'md:order-2' : ''} ${item.isMobile ? 'aspect-[9/18] max-w-[300px] mx-auto' : 'aspect-video'}`}
-                 >
-                    <Image
-                      src={item.src}
-                      alt={item.label}
-                      fill
-                      className={`${item.isMobile ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-700`}
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                       <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 dark:bg-zinc-900/90 p-3 rounded-full shadow-lg text-zinc-900 dark:text-white">
-                          <ImageIcon className="w-6 h-6" />
-                       </div>
-                    </div>
-                 </div>
-                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">{item.label}</h3>
-                    <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                       {item.description}
-                    </p>
-                 </div>
-              </motion.div>
-           ))}
-        </div>
-      </div>
+            <div className="grid gap-24">
+               {gallery.map((item, index) => (
+                  <motion.div
+                     key={index}
+                     initial={{ opacity: 0, y: 40 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     className={`grid md:grid-cols-2 gap-12 items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                  >
+                     <div
+                        className={clsx(
+                           "w-full",
+                           index % 2 === 1 ? "md:order-2" : "",
+                        )}
+                     >
+                        <div
+                           onClick={() => setSelectedImageIndex(index)}
+                           className={clsx(
+                              "relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group cursor-pointer",
+                              item.isMobile
+                                 ? "aspect-9/18 max-w-75 max-h-140 mx-auto"
+                                 : "aspect-video",
+                           )}
+                        >
+                           <Image
+                              src={item.src}
+                              alt={item.label}
+                              fill
+                              className={`${item.isMobile ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-700 `}
+                           />
+                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 dark:bg-zinc-900/90 p-3 rounded-full shadow-lg text-zinc-900 dark:text-white">
+                                 <ImageIcon className="w-6 h-6" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
+                           {item.label}
+                        </h3>
+                        <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                           {item.description}
+                        </p>
+                     </div>
+                  </motion.div>
+               ))}
+            </div>
+         </div>
 
-      <Lightbox
-        isOpen={selectedImageIndex !== null}
-        onClose={() => setSelectedImageIndex(null)}
-        images={gallery}
-        currentIndex={selectedImageIndex ?? 0}
-        onNavigate={(index) => setSelectedImageIndex(index)}
-      />
-    </section>
-  );
+         <Lightbox
+            isOpen={selectedImageIndex !== null}
+            onClose={() => setSelectedImageIndex(null)}
+            images={gallery}
+            currentIndex={selectedImageIndex ?? 0}
+            onNavigate={(index) => setSelectedImageIndex(index)}
+         />
+      </section>
+   );
 };
 
 export default ProjectGallery;
