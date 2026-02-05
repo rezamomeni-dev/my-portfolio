@@ -70,21 +70,25 @@
          {
             "src": "/projects/nexus/mobile-overview-light.png",
             "label": "Mobile Overview – Light Mode",
+            "isMobile": true,
             "description": "Unified mobile dashboard providing quick access to chats, tasks, calendar events, and organizational updates for efficient on-the-go collaboration."
          },
          {
             "src": "/projects/nexus/mobile-overview-dark.png",
             "label": "Mobile Overview – Dark Mode",
+            "isMobile": true,
             "description": "Dark mode mobile overview designed to ensure consistency with the desktop experience while supporting fast navigation and real-time updates."
          },
          {
             "src": "/projects/nexus/mobile-chat-light.png",
             "label": "Mobile Chat – Light Mode",
+            "isMobile": true,
             "description": "Mobile chat experience tailored for real-time communication, prioritizing performance, readability, and intuitive interaction patterns."
          },
          {
             "src": "/projects/nexus/mobile-chat-dark.png",
             "label": "Mobile Chat – Dark Mode",
+            "isMobile": true,
             "description": "Dark mode mobile chat interface delivering a consistent, focused, and distraction-free messaging experience across devices."
          }
       ]

@@ -5,7 +5,6 @@ import Services from "@/components/home/Services";
 import ProjectShowcase from "@/components/home/ProjectShowcase";
 import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
-import ContactCTA from "@/components/home/ContactCTA";
 
 export default function Home() {
    return (
@@ -17,7 +16,6 @@ export default function Home() {
          <ProjectShowcase />
          <Testimonials />
          <FAQ />
-         {/* <ContactCTA /> */}
       </div>
    );
 }

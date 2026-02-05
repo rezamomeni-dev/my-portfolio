@@ -55,14 +55,16 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                   </p>
 
                   <div className="flex flex-wrap gap-4">
-                     <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105"
-                     >
-                        Live Demo <ExternalLink className="w-5 h-5" />
-                     </a>
+                     {project.liveLink && (
+                        <a
+                           href={project.liveLink}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105"
+                        >
+                           Live Demo <ExternalLink className="w-5 h-5" />
+                        </a>
+                     )}
                      {project.githubLink ? (
                         <a
                            href={project.githubLink}
