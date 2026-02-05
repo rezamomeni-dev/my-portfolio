@@ -1,0 +1,21 @@
+
+> my-portfolio@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1154ms
+○ Compiling /blog ...
+ HEAD /blog 200 in 4.7s (compile: 4.4s, render: 395ms)
+ GET /blog 200 in 158ms (compile: 19ms, render: 139ms)
+Error fetching feed Vercel Blog: Error: Status code 404
+    at ignore-listed frames
+Error fetching feed Lee Robinson: Error: Status code 404
+    at ignore-listed frames
+Error fetching feed Builder.io: Error: Status code 404
+    at ignore-listed frames
+ GET /api/blog?page=1&limit=12 200 in 3.0s (compile: 901ms, render: 2.1s)
+ GET /api/blog?page=2&limit=12 200 in 16ms (compile: 8ms, render: 9ms)
