@@ -1,5 +1,95 @@
 [
    {
+      "slug": "nexus",
+      "title": "Nexus",
+      "category": "Enterprise Platform",
+      "description": "A scalable communication platform designed to streamline enterprise workflows and reduce information silos.",
+      "about": "Nexus was developed to address the fragmentation in enterprise communication tools. Large organizations often struggle with information silos and delayed responses. Nexus provides a unified platform that integrates chat, task management, and document sharing, all with a focus on enterprise-grade security and scalability.",
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "liveLink": "",
+      "githubLink": "",
+      "role": "Senior Frontend Developer",
+      "roleDescription": "Led the development of the desktop and mobile applications, ensuring a consistent user experience.",
+      "timeline": "12 Months",
+      "launchedDate": "Mid 2023",
+      "technologies": [
+         "React",
+         "Electron",
+         "Zustand",
+         "ASP.NET Core",
+         "PostgreSQL",
+         "Redis",
+         "OAuth 2.0"
+      ],
+      "achievements": [
+         {
+            "metric": "60%",
+            "title": "Email Reduction",
+            "description": "Reduction in internal email volume within the first quarter."
+         },
+         {
+            "metric": "35%",
+            "title": "Faster Turnaround",
+            "description": "Projects saw significantly faster completion due to real-time tools."
+         },
+         {
+            "metric": "90%",
+            "title": "User Adoption",
+            "description": "Achieved across 5 distinct departments in two weeks."
+         }
+      ],
+      "architecture": [
+         {
+            "label": "FRONTEND FRAMEWORK",
+            "value": "React & Electron"
+         },
+         {
+            "label": "BACKEND API",
+            "value": "ASP.NET Core"
+         },
+         {
+            "label": "DATABASE",
+            "value": "PostgreSQL & Redis"
+         },
+         {
+            "label": "SECURITY & AUTH",
+            "value": "OAuth 2.0, End-to-End Encryption"
+         }
+      ],
+      "gallery": [
+         {
+            "src": "/projects/nexus/desktop-chat-light.png",
+            "label": "Desktop Chat – Light Mode",
+            "description": "Primary desktop chat interface designed for seamless team communication, focusing on clarity, usability, and scalability in enterprise environments."
+         },
+         {
+            "src": "/projects/nexus/desktop-chat-dark.png",
+            "label": "Desktop Chat – Dark Mode",
+            "description": "Dark mode variant of the desktop chat, optimized for prolonged usage and reduced eye strain while maintaining visual hierarchy and accessibility."
+         },
+         {
+            "src": "/projects/nexus/mobile-overview-light.png",
+            "label": "Mobile Overview – Light Mode",
+            "description": "Unified mobile dashboard providing quick access to chats, tasks, calendar events, and organizational updates for efficient on-the-go collaboration."
+         },
+         {
+            "src": "/projects/nexus/mobile-overview-dark.png",
+            "label": "Mobile Overview – Dark Mode",
+            "description": "Dark mode mobile overview designed to ensure consistency with the desktop experience while supporting fast navigation and real-time updates."
+         },
+         {
+            "src": "/projects/nexus/mobile-chat-light.png",
+            "label": "Mobile Chat – Light Mode",
+            "description": "Mobile chat experience tailored for real-time communication, prioritizing performance, readability, and intuitive interaction patterns."
+         },
+         {
+            "src": "/projects/nexus/mobile-chat-dark.png",
+            "label": "Mobile Chat – Dark Mode",
+            "description": "Dark mode mobile chat interface delivering a consistent, focused, and distraction-free messaging experience across devices."
+         }
+      ]
+   },
+   {
       "slug": "artunity",
       "title": "Artunity",
       "category": "Marketplace",
@@ -16,10 +106,7 @@
          "Next.js",
          "TypeScript",
          "Node.js",
-         "PostgreSQL",
-         "Prisma",
-         "Stripe API",
-         "Redis",
+         "MongoDB",
          "Tailwind CSS"
       ],
       "achievements": [
@@ -49,77 +136,6 @@
             "src": "/projects/artunity/banner.jpg",
             "label": "Live Auction Room",
             "description": "WebSocket-powered real-time bidding interface."
-         }
-      ]
-   },
-   {
-      "slug": "nexus",
-      "title": "Nexus",
-      "category": "Enterprise Platform",
-      "description": "A scalable communication platform designed to streamline enterprise workflows and reduce information silos.",
-      "about": "Nexus was developed to address the fragmentation in enterprise communication tools. Large organizations often struggle with information silos and delayed responses. Nexus provides a unified platform that integrates chat, task management, and document sharing, all with a focus on enterprise-grade security and scalability.",
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "liveLink": "",
-      "githubLink": "",
-      "role": "Senior Frontend Developer",
-      "roleDescription": "Led the development of the desktop and mobile applications, ensuring a consistent user experience.",
-      "timeline": "12 Months",
-      "launchedDate": "Mid 2023",
-      "technologies": [
-         "React Native",
-         "Electron",
-         "Node.js",
-         "Express",
-         "PostgreSQL",
-         "Redis",
-         "OAuth 2.0",
-         "JWT"
-      ],
-      "achievements": [
-         {
-            "metric": "60%",
-            "title": "Email Reduction",
-            "description": "Reduction in internal email volume within the first quarter."
-         },
-         {
-            "metric": "35%",
-            "title": "Faster Turnaround",
-            "description": "Projects saw significantly faster completion due to real-time tools."
-         },
-         {
-            "metric": "90%",
-            "title": "User Adoption",
-            "description": "Achieved across 5 distinct departments in two weeks."
-         }
-      ],
-      "architecture": [
-         {
-            "label": "FRONTEND FRAMEWORK",
-            "value": "React Native & Electron"
-         },
-         {
-            "label": "BACKEND API",
-            "value": "Node.js with Express"
-         },
-         {
-            "label": "DATABASE",
-            "value": "PostgreSQL & Redis"
-         },
-         {
-            "label": "SECURITY & AUTH",
-            "value": "OAuth 2.0, JWT, End-to-End Encryption"
-         }
-      ],
-      "gallery": [
-         {
-            "src": "/projects/nexus/desktop-chat-light.png",
-            "label": "Main Dashboard",
-            "description": "High-fidelity mockups of the management dashboard."
-         },
-         {
-            "src": "/projects/nexus/desktop-chat-dark.png",
-            "label": "Mobile View",
-            "description": "Streamlined mobile interface for on-the-go communication."
          }
       ]
    }
