@@ -11,3 +11,6 @@
 ○ Compiling /my-resume ...
  GET /my-resume 200 in 8.0s (compile: 7.1s, render: 941ms)
  GET /my-resume 200 in 334ms (compile: 58ms, render: 276ms)
+✓ Compiled in 2.4s
+ GET /my-resume 200 in 3.2s (compile: 1641ms, render: 1598ms)
+ GET /my-resume 200 in 67ms (compile: 24ms, render: 43ms)

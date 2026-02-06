@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Palette } from "lucide-react";
+import { ArrowUpRight, Palette, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,6 +12,8 @@ interface Project {
    description: string;
    technologies: string[];
    link?: string;
+   liveLink?: string;
+   githubLink?: string;
    banner?: string;
    achievements?: {
       metric: string;
@@ -49,12 +51,12 @@ const Projects = ({ items }: ProjectsProps) => {
                         key={index}
                         whileHover={{ y: -8 }}
                         transition={{ duration: 0.3 }}
+                        className="group bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg dark:hover:bg-zinc-900 flex flex-col h-full"
                      >
                         <Link
                            href={`/projects/${project.slug}`}
-                           className="group block bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg dark:hover:bg-zinc-900 h-full"
+                           className="block relative aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800 overflow-hidden"
                         >
-                           <div className="aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800 relative">
                            {project.banner ? (
                               <Image
                                  src={project.banner}
@@ -65,18 +67,25 @@ const Projects = ({ items }: ProjectsProps) => {
                            ) : (
                               <Palette className="w-12 h-12 text-zinc-300 dark:text-zinc-800 group-hover:text-primary transition-colors" />
                            )}
-                        </div>
-                        <div className="p-6">
-                           <div className="flex items-center justify-between mb-2">
-                              <h3 className="text-xl font-bold text-zinc-900 dark:text-white flex items-center gap-2 group-hover:text-primary transition-colors">
-                                 {project.title}{" "}
-                                 <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-primary transition-colors" />
-                              </h3>
+                           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                              <span className="text-white font-medium flex items-center gap-2">
+                                 View Details <ArrowUpRight className="w-4 h-4" />
+                              </span>
                            </div>
-                           <p className="text-zinc-600 dark:text-zinc-500 text-sm mb-6 leading-relaxed">
+                        </Link>
+
+                        <div className="p-6 flex flex-col flex-1">
+                           <div className="flex items-center justify-between mb-2">
+                              <Link href={`/projects/${project.slug}`} className="hover:text-primary transition-colors">
+                                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
+                                    {project.title}
+                                 </h3>
+                              </Link>
+                           </div>
+                           <p className="text-zinc-600 dark:text-zinc-500 text-sm mb-6 leading-relaxed flex-1">
                               {project.description}
                            </p>
-                           <div className="flex flex-wrap gap-2">
+                           <div className="flex flex-wrap gap-2 mb-6">
                               {project.technologies.map((tech) => (
                                  <span
                                     key={tech}
@@ -86,8 +95,34 @@ const Projects = ({ items }: ProjectsProps) => {
                                  </span>
                               ))}
                            </div>
+
+                           {(project.liveLink || project.githubLink) && (
+                              <div className="flex items-center gap-6 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                                 {project.liveLink && (
+                                    <a
+                                       href={project.liveLink}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="text-zinc-500 hover:text-primary transition-all flex items-center gap-1.5 text-sm font-semibold group/link"
+                                    >
+                                       <ExternalLink className="w-4 h-4 transition-transform group-hover/link:scale-110" />
+                                       <span>Live Preview</span>
+                                    </a>
+                                 )}
+                                 {project.githubLink && (
+                                    <a
+                                       href={project.githubLink}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="text-zinc-500 hover:text-primary transition-all flex items-center gap-1.5 text-sm font-semibold group/link"
+                                    >
+                                       <Github className="w-4 h-4 transition-transform group-hover/link:scale-110" />
+                                       <span>Source Code</span>
+                                    </a>
+                                 )}
+                              </div>
+                           )}
                         </div>
-                     </Link>
                      </motion.div>
                   ))}
                </div>
