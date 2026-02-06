@@ -5,6 +5,7 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogGrid } from "@/components/blog/BlogGrid";
 import { BlogPost } from "@/lib/blog-feeds";
 import { Loader2 } from "lucide-react";
+import SectionContainer from "@/components/SectionContainer";
 
 export default function BlogPage() {
    const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -70,7 +71,7 @@ export default function BlogPage() {
 
    return (
       <div className="min-h-screen bg-zinc-50 dark:bg-black transition-colors duration-300">
-         <div className="max-w-5xl mx-auto px-6 pb-16 md:pb-24">
+         <SectionContainer className="pb-16 md:pb-24">
             <BlogHeader />
 
             <BlogGrid posts={posts} />
@@ -92,7 +93,7 @@ export default function BlogPage() {
                   </p>
                ) : null}
             </div>
-         </div>
+         </SectionContainer>
       </div>
    );
 }

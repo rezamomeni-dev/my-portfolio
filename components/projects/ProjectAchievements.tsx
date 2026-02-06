@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Trophy, Mail, Timer, Users, TrendingUp, Zap, DollarSign } from "lucide-react";
+import SectionContainer from "@/components/SectionContainer";
 
 interface Achievement {
   metric: string;
@@ -27,7 +28,7 @@ const getIcon = (title: string) => {
 const ProjectAchievements = ({ achievements }: ProjectAchievementsProps) => {
   return (
     <section className="py-24 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+      <SectionContainer>
         <div className="flex flex-col mb-16">
           <div className="flex items-center gap-3 mb-4">
              <div className="p-2 rounded-lg bg-primary/10 text-primary">
@@ -65,7 +66,7 @@ const ProjectAchievements = ({ achievements }: ProjectAchievementsProps) => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

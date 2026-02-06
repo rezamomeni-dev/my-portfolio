@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import SectionContainer from "@/components/SectionContainer";
 
 interface ProjectHeroProps {
    project: {
@@ -19,7 +20,7 @@ interface ProjectHeroProps {
 const ProjectHero = ({ project }: ProjectHeroProps) => {
    return (
       <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-6">
+         <SectionContainer>
             {/* Breadcrumb */}
             <motion.div
                initial={{ opacity: 0, y: -10 }}
@@ -105,7 +106,7 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                   <div className="absolute -bottom-10 -left-10 w-32 md:w-64 h-32 md:h-64 bg-indigo-500/10 md:bg-indigo-500/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
                </motion.div>
             </div>
-         </div>
+         </SectionContainer>
       </section>
    );
 };
