@@ -26,7 +26,14 @@ const Hero = () => {
       visible: {
          opacity: 1,
          y: 0,
-         transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+         transition: {
+            duration: 0.8,
+            rotate: {
+               duration: 30,
+               repeat: Infinity,
+               ease: "linear",
+            },
+         },
       },
    };
 
@@ -204,7 +211,9 @@ const Hero = () => {
                      <div className="text-sm text-zinc-500 mb-1 font-semibold">
                         Experience
                      </div>
-                     <div className="text-2xl font-black text-primary">8+ Years</div>
+                     <div className="text-2xl font-black text-primary">
+                        8+ Years
+                     </div>
                   </motion.div>
 
                   <motion.div
@@ -216,8 +225,12 @@ const Hero = () => {
                      }}
                      className="absolute -bottom-10 -left-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                   >
-                     <div className="text-sm text-zinc-500 mb-1 font-semibold">Focus</div>
-                     <div className="text-2xl font-black text-indigo-500">Architecture</div>
+                     <div className="text-sm text-zinc-500 mb-1 font-semibold">
+                        Focus
+                     </div>
+                     <div className="text-2xl font-black text-indigo-500">
+                        Architecture
+                     </div>
                   </motion.div>
                </div>
             </motion.div>
