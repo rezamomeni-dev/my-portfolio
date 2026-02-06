@@ -3,15 +3,10 @@
 import { motion } from "framer-motion";
 import { Trophy, Mail, Timer, Users, TrendingUp, Zap, DollarSign } from "lucide-react";
 import SectionContainer from "@/components/SectionContainer";
-
-interface Achievement {
-  metric: string;
-  title: string;
-  description: string;
-}
+import { ProjectAchievement } from "@/types/project";
 
 interface ProjectAchievementsProps {
-  achievements: Achievement[];
+  achievements: ProjectAchievement[];
 }
 
 const getIcon = (title: string) => {
@@ -26,6 +21,8 @@ const getIcon = (title: string) => {
 };
 
 const ProjectAchievements = ({ achievements }: ProjectAchievementsProps) => {
+  if (!achievements || achievements.length === 0) return null;
+
   return (
     <section className="py-24 bg-white dark:bg-black">
       <SectionContainer>

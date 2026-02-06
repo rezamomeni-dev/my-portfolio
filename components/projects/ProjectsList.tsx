@@ -1,0 +1,73 @@
+"use client";
+
+import { useState } from "react";
+import ProjectTimeline from "./ProjectTimeline";
+import ProjectCard from "./ProjectCard";
+import SectionContainer from "@/components/SectionContainer";
+import { motion } from "framer-motion";
+import { Project } from "@/types/project";
+
+interface ProjectsListProps {
+  projects: Project[];
+}
+
+export default function ProjectsList({ projects }: ProjectsListProps) {
+  const [activeProject, setActiveProject] = useState(projects[0].slug);
+
+  return (
+    <div className="min-h-screen pt-24 pb-32 overflow-hidden">
+      <SectionContainer>
+        {/* Page Hero */}
+        <div className="max-w-4xl mb-24">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block"
+          >
+            Portfolio
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-6xl md:text-8xl font-bold text-zinc-900 dark:text-white mb-8 tracking-tighter"
+          >
+            Engineering <br /> <span className="text-zinc-400">Impact.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed"
+          >
+            A decade of building high-performance web applications, specializing in enterprise-grade frontend architecture and real-time systems.
+          </motion.p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-16">
+          {/* Left Side: Sticky Timeline */}
+          <div className="lg:col-span-4">
+            <ProjectTimeline
+              projects={projects}
+              activeProject={activeProject}
+            />
+          </div>
+
+          {/* Right Side: Project Cards */}
+          <div className="lg:col-span-8">
+            {projects.map((project, index) => (
+              <div key={project.slug} id={project.slug}>
+                <ProjectCard
+                  project={project}
+                  index={index}
+                  isActive={activeProject === project.slug}
+                  onInView={setActiveProject}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionContainer>
+    </div>
+  );
+}

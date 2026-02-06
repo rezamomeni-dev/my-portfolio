@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import { Server, Layout, Database, ShieldCheck, Cpu } from "lucide-react";
 import SectionContainer from "@/components/SectionContainer";
-
-interface ArchitectureItem {
-  label: string;
-  value: string;
-}
+import { ArchitectureItem } from "@/types/project";
 
 interface ProjectArchitectureProps {
   architecture: ArchitectureItem[];
