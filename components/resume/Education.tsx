@@ -16,8 +16,8 @@ interface EducationProps {
 
 const Education = ({ items }: EducationProps) => {
   return (
-    <section id="education" className="py-16 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="education" className="py-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
