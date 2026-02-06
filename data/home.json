@@ -2,7 +2,7 @@
    "hero": {
       "badge": "Available for Senior Roles & Frontend positions",
       "headline": "Engineering <span class=\"text-primary italic\">Scalable</span> Frontend Solutions",
-      "subheadline": "Senior Frontend Engineer specializing in building high-performance web applications with React, Next.js, and TypeScript. Focused on performance, accessibility, and clean architecture.",
+      "subheadline": "Senior Frontend Engineer specializing in building high-performance web applications with React, Next.js, and Vue.js. Focused on performance, accessibility, and clean architecture.",
       "cta": "Explore My Work",
       "image": "/images/home-banner.png"
    },
