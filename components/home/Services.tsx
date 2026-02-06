@@ -6,7 +6,6 @@ import {
    Layout,
    Zap,
    Users,
-   ArrowUpRight,
    LucideIcon,
 } from "lucide-react";
 import homeData from "@/data/home.json";
@@ -63,9 +62,9 @@ const Services = () => {
                   return (
                      <motion.div
                         key={index}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.1 }}
+                        viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ y: -5 }}
                         className="group p-8 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all"
