@@ -45,12 +45,16 @@ const Projects = ({ items }: ProjectsProps) => {
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {items.map((project, index) => (
-                     <Link
+                     <motion.div
                         key={index}
-                        href={`/projects/${project.slug}`}
-                        className="group block bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg dark:hover:bg-zinc-900"
+                        whileHover={{ y: -8 }}
+                        transition={{ duration: 0.3 }}
                      >
-                        <div className="aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800 relative">
+                        <Link
+                           href={`/projects/${project.slug}`}
+                           className="group block bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg dark:hover:bg-zinc-900 h-full"
+                        >
+                           <div className="aspect-video bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center border-b border-zinc-200 dark:border-zinc-800 relative">
                            {project.banner ? (
                               <Image
                                  src={project.banner}
@@ -84,6 +88,7 @@ const Projects = ({ items }: ProjectsProps) => {
                            </div>
                         </div>
                      </Link>
+                     </motion.div>
                   ))}
                </div>
             </motion.div>

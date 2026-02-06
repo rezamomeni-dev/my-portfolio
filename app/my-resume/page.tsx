@@ -4,6 +4,7 @@ import Experience from "@/components/resume/Experience";
 import Projects from "@/components/resume/Projects";
 import Education from "@/components/resume/Education";
 import Skills from "@/components/resume/Skills";
+import BackgroundBlobs from "@/components/resume/BackgroundBlobs";
 import resumeData from "@/data/resume.json";
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
@@ -15,13 +16,15 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300">
-      <div className="max-w-screen-xl mx-auto px-4">
+    <div className="selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300 relative">
+      <BackgroundBlobs />
+      <div className="max-w-screen-xl mx-auto px-4 relative z-10">
         <Hero
           name={resumeData.personalInfo.name}
           role={resumeData.personalInfo.role}
           bio={resumeData.personalInfo.bio}
           image={resumeData.personalInfo.image}
+          email={resumeData.personalInfo.email}
         />
 
         <About content={resumeData.personalInfo.aboutMe} />

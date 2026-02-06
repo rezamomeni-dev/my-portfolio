@@ -4,15 +4,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { User } from "lucide-react";
+import Link from "next/link";
 
 interface HeroProps {
    name: string;
    role: string;
    bio: string;
    image: string;
+   email: string;
 }
 
-const Hero = ({ name, role, bio, image }: HeroProps) => {
+const Hero = ({ name, role, bio, image, email }: HeroProps) => {
    const [imageError, setImageError] = useState(false);
 
    return (
@@ -31,22 +33,40 @@ const Hero = ({ name, role, bio, image }: HeroProps) => {
                   {bio}
                </p>
                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                  <button className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
+                  <Link
+                     href="#projects"
+                     className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+                  >
                      View Projects
-                  </button>
-                  <button className="bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white px-8 py-3 rounded-full font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                  </Link>
+                  <a
+                     href={`mailto:${email}`}
+                     className="bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white px-8 py-3 rounded-full font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  >
                      Contact Me
-                  </button>
+                  </a>
                </div>
             </motion.div>
 
             <motion.div
                initial={{ opacity: 0, scale: 0.8 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 0.5, delay: 0.2 }}
+               animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, -20, 0],
+               }}
+               transition={{
+                  opacity: { duration: 0.5, delay: 0.2 },
+                  scale: { duration: 0.5, delay: 0.2 },
+                  y: {
+                     duration: 6,
+                     repeat: Infinity,
+                     ease: "easeInOut",
+                  },
+               }}
                className="relative w-64 h-64 md:w-80 md:h-80"
             >
-               <div className="w-full h-full rounded-full overflow-hidden border-4 border-zinc-200 dark:border-zinc-800 relative bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+               <div className="w-full h-full rounded-full overflow-hidden border-4 border-zinc-200 dark:border-zinc-800 relative bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shadow-2xl shadow-primary/20">
                   {!imageError ? (
                      <Image
                         src={image}
