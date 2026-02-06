@@ -3,6 +3,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import SectionContainer from "@/components/SectionContainer";
 
 interface ProjectNavigationProps {
   prevProject: { slug: string; title: string } | null;
@@ -12,7 +13,7 @@ interface ProjectNavigationProps {
 const ProjectNavigation = ({ prevProject, nextProject }: ProjectNavigationProps) => {
   return (
     <section className="py-20 bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-7xl mx-auto px-6">
+      <SectionContainer>
         <div className="flex flex-col sm:flex-row justify-between gap-12">
           {prevProject ? (
             <motion.div
@@ -48,7 +49,7 @@ const ProjectNavigation = ({ prevProject, nextProject }: ProjectNavigationProps)
             </motion.div>
           ) : <div />}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

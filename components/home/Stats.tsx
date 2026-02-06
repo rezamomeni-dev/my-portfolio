@@ -1,15 +1,17 @@
 "use client";
 
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import homeData from "@/data/home.json";
+import SectionContainer from "@/components/SectionContainer";
 
 interface StatItemProps {
    label: string;
    valueString: string;
+   index: number;
 }
 
-const StatItem = ({ label, valueString }: StatItemProps) => {
+const StatItem = ({ label, valueString, index }: StatItemProps) => {
    const ref = useRef(null);
    const isInView = useInView(ref, { once: true, amount: 0.2 });
    const [displayValue, setDisplayValue] = useState(0);
@@ -23,7 +25,7 @@ const StatItem = ({ label, valueString }: StatItemProps) => {
       if (isInView) {
          const start = 0;
          const end = value;
-         const duration = 500;
+         const duration = 600; // Faster count-up as requested
          let startTime: number | null = null;
          let frameId: number;
 
@@ -53,35 +55,48 @@ const StatItem = ({ label, valueString }: StatItemProps) => {
    }, [isInView, value]);
 
    return (
-      <div
+      <motion.div
          ref={ref}
-         className="flex flex-col items-center justify-center p-6 border-zinc-200 dark:border-zinc-800 odd:border-r md:odd:border-r md:border-r md:last:border-r-0"
+         initial={{ opacity: 0, y: 30, scale: 0.9 }}
+         whileInView={{ opacity: 1, y: 0, scale: 1 }}
+         viewport={{ once: true }}
+         transition={{
+            duration: 0.5,
+            delay: index * 0.1,
+            ease: [0.21, 1.11, 0.81, 0.99],
+         }}
+         className="flex flex-col items-center justify-center p-6 border-zinc-200 dark:border-zinc-800 odd:border-r md:odd:border-r md:border-r md:last:border-r-0 group hover:bg-white dark:hover:bg-zinc-800/50 transition-colors duration-300 rounded-2xl"
       >
-         <div className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-2">
+         <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+         >
             {displayValue}
             {suffix}
-         </div>
-         <div className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base text-center font-medium uppercase tracking-wider">
+         </motion.div>
+         <div className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base text-center font-medium uppercase tracking-wider group-hover:text-zinc-900 dark:group-hover:text-zinc-200 transition-colors">
             {label}
          </div>
-      </div>
+      </motion.div>
    );
 };
 
 const Stats = () => {
    return (
       <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
-         <div className="max-w-5xl mx-auto px-6">
+         <SectionContainer>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-8">
                {homeData.stats.map((stat, index) => (
                   <StatItem
                      key={index}
+                     index={index}
                      label={stat.label}
                      valueString={stat.value}
                   />
                ))}
             </div>
-         </div>
+         </SectionContainer>
       </section>
    );
 };

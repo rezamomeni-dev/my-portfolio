@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import homeData from "@/data/home.json";
+import SectionContainer from "@/components/SectionContainer";
 
 const FAQItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) => {
   return (
@@ -46,7 +47,7 @@ const FAQ = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black">
-      <div className="max-w-5xl mx-auto px-6">
+      <SectionContainer>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-zinc-900 dark:text-white">{faq.title}</h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto">
@@ -65,7 +66,7 @@ const FAQ = () => {
             />
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

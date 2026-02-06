@@ -7,6 +7,7 @@ import ProjectAchievements from "@/components/projects/ProjectAchievements";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 import ProjectNavigation from "@/components/projects/ProjectNavigation";
+import SectionContainer from "@/components/SectionContainer";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -44,7 +45,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Call to Action at the bottom */}
       <section className="py-24 bg-zinc-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-6">
+        <SectionContainer className="max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to streamline your enterprise?
           </h2>
@@ -71,7 +72,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                {project.liveLink ? "Return Home" : "Back to Home"}
              </Link>
           </div>
-        </div>
+        </SectionContainer>
       </section>
     </div>
   );

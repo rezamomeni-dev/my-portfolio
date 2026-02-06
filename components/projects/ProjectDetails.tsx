@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Info, Code2, UserCircle, Calendar } from "lucide-react";
+import SectionContainer from "@/components/SectionContainer";
 
 interface ProjectDetailsProps {
   project: {
@@ -17,7 +18,7 @@ interface ProjectDetailsProps {
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6">
+      <SectionContainer>
         <div className="grid lg:grid-cols-3 gap-16">
           {/* Main Content */}
           <motion.div
@@ -91,7 +92,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

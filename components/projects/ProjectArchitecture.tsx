@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Server, Layout, Database, ShieldCheck, Cpu } from "lucide-react";
+import SectionContainer from "@/components/SectionContainer";
 
 interface ArchitectureItem {
   label: string;
@@ -26,7 +27,7 @@ const ProjectArchitecture = ({ architecture }: ProjectArchitectureProps) => {
 
   return (
     <section className="py-24 bg-white dark:bg-black border-y border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+      <SectionContainer>
         <div className="flex flex-col mb-16">
           <div className="flex items-center gap-3 mb-4">
              <div className="p-2 rounded-lg bg-primary/10 text-primary">
@@ -60,7 +61,7 @@ const ProjectArchitecture = ({ architecture }: ProjectArchitectureProps) => {
               </motion.div>
            ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };
