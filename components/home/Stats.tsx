@@ -23,7 +23,7 @@ const StatItem = ({ label, valueString }: StatItemProps) => {
       if (isInView) {
          const start = 0;
          const end = value;
-         const duration = 2000;
+         const duration = 500;
          let startTime: number | null = null;
          let frameId: number;
 
@@ -74,7 +74,11 @@ const Stats = () => {
          <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-8">
                {homeData.stats.map((stat, index) => (
-                  <StatItem key={index} label={stat.label} valueString={stat.value} />
+                  <StatItem
+                     key={index}
+                     label={stat.label}
+                     valueString={stat.value}
+                  />
                ))}
             </div>
          </div>
