@@ -16,7 +16,7 @@ const Hero = ({ name, role, bio, image }: HeroProps) => {
    const [imageError, setImageError] = useState(false);
 
    return (
-      <section className="pt-32 pb-16 px-6">
+      <section className="py-16 md:py-24">
          <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             <motion.div
                initial={{ opacity: 0, y: 20 }}
