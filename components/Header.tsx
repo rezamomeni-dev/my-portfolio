@@ -16,7 +16,7 @@ const Header = () => {
    // Close menu on resize
    useEffect(() => {
       const handleResize = () => {
-         if (window.innerWidth >= 768) {
+         if (window.innerWidth >= 1024) {
             setIsOpen(false);
          }
       };
@@ -37,17 +37,15 @@ const Header = () => {
    }, [isOpen]);
 
    const navItems = [
-      { name: "About", href: "/my-resume#about" },
-      { name: "Experience", href: "/my-resume#experience" },
+      { name: "Home", href: "/" },
       { name: "Projects", href: "/projects" },
+      { name: "Resume", href: "/my-resume" },
       { name: "Blog", href: "/blog" },
-      { name: "Education", href: "/my-resume#education" },
-      { name: "Skills", href: "/my-resume#skills" },
    ];
 
    return (
       <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 print:hidden">
-         <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 flex items-center gap-6 max-w-5xl w-full justify-between shadow-sm relative">
+         <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 flex items-center gap-6 max-w-7xl w-full justify-between shadow-sm relative">
             <Link href="/" className="flex items-center gap-2 z-50">
                <div className="bg-primary rounded-md p-1">
                   <User className="w-4 h-4 text-primary-foreground" />
@@ -58,13 +56,13 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <NavigationMenu.Root className="relative hidden md:flex">
-               <NavigationMenu.List className="flex items-center gap-1">
+            <NavigationMenu.Root className="relative hidden lg:flex">
+               <NavigationMenu.List className="flex items-center gap-2">
                   {navItems.map((item) => (
                      <NavigationMenu.Item key={item.name}>
                         <NavigationMenu.Link
                            asChild
-                           className="text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-3 py-1.5 text-sm transition-colors cursor-pointer"
+                           className="text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800"
                         >
                            <Link href={item.href}>{item.name}</Link>
                         </NavigationMenu.Link>
@@ -78,14 +76,14 @@ const Header = () => {
                <a
                   href="/MohammadTaghimomeni_Resume.pdf"
                   download
-                  className="bg-primary text-primary-foreground px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 hover:opacity-90 transition-opacity hidden sm:flex"
+                  className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105 active:scale-95 hidden sm:flex shadow-sm"
                >
                   <span>Resume</span> <FileText className="w-4 h-4" />
                </a>
 
                {/* Mobile Menu Toggle */}
                <button
-                  className="p-2 md:hidden text-zinc-600 dark:text-zinc-400"
+                  className="p-2 lg:hidden text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors"
                   onClick={() => setIsOpen(!isOpen)}
                   aria-label="Toggle menu"
                >
@@ -101,31 +99,31 @@ const Header = () => {
             <AnimatePresence>
                {isOpen && (
                   <motion.div
-                     initial={{ opacity: 0, y: -20 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     exit={{ opacity: 0, y: -20 }}
-                     className="absolute top-full left-0 right-0 mt-2 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl shadow-xl flex flex-col gap-4 md:hidden z-40"
+                     initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                     animate={{ opacity: 1, y: 0, scale: 1 }}
+                     exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                     className="absolute top-full left-0 right-0 mt-4 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-2xl flex flex-col gap-4 lg:hidden z-40"
                   >
-                     <div className="flex flex-col gap-2">
+                     <div className="flex flex-col gap-1">
                         {navItems.map((item) => (
                            <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setIsOpen(false)}
-                              className="px-4 py-3 text-lg font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50 rounded-xl transition-colors"
+                              className="px-6 py-4 text-xl font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50 rounded-2xl transition-all"
                            >
                               {item.name}
                            </Link>
                         ))}
                      </div>
-                     <div className="h-px bg-zinc-100 dark:bg-zinc-800 my-2" />
+                     <div className="h-px bg-zinc-100 dark:bg-zinc-800 mx-2" />
                      <a
                         href="/MohammadTaghimomeni_Resume.pdf"
                         download
                         onClick={() => setIsOpen(false)}
-                        className="bg-primary text-primary-foreground px-4 py-4 rounded-xl text-center font-semibold flex items-center justify-center gap-2"
+                        className="bg-primary text-primary-foreground px-6 py-5 rounded-2xl text-center font-bold text-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
                      >
-                        Download Resume <FileText className="w-5 h-5" />
+                        Download Resume <FileText className="w-6 h-6" />
                      </a>
                   </motion.div>
                )}
@@ -140,7 +138,7 @@ const Header = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onClick={() => setIsOpen(false)}
-                  className="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm -z-10 md:hidden"
+                  className="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-md -z-10 lg:hidden"
                />
             )}
          </AnimatePresence>

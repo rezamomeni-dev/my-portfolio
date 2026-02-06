@@ -11,21 +11,43 @@ const Hero = () => {
    const { hero } = homeData;
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
+   const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.2,
+         },
+      },
+   };
+
+   const itemVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+         opacity: 1,
+         y: 0,
+         transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      },
+   };
+
    return (
-      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-16 md:py-24 px-6">
+      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 md:py-32 px-6 md:px-8 lg:px-12">
          {/* Background Elements */}
          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse" />
-            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse delay-700" />
+            <div className="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse" />
+            <div className="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-indigo-500/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse delay-700" />
          </div>
 
-         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div className="text-left">
+         <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="max-w-7xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10"
+         >
+            <div className="text-left w-full">
                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 text-sm font-medium mb-8"
+                  variants={itemVariants}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 text-sm font-semibold mb-8 backdrop-blur-sm"
                >
                   <span className="relative flex h-2 w-2">
                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -35,45 +57,57 @@ const Hero = () => {
                </motion.div>
 
                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-5xl md:text-7xl font-bold tracking-tight mb-8"
+                  variants={itemVariants}
+                  className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[1.1]"
                   dangerouslySetInnerHTML={{ __html: hero.headline }}
                />
 
                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-xl mb-10 leading-relaxed"
+                  variants={itemVariants}
+                  className="text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium"
                >
                   {hero.subheadline}
                </motion.p>
 
                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="flex flex-col sm:flex-row items-center gap-6"
+                  variants={itemVariants}
+                  className="flex flex-col sm:flex-row items-center gap-10"
                >
-                  <Link
-                     href="/my-resume"
-                     className="group bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105"
-                  >
-                     {hero.cta}
-                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-
-                  <div className="flex items-center gap-5">
-                     <a
-                        href={github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-primary transition-colors"
+                  <div className="relative group">
+                     {/* Circular "See My Resume" Motion */}
+                     <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{
+                           duration: 10,
+                           repeat: Infinity,
+                           ease: "linear",
+                        }}
+                        className="absolute -inset-12 hidden sm:block pointer-events-none"
                      >
-                        <Github className="w-6 h-6" />
-                     </a>
+                        <svg className="w-full h-full" viewBox="0 0 200 200">
+                           <path
+                              id="circlePath"
+                              d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                              fill="none"
+                           />
+                           <text className="text-[14px] font-bold uppercase tracking-[0.2em] fill-primary/40 dark:fill-primary/30">
+                              <textPath href="#circlePath" startOffset="0%">
+                                 See My Resume • Experience • Impact •
+                              </textPath>
+                           </text>
+                        </svg>
+                     </motion.div>
+
+                     <Link
+                        href="/my-resume"
+                        className="relative group bg-primary text-primary-foreground px-10 py-5 rounded-full text-xl font-bold flex items-center gap-3 hover:opacity-90 transition-all hover:scale-105 shadow-xl shadow-primary/25 active:scale-95 z-10"
+                     >
+                        {hero.cta}
+                        <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                     </Link>
+                  </div>
+
+                  <div className="flex items-center gap-8">
                      <a
                         href={linkedin}
                         target="_blank"
@@ -81,6 +115,14 @@ const Hero = () => {
                         className="text-zinc-400 hover:text-primary transition-colors"
                      >
                         <Linkedin className="w-6 h-6" />
+                     </a>
+                     <a
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-400 hover:text-primary transition-colors"
+                     >
+                        <Github className="w-6 h-6" />
                      </a>
                      <a
                         href={twitter}
@@ -95,84 +137,91 @@ const Hero = () => {
             </div>
 
             <motion.div
-               initial={{ opacity: 0, scale: 0.8 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 0.8, ease: "easeOut" }}
-               className="relative flex justify-center lg:justify-end"
+               variants={itemVariants}
+               className="relative flex justify-center lg:justify-end w-full"
             >
-               <div className="relative w-72 h-72 md:w-96 md:h-96">
-                  {/* Animated Rings */}
+               <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem]">
+                  {/* Animated Decorative Elements */}
                   <motion.div
                      animate={{ rotate: 360 }}
                      transition={{
-                        duration: 20,
+                        duration: 30,
                         repeat: Infinity,
                         ease: "linear",
                      }}
-                     className="absolute inset-0 border-2 border-dashed border-primary/30 rounded-full"
+                     className="absolute -inset-8 border-2 border-dashed border-primary/20 rounded-[3rem]"
                   />
                   <motion.div
                      animate={{ rotate: -360 }}
                      transition={{
-                        duration: 25,
+                        duration: 40,
                         repeat: Infinity,
                         ease: "linear",
                      }}
-                     className="absolute -inset-4 border border-indigo-500/20 rounded-full"
+                     className="absolute -inset-16 border border-indigo-500/10 rounded-full"
                   />
 
                   {/* Main Image Container */}
                   <motion.div
                      animate={{
                         y: [0, -20, 0],
+                        rotate: [0, 2, 0, -2, 0],
                      }}
                      transition={{
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut",
+                        y: {
+                           duration: 6,
+                           repeat: Infinity,
+                           ease: "easeInOut",
+                        },
+                        rotate: {
+                           duration: 10,
+                           repeat: Infinity,
+                           ease: "easeInOut",
+                        },
                      }}
-                     className="relative w-full h-full overflow-hidden shadow-2xl rounded-full border-4 border-white dark:border-zinc-800"
+                     className="relative w-full h-full overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] rounded-[4rem] border-8 border-white dark:border-zinc-800 group"
                   >
                      <Image
                         src={hero.image}
                         alt="Professional portrait"
                         fill
-                        className="object-cover object-top rounded-full"
+                        className="object-cover object-top rounded-[3.5rem] group-hover:scale-110 transition-transform duration-700"
                         priority
                      />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </motion.div>
 
                   {/* Status Badge Overlays */}
                   <motion.div
-                     animate={{ y: [0, 10, 0] }}
-                     transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                     }}
-                     className="absolute -top-6 -right-6 bg-white dark:bg-zinc-800 p-4 rounded-xl shadow-xl border border-zinc-100 dark:border-zinc-700"
-                  >
-                     <div className="text-xs text-zinc-500 mb-1">
-                        Experience
-                     </div>
-                     <div className="font-bold text-primary">8+ Years</div>
-                  </motion.div>
-
-                  <motion.div
-                     animate={{ y: [0, -10, 0] }}
+                     animate={{ y: [0, 15, 0], x: [0, 5, 0] }}
                      transition={{
                         duration: 5,
                         repeat: Infinity,
                         ease: "easeInOut",
                      }}
-                     className="absolute -bottom-6 -left-6 bg-white dark:bg-zinc-800 p-4 rounded-xl shadow-xl border border-zinc-100 dark:border-zinc-700"
+                     className="absolute -top-10 -right-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                   >
-                     <div className="text-xs text-zinc-500 mb-1">Focus</div>
-                     <div className="font-bold text-indigo-500">Frontend</div>
+                     <div className="text-sm text-zinc-500 mb-1 font-semibold">
+                        Experience
+                     </div>
+                     <div className="text-2xl font-black text-primary">8+ Years</div>
+                  </motion.div>
+
+                  <motion.div
+                     animate={{ y: [0, -15, 0], x: [0, -5, 0] }}
+                     transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                     }}
+                     className="absolute -bottom-10 -left-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
+                  >
+                     <div className="text-sm text-zinc-500 mb-1 font-semibold">Focus</div>
+                     <div className="text-2xl font-black text-indigo-500">Architecture</div>
                   </motion.div>
                </div>
             </motion.div>
-         </div>
+         </motion.div>
       </section>
    );
 };

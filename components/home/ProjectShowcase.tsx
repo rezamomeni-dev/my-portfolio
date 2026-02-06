@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import homeData from "@/data/home.json";
 import projectsData from "@/data/projects.json";
 
 const ProjectShowcase = () => {
@@ -12,7 +11,7 @@ const ProjectShowcase = () => {
 
    return (
       <section className="py-16 md:py-24 bg-white dark:bg-black">
-         <div className="max-w-5xl mx-auto px-6">
+         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
             <div className="text-center mb-16 md:mb-20">
                <h2 className="text-4xl md:text-6xl font-bold mb-6">
                   Projects That{" "}
