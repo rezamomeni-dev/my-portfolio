@@ -1,5 +1,9 @@
-import ProjectShowcase from "@/components/home/ProjectShowcase";
+import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
+import ProjectsList from "@/components/projects/ProjectsList";
+import { Project } from "@/types/project";
+
+const projects = projectsData as unknown as Project[];
 
 export const metadata: Metadata = {
    title: "Projects | Senior Frontend Engineer",
@@ -8,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-   return <ProjectShowcase />;
+   return <ProjectsList projects={projects} />;
 }
