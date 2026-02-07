@@ -4,12 +4,9 @@ import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { HomeData, StatItemProps } from "@/types/home";
 
-interface StatItemProps {
-   label: string;
-   valueString: string;
-   index: number;
-}
+const typedHomeData = homeData as HomeData;
 
 const StatItem = ({ label, valueString, index }: StatItemProps) => {
    const ref = useRef(null);
@@ -61,12 +58,12 @@ const StatItem = ({ label, valueString, index }: StatItemProps) => {
    return (
       <motion.div
          ref={ref}
-         initial={{ opacity: 0, y: 30, scale: 0.9 }}
+         initial={{ opacity: 0, y: 10, scale: 0.95 }}
          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-         viewport={{ once: true }}
+         viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
          transition={{
-            duration: 0.5,
-            delay: index * 0.1,
+            duration: 0.4,
+            delay: index * 0.05,
             ease: [0.21, 1.11, 0.81, 0.99],
          }}
          className="flex flex-col items-center justify-center p-6 border-zinc-200 dark:border-zinc-800 odd:border-r md:odd:border-r md:border-r md:last:border-r-0 group hover:bg-white dark:hover:bg-zinc-800/50 transition-colors duration-300 rounded-2xl"
@@ -91,7 +88,7 @@ const Stats = () => {
       <section className="bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
          <SectionContainer>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-8">
-               {homeData.stats.map((stat, index) => (
+               {typedHomeData.stats.map((stat, index) => (
                   <StatItem
                      key={index}
                      index={index}

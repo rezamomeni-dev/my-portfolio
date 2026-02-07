@@ -28,14 +28,14 @@ const ProjectShowcase = () => {
                {projects.map((project, index) => (
                   <motion.div
                      key={project.slug}
-                     initial={{ opacity: 0, y: 20 }}
+                     initial={{ opacity: 0, y: 10 }}
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{
                         once: true,
-                        amount: "some",
+                        amount: 0.2,
                         margin: "0px 0px -50px 0px",
                      }}
-                     transition={{ duration: 0.6 }}
+                     transition={{ duration: 0.5 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
                   >
                      <div

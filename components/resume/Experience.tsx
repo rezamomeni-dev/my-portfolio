@@ -5,26 +5,15 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SectionContainer from "../shared/SectionContainer";
 
-interface ExperienceItem {
-   role: string;
-   company: string;
-   location: string;
-   period: string;
-   description: string[];
-   technologies: string[];
-}
-
-interface ExperienceProps {
-   items: ExperienceItem[];
-}
+import { ExperienceProps } from "@/types/resume";
 
 const Experience = ({ items }: ExperienceProps) => {
    return (
       <SectionContainer id="experience" className="py-16 md:py-24">
          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">

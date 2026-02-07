@@ -4,15 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
-import { ProjectGalleryItem } from "@/types/project";
+import { LightboxProps } from "@/types/project";
 
-interface LightboxProps {
-  isOpen: boolean;
-  onClose: () => void;
-  images: ProjectGalleryItem[];
-  currentIndex: number;
-  onNavigate: (index: number) => void;
-}
+
 
 const Lightbox = ({ isOpen, onClose, images, currentIndex, onNavigate }: LightboxProps) => {
   const handlePrevious = useCallback(() => {

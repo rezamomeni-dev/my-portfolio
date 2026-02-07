@@ -7,12 +7,9 @@ import Image from "next/image";
 import Lightbox from "./Lightbox";
 import clsx from "clsx";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { ProjectGalleryItem } from "@/types/project";
+import { ProjectGalleryProps } from "@/types/project";
 
-interface ProjectGalleryProps {
-   gallery: ProjectGalleryItem[];
-   variant?: "light" | "zinc";
-}
+
 
 const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
@@ -48,9 +45,9 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                   return (
                      <motion.div
                         key={index}
-                        initial={{ opacity: 0, y: 40 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className={`grid md:grid-cols-2 gap-12 items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
                      >
                         <div

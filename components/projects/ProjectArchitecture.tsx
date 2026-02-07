@@ -3,12 +3,9 @@
 import { motion } from "framer-motion";
 import { Server, Layout, Database, ShieldCheck, Cpu } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { ArchitectureItem } from "@/types/project";
+import { ProjectArchitectureProps } from "@/types/project";
 
-interface ProjectArchitectureProps {
-   architecture: ArchitectureItem[];
-   variant?: "light" | "zinc";
-}
+
 
 const getIcon = (label: string) => {
    const l = label.toLowerCase();

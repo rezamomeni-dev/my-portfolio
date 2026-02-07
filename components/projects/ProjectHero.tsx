@@ -5,11 +5,9 @@ import { ExternalLink, Github, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { Project } from "@/types/project";
+import { ProjectHeroProps } from "@/types/project";
 
-interface ProjectHeroProps {
-   project: Project;
-}
+
 
 const ProjectHero = ({ project }: ProjectHeroProps) => {
    return (

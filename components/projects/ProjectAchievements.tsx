@@ -11,12 +11,9 @@ import {
    DollarSign,
 } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { ProjectAchievement } from "@/types/project";
+import { ProjectAchievementsProps } from "@/types/project";
 
-interface ProjectAchievementsProps {
-   achievements: ProjectAchievement[];
-   variant?: "light" | "zinc";
-}
+
 
 const getIcon = (title: string) => {
    const t = title.toLowerCase();

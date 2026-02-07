@@ -3,25 +3,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
-
-interface EducationItem {
-   institution: string;
-   degree: string;
-   period: string;
-   location: string;
-}
-
-interface EducationProps {
-   items: EducationItem[];
-}
+import { EducationProps } from "@/types/resume";
 
 const Education = ({ items }: EducationProps) => {
    return (
       <SectionContainer id="education">
          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">

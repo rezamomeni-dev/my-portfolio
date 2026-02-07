@@ -4,18 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/types/project";
+import { ProjectCardProps } from "@/types/project";
 import { formatProjectTimeline } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import clsx from "clsx";
-
-interface ProjectCardProps {
-   project: Project;
-   index: number;
-   isActive: boolean;
-   onInView: (slug: string) => void;
-}
 
 const ProjectCard = ({
    project,
@@ -25,7 +18,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
    const ref = useRef(null);
    const isInView = useInView(ref, {
-      amount: 0.5,
+      amount: 0.2,
       margin: "-10% 0px -40% 0px",
    });
 
@@ -38,20 +31,21 @@ const ProjectCard = ({
    return (
       <motion.div
          ref={ref}
-         initial={{ opacity: 0, y: 40, scale: 0.95 }}
+         initial={{ opacity: 0, y: 20, scale: 0.95 }}
          whileInView={{ opacity: 1, y: 0, scale: 1 }}
          viewport={{ once: true, amount: 0.2 }}
          transition={{
-            duration: 0.7,
+            duration: 0.6,
             delay: index * 0.1,
             ease: [0.21, 0.47, 0.32, 0.98]
          }}
          className={clsx(
             "relative group mb-12 md:mb-24 last:mb-0 transition-all duration-700",
             {
-               "opacity-30 scale-95 blur-[2px]": !isActive,
+               "opacity-30 md:scale-95 md:blur-[2px]": !isActive,
                "opacity-100 scale-100 blur-0": isActive,
             },
+            "max-md:opacity-100 max-md:blur-0 max-md:scale-100"
          )}
       >
          <div className="grid lg:grid-cols-12 gap-6 md:gap-12 items-start">
@@ -63,7 +57,7 @@ const ProjectCard = ({
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 max-md:hidden">
                   <div className="flex flex-wrap gap-4">
                      <Link
                         href={`/projects/${project.slug}`}
@@ -93,9 +87,11 @@ const ProjectCard = ({
                   </span>
                </div>
 
-               <h3 className="text-2xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white leading-tight group-hover:text-primary transition-colors">
-                  {project.title}
-               </h3>
+               <Link href={`/projects/${project.slug}`}>
+                  <h3 className="text-2xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white leading-tight group-hover:text-primary transition-colors">
+                     {project.title}
+                  </h3>
+               </Link>
 
                <div className="flex flex-wrap gap-4 mb-6 text-zinc-600 dark:text-zinc-400">
                   <div className="flex items-center gap-2">
@@ -113,6 +109,26 @@ const ProjectCard = ({
                <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
                   {project.description}
                </p>
+
+               {/* Mobile Actions */}
+               <div className="flex flex-wrap gap-3 mb-8 md:hidden">
+                  <Link
+                     href={`/projects/${project.slug}`}
+                     className="bg-primary text-primary-foreground px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 text-sm shadow-lg shadow-primary/20"
+                  >
+                     View Details <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                  {project.liveLink && (
+                     <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 text-sm border border-zinc-200 dark:border-zinc-700"
+                     >
+                        Live Demo <ArrowUpRight className="w-4 h-4" />
+                     </a>
+                  )}
+               </div>
 
                {/* {project.highlights && (
                   <div className="space-y-2 mb-8">
