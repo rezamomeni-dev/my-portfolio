@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPost } from "@/lib/blog-feeds";
+import { BlogPost } from "@/types/blog";
 import { BlogCard } from "./BlogCard";
 import { AnimatePresence } from "framer-motion";
 

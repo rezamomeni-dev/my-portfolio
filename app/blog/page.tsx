@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogGrid } from "@/components/blog/BlogGrid";
-import { BlogPost } from "@/lib/blog-feeds";
+import { BlogPost } from "@/types/blog";
 import { Loader2 } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
 

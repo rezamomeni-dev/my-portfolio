@@ -3,13 +3,10 @@
 import { motion } from "framer-motion";
 import { Info, Code2, UserCircle, Calendar } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { Project } from "@/types/project";
+import { ProjectDetailsProps } from "@/types/project";
 import { formatProjectTimeline } from "@/lib/utils";
 
-interface ProjectDetailsProps {
-   project: Project;
-   variant?: "light" | "zinc";
-}
+
 
 const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
    return (
@@ -24,9 +21,9 @@ const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
             <div className="grid lg:grid-cols-3 gap-16">
                {/* Main Content */}
                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   className="lg:col-span-2"
                >
                   <div className="flex items-center gap-3 mb-6">

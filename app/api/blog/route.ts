@@ -1,6 +1,7 @@
+import { BlogPost } from "@/types/blog";
 import { NextRequest, NextResponse } from 'next/server';
 import Parser from 'rss-parser';
-import { FEEDS, BlogPost } from '@/lib/blog-feeds';
+import { FEEDS } from '@/lib/blog-feeds';
 
 const parser = new Parser();
 

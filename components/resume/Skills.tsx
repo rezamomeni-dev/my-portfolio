@@ -4,18 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
 
-interface SkillsProps {
-   core: string[];
-   tools: string[];
-}
+import { SkillsProps } from "@/types/resume";
 
 const Skills = ({ core, tools }: SkillsProps) => {
    return (
       <SectionContainer id="skills">
          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">

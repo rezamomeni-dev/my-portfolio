@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Calendar, Tag } from "lucide-react";
-import { BlogPost } from "@/lib/blog-feeds";
+import { BlogPost } from "@/types/blog";
 
 interface BlogCardProps {
    post: BlogPost;
@@ -18,9 +18,9 @@ export const BlogCard = ({ post, index }: BlogCardProps) => {
 
    return (
       <motion.div
-         initial={{ opacity: 0, y: 20 }}
+         initial={{ opacity: 0, y: 10 }}
          whileInView={{ opacity: 1, y: 0 }}
-         viewport={{ once: true, amount: 0.1 }}
+         viewport={{ once: true, amount: 0.2 }}
          transition={{ duration: 0.4, delay: index * 0.05 }}
          whileHover={{ y: -5 }}
          className="group relative flex flex-col h-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all"

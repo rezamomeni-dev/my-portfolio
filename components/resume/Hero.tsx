@@ -6,26 +6,18 @@ import Image from "next/image";
 import { User } from "lucide-react";
 import Link from "next/link";
 import SectionContainer from "../shared/SectionContainer";
+import { ResumeHeroProps } from "@/types/resume";
 
-interface HeroProps {
-   name: string;
-   role: string;
-   bio: string;
-   image: string;
-   email: string;
-   location: string;
-}
-
-const Hero = ({ name, role, bio, image, email, location }: HeroProps) => {
+const Hero = ({ name, role, bio, image, email, location }: ResumeHeroProps) => {
    const [imageError, setImageError] = useState(false);
 
    return (
       <SectionContainer>
          <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             <motion.div
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 0, y: 10 }}
                animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.5 }}
+               transition={{ duration: 0.4 }}
                className="flex-1 text-center md:text-left"
             >
                <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-2 leading-tight">
@@ -52,15 +44,15 @@ const Hero = ({ name, role, bio, image, email, location }: HeroProps) => {
             </motion.div>
 
             <motion.div
-               initial={{ opacity: 0, scale: 0.8 }}
+               initial={{ opacity: 0, scale: 0.95 }}
                animate={{
                   opacity: 1,
                   scale: 1,
                   y: [0, -20, 0],
                }}
                transition={{
-                  opacity: { duration: 0.5, delay: 0.2 },
-                  scale: { duration: 0.5, delay: 0.2 },
+                  opacity: { duration: 0.4, delay: 0.1 },
+                  scale: { duration: 0.4, delay: 0.1 },
                   y: {
                      duration: 6,
                      repeat: Infinity,

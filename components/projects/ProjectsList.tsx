@@ -5,11 +5,9 @@ import ProjectTimeline from "./ProjectTimeline";
 import ProjectCard from "./ProjectCard";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { motion } from "framer-motion";
-import { Project } from "@/types/project";
+import { ProjectsListProps } from "@/types/project";
 
-interface ProjectsListProps {
-   projects: Project[];
-}
+
 
 export default function ProjectsList({ projects }: ProjectsListProps) {
    const [activeProject, setActiveProject] = useState(projects[0].slug);
@@ -26,7 +24,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
                Portfolio
             </motion.span>
             <motion.h1
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 0, y: 10 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.1 }}
                className="text-6xl md:text-8xl font-bold text-zinc-900 dark:text-white mb-8 tracking-tighter"
@@ -34,7 +32,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
                Engineering <br /> <span className="text-zinc-400">Impact.</span>
             </motion.h1>
             <motion.p
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 0, y: 10 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.2 }}
                className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed"

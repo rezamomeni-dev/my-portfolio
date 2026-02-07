@@ -1,13 +1,10 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Project } from "@/types/project";
+import { ProjectTimelineProps } from "@/types/project";
 import { formatProjectTimeline } from "@/lib/utils";
 
-interface ProjectTimelineProps {
-  projects: Project[];
-  activeProject: string;
-}
+
 
 const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
   const { scrollYProgress } = useScroll();

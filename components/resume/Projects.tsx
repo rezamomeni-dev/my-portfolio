@@ -6,26 +6,7 @@ import { ArrowUpRight, Palette, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import SectionContainer from "../shared/SectionContainer";
-
-interface Project {
-   slug: string;
-   title: string;
-   description: string;
-   technologies: string[];
-   link?: string;
-   liveLink?: string;
-   githubLink?: string;
-   banner?: string;
-   achievements?: {
-      metric: string;
-      title: string;
-      description: string;
-   }[];
-   images?: {
-      src: string;
-      alt: string;
-   }[];
-}
+import { Project } from "@/types/project";
 
 interface ProjectsProps {
    items: Project[];
@@ -35,9 +16,9 @@ const Projects = ({ items }: ProjectsProps) => {
    return (
       <SectionContainer id="projects">
          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">
@@ -67,7 +48,7 @@ const Projects = ({ items }: ProjectsProps) => {
                         ) : (
                            <Palette className="w-12 h-12 text-zinc-300 dark:text-zinc-800 group-hover:text-primary transition-colors" />
                         )}
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center max-md:opacity-100">
                            <span className="text-white font-medium flex items-center gap-2">
                               View Details <ArrowUpRight className="w-4 h-4" />
                            </span>

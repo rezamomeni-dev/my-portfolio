@@ -5,18 +5,16 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { FAQItemProps, HomeData } from "@/types/home";
+
+const typedHomeData = homeData as HomeData;
 
 const FAQItem = ({
    question,
    answer,
    isOpen,
    onClick,
-}: {
-   question: string;
-   answer: string;
-   isOpen: boolean;
-   onClick: () => void;
-}) => {
+}: FAQItemProps) => {
    return (
       <div className="border-b border-zinc-200 dark:border-zinc-800 last:border-0">
          <button
@@ -54,7 +52,7 @@ const FAQItem = ({
 };
 
 const FAQ = () => {
-   const { faq } = homeData;
+   const { faq } = typedHomeData;
    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
    return (

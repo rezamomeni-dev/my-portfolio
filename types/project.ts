@@ -39,3 +39,56 @@ export interface Project {
   achievements: ProjectAchievement[];
   architecture?: ArchitectureItem[];
 }
+
+export interface LightboxProps {
+  isOpen: boolean;
+  onClose: () => void;
+  images: ProjectGalleryItem[];
+  currentIndex: number;
+  onNavigate: (index: number) => void;
+}
+
+export interface ProjectAchievementsProps {
+  achievements: ProjectAchievement[];
+  variant?: "light" | "zinc";
+}
+
+export interface ProjectArchitectureProps {
+  architecture: ArchitectureItem[];
+  variant?: "light" | "zinc";
+}
+
+export interface ProjectCardProps {
+  project: Project;
+  index: number;
+  isActive: boolean;
+  onInView: (slug: string) => void;
+}
+
+export interface ProjectDetailsProps {
+  project: Project;
+  variant?: "light" | "zinc";
+}
+
+export interface ProjectGalleryProps {
+  gallery: ProjectGalleryItem[];
+  variant?: "light" | "zinc";
+}
+
+export interface ProjectHeroProps {
+  project: Project;
+}
+
+export interface ProjectNavigationProps {
+  prevProject: { slug: string; title: string } | null;
+  nextProject: { slug: string; title: string } | null;
+}
+
+export interface ProjectTimelineProps {
+  projects: Project[];
+  activeProject: string;
+}
+
+export interface ProjectsListProps {
+  projects: Project[];
+}

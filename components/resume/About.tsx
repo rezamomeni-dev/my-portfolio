@@ -3,10 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
-
-interface AboutProps {
-   content: string;
-}
+import { AboutProps } from "@/types/resume";
 
 const About = ({ content }: AboutProps) => {
    return (

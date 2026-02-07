@@ -13,12 +13,3 @@ export const FEEDS = [
   { name: 'Lee Robinson', url: 'https://leerob.com/rss', category: 'Next.js' },
 ];
 
-export interface BlogPost {
-  title: string;
-  link: string;
-  pubDate: string;
-  contentSnippet: string;
-  source: string;
-  category: string;
-  isoDate: string;
-}
