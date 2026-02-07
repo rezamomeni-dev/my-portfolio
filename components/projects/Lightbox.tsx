@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
 import { ProjectGalleryItem } from "@/types/project";
@@ -76,7 +76,7 @@ const Lightbox = ({ isOpen, onClose, images, currentIndex, onNavigate }: Lightbo
         <div className="flex-1 relative flex items-center justify-center p-4 md:p-12 overflow-hidden">
           <button
             onClick={handlePrevious}
-            className="absolute left-4 md:left-8 z-10 p-4 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-white"
+            className="absolute left-4 md:left-8 z-50 p-4 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-white"
             aria-label="Previous Image"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -92,11 +92,25 @@ const Lightbox = ({ isOpen, onClose, images, currentIndex, onNavigate }: Lightbo
           >
             {currentImage.src.toLowerCase().endsWith(".pdf") ||
             currentImage.type === "pdf" ? (
-              <iframe
-                src={`${currentImage.src}#toolbar=0&navpanes=0&scrollbar=0`}
+              <object
+                data={`${currentImage.src}#toolbar=0&navpanes=0&scrollbar=0`}
+                type="application/pdf"
                 className="w-full h-full rounded-lg bg-white"
                 title={currentImage.label}
-              />
+              >
+                <div className="flex flex-col items-center justify-center p-8 text-center bg-white rounded-lg h-full w-full">
+                  <FileText className="w-16 h-16 text-zinc-400 mb-4" />
+                  <p className="text-zinc-900 font-medium mb-4">PDF preview not available in this browser.</p>
+                  <a
+                    href={currentImage.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+                  >
+                    Open PDF in new tab
+                  </a>
+                </div>
+              </object>
             ) : (
               <Image
                 src={currentImage.src}
@@ -110,7 +124,7 @@ const Lightbox = ({ isOpen, onClose, images, currentIndex, onNavigate }: Lightbo
 
           <button
             onClick={handleNext}
-            className="absolute right-4 md:right-8 z-10 p-4 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-white"
+            className="absolute right-4 md:right-8 z-50 p-4 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-white"
             aria-label="Next Image"
           >
             <ChevronRight className="w-8 h-8" />
