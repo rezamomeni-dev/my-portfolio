@@ -44,7 +44,7 @@ const Header = () => {
    ];
 
    return (
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 print:hidden w-screen">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-4 md:px-8 print:hidden w-screen">
          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 flex items-center gap-6 max-w-7xl w-full justify-between shadow-sm relative">
             <Link href="/" className="flex items-center gap-2 z-50">
                <div className="bg-primary rounded-md p-1">

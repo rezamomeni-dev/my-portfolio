@@ -13,8 +13,8 @@ export const SectionContainer = ({
    return (
       <section
          className={cn(
-            "max-w-7xl mx-auto px-5 md:px-6 lg:px-8 py-16 md:py-24",
-            className,
+            "max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-24",
+            className
          )}
          {...others}
       >
