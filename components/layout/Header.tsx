@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { FileText, User, Menu, X } from "lucide-react";
-import { ThemeSwitcher } from "../ThemeSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link";
 import resumeData from "@/data/resume.json";
 import { useState, useEffect } from "react";
