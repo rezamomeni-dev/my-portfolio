@@ -350,8 +350,19 @@
          "Data-heavy enterprise UI",
          "AI-assisted trade analytics"
       ],
-      "banner": "/projects/artunity/banner.jpg",
-      "gallery": [],
+      "banner": "/projects/jtradehelp/banner.jpg",
+      "gallery": [
+         {
+            "src": "/projects/jtradehelp/home.png",
+            "label": "Home",
+            "description": "The main landing page of the Jtradehelp platform."
+         },
+         {
+            "src": "/projects/jtradehelp/dashboard.png",
+            "label": "Dashboard",
+            "description": "The main dashboard of the Jtradehelp platform, showcasing AI-assisted trade insights and data visualizations."
+         }
+      ],
       "achievements": []
    }
 ]
