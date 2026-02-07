@@ -5,7 +5,7 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogGrid } from "@/components/blog/BlogGrid";
 import { BlogPost } from "@/lib/blog-feeds";
 import { Loader2 } from "lucide-react";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 
 export default function BlogPage() {
    const [posts, setPosts] = useState<BlogPost[]>([]);

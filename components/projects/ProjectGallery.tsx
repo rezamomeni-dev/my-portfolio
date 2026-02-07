@@ -6,7 +6,7 @@ import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
 import clsx from "clsx";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 
 interface GalleryItem {
    src: string;

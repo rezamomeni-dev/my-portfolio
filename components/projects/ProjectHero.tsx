@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 import { Project } from "@/types/project";
 
 interface ProjectHeroProps {
