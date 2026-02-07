@@ -207,6 +207,11 @@
             "src": "/projects/landlogic/show-projects.png",
             "label": "Projects View",
             "description": "Interactive view of projects within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/LandLogic-ComprehensiveDueDiligenceReport.pdf",
+            "label": "Comprehensive Due Diligence Report",
+            "description": "PDF report showcasing the comprehensive due diligence work completed for the LandLogic platform."
          }
       ],
       "achievements": [
@@ -274,13 +279,7 @@
          "Collaborated with cross-functional teams",
          "Helped reduce manual paperwork by approximately 75%"
       ],
-      "technologies": [
-         "React",
-         "TypeScript",
-         "Redux Toolkit",
-         "LESS",
-         "Scrum"
-      ],
+      "technologies": ["React", "TypeScript", "Redux Toolkit", "LESS", "Scrum"],
       "banner": "/projects/nexus/desktop-chat-light.png",
       "gallery": [],
       "achievements": []
@@ -300,13 +299,7 @@
          "Doubled user acquisition through SEO improvements",
          "Delivered stable, bug-free releases"
       ],
-      "technologies": [
-         "React",
-         "Next.js",
-         "Redux Toolkit",
-         "Docker",
-         "SCSS"
-      ],
+      "technologies": ["React", "Next.js", "Redux Toolkit", "Docker", "SCSS"],
       "logo": "/projects/artunity/banner.png",
       "banner": "/projects/artunity/home.jpg",
       "gallery": [
