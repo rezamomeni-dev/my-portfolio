@@ -9,6 +9,8 @@ export interface ProjectGalleryItem {
   label: string;
   description: string;
   isMobile?: boolean;
+  thumbnail?: string;
+  type?: "image" | "pdf";
 }
 
 export interface ArchitectureItem {
