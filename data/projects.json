@@ -22,7 +22,11 @@
          "Electron",
          "Zustand",
          "WebSockets",
-         "TypeScript"
+         "TypeScript",
+         "ASP.NET Core",
+         "PostgreSQL",
+         "Redis",
+         "OAuth 2.0"
       ],
       "highlights": [
          "Enterprise-scale real-time system",
@@ -30,6 +34,41 @@
          "Cross-platform (Web + Desktop)"
       ],
       "banner": "/projects/nexus/desktop-chat-light.png",
+      "achievements": [
+         {
+            "metric": "35%",
+            "title": "Faster Turnaround",
+            "description": "Projects saw significantly faster completion due to real-time tools."
+         },
+         {
+            "metric": "90%",
+            "title": "User Adoption",
+            "description": "Achieved across 5 distinct departments in two weeks."
+         },
+         {
+            "metric": "Real-time",
+            "title": "WebSocket Sync",
+            "description": "Synchronized data across web and desktop clients."
+         }
+      ],
+      "architecture": [
+         {
+            "label": "FRONTEND FRAMEWORK",
+            "value": "React & Electron"
+         },
+         {
+            "label": "BACKEND API",
+            "value": "ASP.NET Core"
+         },
+         {
+            "label": "DATABASE",
+            "value": "PostgreSQL & Redis"
+         },
+         {
+            "label": "SECURITY & AUTH",
+            "value": "OAuth 2.0, End-to-End Encryption"
+         }
+      ],
       "gallery": [
          {
             "src": "/projects/nexus/desktop-chat-light.png",
@@ -40,13 +79,30 @@
             "src": "/projects/nexus/desktop-chat-dark.png",
             "label": "Desktop Chat – Dark Mode",
             "description": "Dark mode variant of the desktop chat, optimized for prolonged usage."
-         }
-      ],
-      "achievements": [
+         },
          {
-            "metric": "Real-time",
-            "title": "WebSocket Sync",
-            "description": "Synchronized data across web and desktop clients."
+            "src": "/projects/nexus/mobile-overview-light.png",
+            "label": "Mobile Overview – Light Mode",
+            "isMobile": true,
+            "description": "Unified mobile dashboard providing quick access to chats, tasks, calendar events, and organizational updates for efficient on-the-go collaboration."
+         },
+         {
+            "src": "/projects/nexus/mobile-overview-dark.png",
+            "label": "Mobile Overview – Dark Mode",
+            "isMobile": true,
+            "description": "Dark mode mobile overview designed to ensure consistency with the desktop experience while supporting fast navigation and real-time updates."
+         },
+         {
+            "src": "/projects/nexus/mobile-chat-light.png",
+            "label": "Mobile Chat – Light Mode",
+            "isMobile": true,
+            "description": "Mobile chat experience tailored for real-time communication, prioritizing performance, readability, and intuitive interaction patterns."
+         },
+         {
+            "src": "/projects/nexus/mobile-chat-dark.png",
+            "label": "Mobile Chat – Dark Mode",
+            "isMobile": true,
+            "description": "Dark mode mobile chat interface delivering a consistent, focused, and distraction-free messaging experience across devices."
          }
       ]
    },
@@ -187,8 +243,20 @@
          "Delivered stable, bug-free releases"
       ],
       "technologies": ["React", "Next.js", "Redux Toolkit", "Docker", "SCSS"],
-      "banner": "/projects/artunity/banner.png",
-      "gallery": [],
+      "logo": "/projects/artunity/banner.png",
+      "banner": "/projects/artunity/home.jpg",
+      "gallery": [
+         {
+            "src": "/projects/artunity/home.jpg",
+            "label": "Home",
+            "description": "The main landing page of the Artunity platform."
+         },
+         {
+            "src": "/projects/artunity/artworks.png",
+            "label": "Artworks",
+            "description": "The main artworks page of the Artunity platform."
+         }
+      ],
       "achievements": []
    },
    {
