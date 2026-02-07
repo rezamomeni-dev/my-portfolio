@@ -86,7 +86,16 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                   </div>
                   <div className="pt-8 relative aspect-video">
-                     <Image src={project.banner} alt={project.title} fill />
+                     <Image
+                        src={
+                           project?.gallery?.length
+                              ? project.gallery[0]?.src
+                              : project?.banner
+                        }
+                        alt={project.title}
+                        fill
+                        className="object-cover object-top"
+                     />
                   </div>
                </div>
                {/* Background blobs for visual interest - reduced on mobile */}
