@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import projectsData from "@/data/projects.json";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectDetails from "@/components/projects/ProjectDetails";
@@ -7,7 +6,6 @@ import ProjectAchievements from "@/components/projects/ProjectAchievements";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 import ProjectNavigation from "@/components/projects/ProjectNavigation";
-import SectionContainer from "@/components/shared/SectionContainer";
 import { Project } from "@/types/project";
 
 const projects = projectsData as unknown as Project[];
@@ -35,15 +33,38 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
    const nextProject =
       projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
+   let sectionIndex = 0;
+
    return (
       <div className="flex flex-col min-h-screen">
          <ProjectHero project={project} />
-         <ProjectDetails project={project} />
-         <ProjectAchievements achievements={project.achievements} />
-         {project.architecture && (
-            <ProjectArchitecture architecture={project.architecture} />
+
+         <ProjectDetails
+            project={project}
+            variant={sectionIndex++ % 2 === 0 ? "zinc" : "light"}
+         />
+
+         {project.achievements && project.achievements.length > 0 && (
+            <ProjectAchievements
+               achievements={project.achievements}
+               variant={sectionIndex++ % 2 === 0 ? "zinc" : "light"}
+            />
          )}
-         <ProjectGallery gallery={project.gallery} />
+
+         {project.architecture && (
+            <ProjectArchitecture
+               architecture={project.architecture}
+               variant={sectionIndex++ % 2 === 0 ? "zinc" : "light"}
+            />
+         )}
+
+         {project.gallery && project.gallery.length > 0 && (
+            <ProjectGallery
+               gallery={project.gallery}
+               variant={sectionIndex++ % 2 === 0 ? "zinc" : "light"}
+            />
+         )}
+
          <ProjectNavigation
             prevProject={
                prevProject
