@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 
 const ProjectShowcase = () => {
    const projects = projectsData;
@@ -30,7 +30,11 @@ const ProjectShowcase = () => {
                      key={project.slug}
                      initial={{ opacity: 0, y: 20 }}
                      whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
+                     viewport={{
+                        once: true,
+                        amount: "some",
+                        margin: "0px 0px -50px 0px",
+                     }}
                      transition={{ duration: 0.6 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
                   >

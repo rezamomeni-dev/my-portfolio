@@ -3,7 +3,7 @@
 import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import homeData from "@/data/home.json";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 
 interface StatItemProps {
    label: string;
@@ -13,7 +13,11 @@ interface StatItemProps {
 
 const StatItem = ({ label, valueString, index }: StatItemProps) => {
    const ref = useRef(null);
-   const isInView = useInView(ref, { once: true, amount: "some", margin: "0px 0px -50px 0px" });
+   const isInView = useInView(ref, {
+      once: true,
+      amount: "some",
+      margin: "0px 0px -50px 0px",
+   });
    const [displayValue, setDisplayValue] = useState(0);
 
    // Parse value and suffix (e.g., "8+" -> { value: 8, suffix: "+" })

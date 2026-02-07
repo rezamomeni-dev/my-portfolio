@@ -8,7 +8,7 @@ import BackgroundBlobs from "@/components/resume/BackgroundBlobs";
 import resumeData from "@/data/resume.json";
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/shared/SectionContainer";
 
 export const metadata: Metadata = {
    title: `${resumeData.personalInfo.name} - Resume`,
