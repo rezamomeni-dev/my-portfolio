@@ -15,7 +15,7 @@ const ProjectNavigation = ({
    nextProject,
 }: ProjectNavigationProps) => {
    return (
-      <section className="py-20 bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800">
+      <section className="bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800">
          <SectionContainer>
             <div className="flex flex-col sm:flex-row justify-between gap-12">
                {prevProject ? (

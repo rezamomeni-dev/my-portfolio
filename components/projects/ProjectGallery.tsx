@@ -25,7 +25,7 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
    );
 
    return (
-      <section className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50">
          <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">
