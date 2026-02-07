@@ -48,12 +48,12 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
-                        className={`grid md:grid-cols-2 gap-6 md:gap-12 items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                        className={`grid lg:grid-cols-2 gap-6 md:gap-12 items-center justify-between`}
                      >
                         <div
                            className={clsx(
                               "w-full",
-                              index % 2 === 1 ? "md:order-2" : "",
+                              index % 2 === 1 ? "lg:order-2" : "",
                            )}
                         >
                            <div
@@ -74,6 +74,7 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                                     src={item.thumbnail || item.src}
                                     alt={item.label}
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className={`object-cover object-top group-hover:scale-105 transition-transform duration-700 `}
                                  />
                               )}
@@ -88,7 +89,7 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                               </div>
                            </div>
                         </div>
-                        <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                        <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
                               {item.label}
                            </h3>

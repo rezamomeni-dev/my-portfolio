@@ -7,9 +7,19 @@ import Image from "next/image";
 import homeData from "@/data/home.json";
 import resumeData from "@/data/resume.json";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
    const { hero } = homeData;
+   const [isMobile, setIsMobile] = useState(false);
+
+   useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+   }, []);
+
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
    const containerVariants: Variants = {
@@ -173,8 +183,8 @@ const Hero = () => {
                      {/* Main Image Container */}
                      <motion.div
                         animate={{
-                           y: [0, -20, 0],
-                           rotate: [0, 2, 0, -2, 0],
+                           y: isMobile ? [0, -10, 0] : [0, -20, 0],
+                           rotate: isMobile ? [0, 1, 0, -1, 0] : [0, 2, 0, -2, 0],
                         }}
                         transition={{
                            y: {
@@ -188,12 +198,14 @@ const Hero = () => {
                               ease: "easeInOut",
                            },
                         }}
+                        style={{ willChange: "transform" }}
                         className="relative w-full h-full overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] rounded-[4rem] border-8 border-white dark:border-zinc-800 group"
                      >
                         <Image
                            src={hero.image}
                            alt="Professional portrait"
                            fill
+                           sizes="(max-width: 768px) 100vw, 50vw"
                            className="object-cover object-top rounded-[3.5rem] group-hover:scale-110 transition-transform duration-700"
                            priority
                         />

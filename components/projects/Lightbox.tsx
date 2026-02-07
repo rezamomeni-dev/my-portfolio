@@ -113,6 +113,7 @@ const Lightbox = ({
                            src={currentImage.src}
                            alt={currentImage.label}
                            fill
+                           sizes="100vw"
                            className="object-contain"
                            priority
                         />
