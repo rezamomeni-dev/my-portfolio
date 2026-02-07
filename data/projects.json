@@ -4,7 +4,7 @@
       "title": "Nexus",
       "category": "Enterprise Communication Platform",
       "description": "A real-time enterprise collaboration platform built to unify internal communication and workflows.",
-      "role": "Senior Frontend Engineer",
+      "role": "Frontend Chapter Lead",
       "startDate": "2024-03",
       "endDate": "Present",
       "about": "Nexus is a large-scale enterprise platform focused on real-time communication and productivity. The system heavily relies on WebSocket-based architecture to synchronize data across web and desktop clients.",
@@ -237,7 +237,7 @@
       "title": "Lastik Foroosh",
       "category": "E-commerce Platform",
       "description": "A performance-oriented e-commerce platform focused on SEO and server-side rendering.",
-      "role": "Frontend Engineer",
+      "role": "Senior Frontend Developer",
       "startDate": "2023-03",
       "endDate": "2024-03",
       "about": "Responsible for end-to-end frontend development of an e-commerce platform using Next.js with a strong focus on SEO, performance, and maintainability.",
@@ -261,7 +261,7 @@
          "SEO-driven architecture",
          "Production e-commerce platform"
       ],
-      "banner": "/projects/artunity/banner.jpg",
+      "banner": "/projects/lastikforoosh/banner.png",
       "gallery": [],
       "achievements": []
    },
@@ -280,8 +280,14 @@
          "Helped reduce manual paperwork by approximately 75%"
       ],
       "technologies": ["React", "TypeScript", "Redux Toolkit", "LESS", "Scrum"],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
+      "banner": "/projects/marine/banner.png",
+      "gallery": [
+         {
+            "src": "/projects/marine/define-form.png",
+            "label": "Form Definition",
+            "description": "The main form definition page of the Marine platform."
+         }
+      ],
       "achievements": []
    },
    {
@@ -344,8 +350,19 @@
          "Data-heavy enterprise UI",
          "AI-assisted trade analytics"
       ],
-      "banner": "/projects/artunity/banner.jpg",
-      "gallery": [],
+      "banner": "/projects/jtradehelp/banner.jpg",
+      "gallery": [
+         {
+            "src": "/projects/jtradehelp/home.png",
+            "label": "Home",
+            "description": "The main landing page of the Jtradehelp platform."
+         },
+         {
+            "src": "/projects/jtradehelp/dashboard.png",
+            "label": "Dashboard",
+            "description": "The main dashboard of the Jtradehelp platform, showcasing AI-assisted trade insights and data visualizations."
+         }
+      ],
       "achievements": []
    }
 ]
