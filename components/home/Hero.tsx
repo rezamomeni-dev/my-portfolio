@@ -39,7 +39,7 @@ const Hero = () => {
    };
 
    return (
-      <div className="relative min-h-dvh flex items-center justify-center overflow-hidden -mt-16">
+      <div className="relative min-h-dvh flex items-center justify-center overflow-hidden md:-mt-16">
          {/* Background Elements */}
          <div className="absolute inset-0 -z-10">
             <div className="absolute top-1/4 -left-20 w-120 h-120 bg-primary/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse" />
