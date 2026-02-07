@@ -39,11 +39,11 @@ const Hero = () => {
    };
 
    return (
-      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 md:py-32 px-6 md:px-8 lg:px-12">
+      <div className="relative min-h-dvh flex items-center justify-center overflow-hidden -mt-16">
          {/* Background Elements */}
          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse" />
-            <div className="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-indigo-500/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse delay-700" />
+            <div className="absolute top-1/4 -left-20 w-120 h-120 bg-primary/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse" />
+            <div className="absolute bottom-1/4 -right-20 w-120 h-120 bg-indigo-500/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse delay-700" />
          </div>
 
          <SectionContainer>
@@ -238,7 +238,7 @@ const Hero = () => {
                </motion.div>
             </motion.div>
          </SectionContainer>
-      </section>
+      </div>
    );
 };
 
