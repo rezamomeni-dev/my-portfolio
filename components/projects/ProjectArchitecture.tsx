@@ -7,6 +7,7 @@ import { ArchitectureItem } from "@/types/project";
 
 interface ProjectArchitectureProps {
    architecture: ArchitectureItem[];
+   variant?: "light" | "zinc";
 }
 
 const getIcon = (label: string) => {
@@ -22,11 +23,20 @@ const getIcon = (label: string) => {
    return <Cpu className="w-5 h-5" />;
 };
 
-const ProjectArchitecture = ({ architecture }: ProjectArchitectureProps) => {
+const ProjectArchitecture = ({
+   architecture,
+   variant = "light",
+}: ProjectArchitectureProps) => {
    if (!architecture || architecture.length === 0) return null;
 
    return (
-      <section className="bg-white dark:bg-black border-y border-zinc-200 dark:border-zinc-800">
+      <section
+         className={`${
+            variant === "zinc"
+               ? "bg-zinc-50 dark:bg-zinc-900/50"
+               : "bg-white dark:bg-black"
+         } border-y border-zinc-200 dark:border-zinc-800`}
+      >
          <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">

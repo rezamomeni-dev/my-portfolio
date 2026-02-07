@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Calendar, User, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Project } from "@/types/project";
+import { formatProjectTimeline } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import clsx from "clsx";
@@ -37,21 +38,25 @@ const ProjectCard = ({
    return (
       <motion.div
          ref={ref}
-         initial={{ opacity: 0, y: 50 }}
-         whileInView={{ opacity: 1, y: 0 }}
+         initial={{ opacity: 0, y: 40, scale: 0.95 }}
+         whileInView={{ opacity: 1, y: 0, scale: 1 }}
          viewport={{ once: true, amount: 0.2 }}
-         transition={{ duration: 0.8, delay: index * 0.1 }}
+         transition={{
+            duration: 0.7,
+            delay: index * 0.1,
+            ease: [0.21, 0.47, 0.32, 0.98]
+         }}
          className={clsx(
-            "relative group mb-20 last:mb-0 transition-all duration-700",
+            "relative group mb-12 md:mb-24 last:mb-0 transition-all duration-700",
             {
-               "opacity-30 scale-95": !isActive,
-               "opacity-100 scale-100": isActive,
+               "opacity-30 scale-95 blur-[2px]": !isActive,
+               "opacity-100 scale-100 blur-0": isActive,
             },
          )}
       >
-         <div className="grid lg:grid-cols-12 gap-8 items-start">
+         <div className="grid lg:grid-cols-12 gap-6 md:gap-12 items-start">
             {/* Project Image/Visual */}
-            <div className="lg:col-span-6 relative aspect-video rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl">
+            <div className="lg:col-span-6 relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl md:shadow-2xl">
                <Image
                   src={project.banner}
                   alt={project.title}
@@ -88,7 +93,7 @@ const ProjectCard = ({
                   </span>
                </div>
 
-               <h3 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white leading-tight">
+               <h3 className="text-2xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white leading-tight group-hover:text-primary transition-colors">
                   {project.title}
                </h3>
 
@@ -100,7 +105,7 @@ const ProjectCard = ({
                   <div className="flex items-center gap-2">
                      <Calendar className="w-4 h-4 text-primary" />
                      <span className="text-sm font-medium">
-                        {project.timeline}
+                        {formatProjectTimeline(project.startDate, project.endDate)}
                      </span>
                   </div>
                </div>

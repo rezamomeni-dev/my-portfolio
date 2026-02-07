@@ -5,7 +5,6 @@
       "category": "Enterprise Communication Platform",
       "description": "A real-time enterprise collaboration platform built to unify internal communication and workflows.",
       "role": "Senior Frontend Engineer",
-      "timeline": "Mar 2024 – Present",
       "startDate": "2024-03",
       "endDate": "Present",
       "about": "Nexus is a large-scale enterprise platform focused on real-time communication and productivity. The system heavily relies on WebSocket-based architecture to synchronize data across web and desktop clients.",
@@ -112,7 +111,6 @@
       "category": "Enterprise HR System",
       "description": "A modular HR management system built using a micro-frontend architecture.",
       "role": "Frontend Developer",
-      "timeline": "Mar 2025 - Nov 2025",
       "startDate": "2025-03",
       "endDate": "2025-11",
       "about": "Contributed to an enterprise HR system developed with Vue.js and micro-frontend architecture across multiple teams.",
@@ -144,7 +142,6 @@
       "category": "GovTech / Geospatial Platform",
       "description": "A geospatial web platform used by Canadian municipalities for land-use planning and permit issuance.",
       "role": "Senior Frontend Developer",
-      "timeline": "Jul 2023 – Feb 2024",
       "startDate": "2023-07",
       "endDate": "2024-02",
       "about": "Worked on a complex map-based system handling large-scale geospatial data and dynamic reporting.",
@@ -178,7 +175,6 @@
       "category": "E-commerce Platform",
       "description": "A performance-oriented e-commerce platform focused on SEO and server-side rendering.",
       "role": "Frontend Engineer",
-      "timeline": "Mar 2023 – Mar 2024",
       "startDate": "2023-03",
       "endDate": "2024-03",
       "about": "Responsible for end-to-end frontend development of an e-commerce platform using Next.js with a strong focus on SEO, performance, and maintainability.",
@@ -206,14 +202,12 @@
       "gallery": [],
       "achievements": []
    },
-
    {
       "slug": "marine",
       "title": "Marine Platform",
       "category": "Enterprise Web Application",
       "description": "A large-scale web application consolidating internal enterprise workflows.",
       "role": "Frontend Developer",
-      "timeline": "Dec 2021 – Feb 2023",
       "startDate": "2021-12",
       "endDate": "2023-02",
       "about": "Worked across multiple teams to build and customize complex form-driven workflows.",
@@ -222,7 +216,13 @@
          "Collaborated with cross-functional teams",
          "Helped reduce manual paperwork by approximately 75%"
       ],
-      "technologies": ["React", "TypeScript", "Redux Toolkit", "LESS", "Scrum"],
+      "technologies": [
+         "React",
+         "TypeScript",
+         "Redux Toolkit",
+         "LESS",
+         "Scrum"
+      ],
       "banner": "/projects/nexus/desktop-chat-light.png",
       "gallery": [],
       "achievements": []
@@ -233,7 +233,6 @@
       "category": "Content & Marketplace Platform",
       "description": "A SEO-focused platform built with SSR capabilities.",
       "role": "Frontend Developer",
-      "timeline": "Sep 2021 – Sep 2022",
       "startDate": "2021-09",
       "endDate": "2022-09",
       "about": "Focused on frontend development and SEO optimization using React and Next.js.",
@@ -243,7 +242,13 @@
          "Doubled user acquisition through SEO improvements",
          "Delivered stable, bug-free releases"
       ],
-      "technologies": ["React", "Next.js", "Redux Toolkit", "Docker", "SCSS"],
+      "technologies": [
+         "React",
+         "Next.js",
+         "Redux Toolkit",
+         "Docker",
+         "SCSS"
+      ],
       "logo": "/projects/artunity/banner.png",
       "banner": "/projects/artunity/home.jpg",
       "gallery": [
@@ -266,7 +271,6 @@
       "category": "AI-Powered Trade Intelligence Platform",
       "description": "An AI-driven platform for analyzing international trade data and discovering cross-border opportunities.",
       "role": "Frontend Developer (Angular)",
-      "timeline": "Dec 2020 – Nov 2021",
       "startDate": "2020-12",
       "endDate": "2021-11",
       "about": "Delivered Phase One of a data-intensive Angular application designed to explore global trade data using AI-assisted insights.",
