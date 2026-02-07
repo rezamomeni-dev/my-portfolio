@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { User } from "lucide-react";
 import Link from "next/link";
+import SectionContainer from "../shared/SectionContainer";
 
 interface HeroProps {
    name: string;
@@ -18,7 +19,7 @@ const Hero = ({ name, role, bio, image, email }: HeroProps) => {
    const [imageError, setImageError] = useState(false);
 
    return (
-      <section className="py-16 md:py-24">
+      <SectionContainer>
          <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             <motion.div
                initial={{ opacity: 0, y: 20 }}
@@ -83,7 +84,7 @@ const Hero = ({ name, role, bio, image, email }: HeroProps) => {
                </div>
             </motion.div>
          </div>
-      </section>
+      </SectionContainer>
    );
 };
 
