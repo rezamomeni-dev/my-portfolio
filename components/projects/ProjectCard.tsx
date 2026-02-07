@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index, isActive, onInView }: ProjectCardProps) =
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className={`relative group mb-32 last:mb-0 transition-all duration-700 ${
+      className={`relative group mb-20 last:mb-0 transition-all duration-700 ${
         !isActive ? "opacity-30 blur-[2px] scale-95" : "opacity-100 blur-0 scale-100"
       }`}
     >
@@ -78,11 +78,11 @@ const ProjectCard = ({ project, index, isActive, onInView }: ProjectCardProps) =
             </span>
           </div>
 
-          <h3 className="text-4xl md:text-5xl font-bold mb-6 text-zinc-900 dark:text-white leading-tight">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white leading-tight">
             {project.title}
           </h3>
 
-          <div className="flex flex-wrap gap-6 mb-8 text-zinc-600 dark:text-zinc-400">
+          <div className="flex flex-wrap gap-4 mb-6 text-zinc-600 dark:text-zinc-400">
              <div className="flex items-center gap-2">
                 <User className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">{project.role}</span>
@@ -93,12 +93,12 @@ const ProjectCard = ({ project, index, isActive, onInView }: ProjectCardProps) =
              </div>
           </div>
 
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
             {project.description}
           </p>
 
           {project.highlights && (
-            <div className="space-y-4 mb-10">
+            <div className="space-y-2 mb-8">
               {project.highlights.map((highlight: string, i: number) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="mt-1.5 shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">

@@ -13,9 +13,10 @@ interface HeroProps {
    bio: string;
    image: string;
    email: string;
+   location: string;
 }
 
-const Hero = ({ name, role, bio, image, email }: HeroProps) => {
+const Hero = ({ name, role, bio, image, email, location }: HeroProps) => {
    const [imageError, setImageError] = useState(false);
 
    return (
@@ -27,9 +28,10 @@ const Hero = ({ name, role, bio, image, email }: HeroProps) => {
                transition={{ duration: 0.5 }}
                className="flex-1 text-center md:text-left"
             >
-               <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
+               <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-2 leading-tight">
                   {role}
                </h1>
+               <p className="text-primary font-medium mb-6">{location}</p>
                <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
                   {bio}
                </p>
