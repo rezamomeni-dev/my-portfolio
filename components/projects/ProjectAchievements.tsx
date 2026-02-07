@@ -43,7 +43,7 @@ const ProjectAchievements = ({ achievements }: ProjectAchievementsProps) => {
    if (!achievements || achievements.length === 0) return null;
 
    return (
-      <section className="py-24 bg-white dark:bg-black">
+      <section className="bg-white dark:bg-black">
          <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">

@@ -11,7 +11,7 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
    return (
-      <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/50">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50">
          <SectionContainer>
             <div className="grid lg:grid-cols-3 gap-16">
                {/* Main Content */}

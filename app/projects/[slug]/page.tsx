@@ -58,7 +58,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
          />
 
          {/* Call to Action at the bottom */}
-         <section className="py-24 bg-zinc-900 text-white text-center">
+         {/* <section className="py-24 bg-zinc-900 text-white text-center">
             <SectionContainer className="max-w-3xl">
                <h2 className="text-4xl md:text-5xl font-bold mb-8">
                   Ready to streamline your enterprise?
@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </Link>
                </div>
             </SectionContainer>
-         </section>
+         </section> */}
       </div>
    );
 }
