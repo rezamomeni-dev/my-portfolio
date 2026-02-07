@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
+import { ProjectGalleryItem } from "@/types/project";
 
 interface LightboxProps {
   isOpen: boolean;
   onClose: () => void;
-  images: { src: string; label: string; description: string; isMobile?: boolean }[];
+  images: ProjectGalleryItem[];
   currentIndex: number;
   onNavigate: (index: number) => void;
 }
@@ -87,15 +88,24 @@ const Lightbox = ({ isOpen, onClose, images, currentIndex, onNavigate }: Lightbo
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.9, x: -20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className={`relative w-full h-full flex items-center justify-center ${currentImage.isMobile ? 'max-w-md mx-auto' : ''}`}
+            className={`relative w-full h-full flex items-center justify-center ${currentImage.isMobile ? "max-w-md mx-auto" : ""}`}
           >
-            <Image
-              src={currentImage.src}
-              alt={currentImage.label}
-              fill
-              className="object-contain"
-              priority
-            />
+            {currentImage.src.toLowerCase().endsWith(".pdf") ||
+            currentImage.type === "pdf" ? (
+              <iframe
+                src={`${currentImage.src}#toolbar=0&navpanes=0&scrollbar=0`}
+                className="w-full h-full rounded-lg bg-white"
+                title={currentImage.label}
+              />
+            ) : (
+              <Image
+                src={currentImage.src}
+                alt={currentImage.label}
+                fill
+                className="object-contain"
+                priority
+              />
+            )}
           </motion.div>
 
           <button
