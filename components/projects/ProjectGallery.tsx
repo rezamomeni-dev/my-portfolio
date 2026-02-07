@@ -69,7 +69,7 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
                               src={item.src}
                               alt={item.label}
                               fill
-                              className={`${item.isMobile ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-700 `}
+                              className={`${item.isMobile ? "object-contain" : "object-cover"} object-top group-hover:scale-105 transition-transform duration-700 `}
                            />
                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
                               <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 dark:bg-zinc-900/90 p-3 rounded-full shadow-lg text-zinc-900 dark:text-white">
