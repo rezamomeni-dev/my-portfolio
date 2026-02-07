@@ -23,7 +23,6 @@ export interface Project {
   description: string;
   role: string;
   roleDescription?: string;
-  timeline: string;
   startDate: string;
   endDate: string;
   launchedDate?: string;

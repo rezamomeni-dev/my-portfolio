@@ -15,6 +15,7 @@ import { ProjectAchievement } from "@/types/project";
 
 interface ProjectAchievementsProps {
    achievements: ProjectAchievement[];
+   variant?: "light" | "zinc";
 }
 
 const getIcon = (title: string) => {
@@ -39,11 +40,20 @@ const getIcon = (title: string) => {
    return <Trophy className="w-6 h-6" />;
 };
 
-const ProjectAchievements = ({ achievements }: ProjectAchievementsProps) => {
+const ProjectAchievements = ({
+   achievements,
+   variant = "light",
+}: ProjectAchievementsProps) => {
    if (!achievements || achievements.length === 0) return null;
 
    return (
-      <section className="bg-white dark:bg-black">
+      <section
+         className={
+            variant === "zinc"
+               ? "bg-zinc-50 dark:bg-zinc-900/50"
+               : "bg-white dark:bg-black"
+         }
+      >
          <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">

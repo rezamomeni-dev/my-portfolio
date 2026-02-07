@@ -4,14 +4,22 @@ import { motion } from "framer-motion";
 import { Info, Code2, UserCircle, Calendar } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { Project } from "@/types/project";
+import { formatProjectTimeline } from "@/lib/utils";
 
 interface ProjectDetailsProps {
    project: Project;
+   variant?: "light" | "zinc";
 }
 
-const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
    return (
-      <section className="bg-zinc-50 dark:bg-zinc-900/50">
+      <section
+         className={
+            variant === "zinc"
+               ? "bg-zinc-50 dark:bg-zinc-900/50"
+               : "bg-white dark:bg-black"
+         }
+      >
          <SectionContainer>
             <div className="grid lg:grid-cols-3 gap-16">
                {/* Main Content */}
@@ -105,7 +113,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                      </div>
                      <div className="space-y-1">
                         <div className="text-xl font-bold text-zinc-900 dark:text-white">
-                           {project.timeline}
+                           {formatProjectTimeline(project.startDate, project.endDate)}
                         </div>
                         {project.launchedDate && (
                            <p className="text-zinc-500 dark:text-zinc-400">

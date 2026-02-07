@@ -17,15 +17,22 @@ interface GalleryItem {
 
 interface ProjectGalleryProps {
    gallery: GalleryItem[];
+   variant?: "light" | "zinc";
 }
 
-const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
+const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
       null,
    );
 
    return (
-      <section className="bg-zinc-50 dark:bg-zinc-900/50">
+      <section
+         className={
+            variant === "zinc"
+               ? "bg-zinc-50 dark:bg-zinc-900/50"
+               : "bg-white dark:bg-black"
+         }
+      >
          <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">

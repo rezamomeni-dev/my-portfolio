@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Project } from "@/types/project";
+import { formatProjectTimeline } from "@/lib/utils";
 
 interface ProjectTimelineProps {
   projects: Project[];
@@ -68,7 +69,7 @@ const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
                 <span className={`text-[10px] font-bold uppercase tracking-widest mb-1 transition-colors duration-500 ${
                   isActive ? "text-primary" : "text-zinc-400"
                 }`}>
-                  {project.startDate.split('-').reverse().join(' ')}
+                  {formatProjectTimeline(project.startDate, project.endDate)}
                 </span>
 
                 <h4 className={`text-lg font-bold transition-all duration-500 ${
