@@ -107,7 +107,7 @@
       ]
    },
    {
-      "slug": "alkafeel-hr",
+      "slug": "alkafeel",
       "title": "Alkafeel HR Platform",
       "category": "Enterprise HR System",
       "description": "A modular HR management system built using a micro-frontend architecture.",
@@ -134,8 +134,24 @@
          "Micro-frontend architecture",
          "RTL & multilingual UX"
       ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
+      "banner": "/projects/alkafeel/banner.png",
+      "gallery": [
+         {
+            "src": "/projects/alkafeel/overview.png",
+            "label": "Overview Dashboard",
+            "description": "Overview dashboard for managing HR operations and employee data."
+         },
+         {
+            "src": "/projects/alkafeel/holiday-calendar-month.png",
+            "label": "Holiday Calendar",
+            "description": "Interactive holiday calendar view showing company-wide holidays and events."
+         },
+         {
+            "src": "/projects/alkafeel/employee-leaves.png",
+            "label": "Employee Leaves",
+            "description": "Employee leaves management interface for tracking and approving leave requests."
+         }
+      ],
       "achievements": []
    },
    {
