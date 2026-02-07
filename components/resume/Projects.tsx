@@ -129,6 +129,21 @@ const Projects = ({ items }: ProjectsProps) => {
                   </motion.div>
                ))}
             </div>
+
+            <motion.div
+               initial={{ opacity: 0, y: 10 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.5, delay: 0.2 }}
+               className="mt-12 text-center"
+            >
+               <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full font-bold hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all transform hover:scale-105"
+               >
+                  See More Projects <ArrowUpRight className="w-5 h-5" />
+               </Link>
+            </motion.div>
          </motion.div>
       </SectionContainer>
    );

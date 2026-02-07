@@ -24,13 +24,14 @@ export default function ResumePage() {
             bio={resumeData.personalInfo.bio}
             image={resumeData.personalInfo.image}
             email={resumeData.personalInfo.email}
+            location={resumeData.personalInfo.location}
          />
 
          <About content={resumeData.personalInfo.aboutMe} />
 
          <Experience items={resumeData.experience} />
 
-         <Projects items={projectsData} />
+         <Projects items={projectsData.slice(0, 2)} />
 
          <Education items={resumeData.education} />
 
