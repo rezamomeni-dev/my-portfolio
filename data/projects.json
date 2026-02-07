@@ -184,8 +184,34 @@
          "Performance-critical frontend",
          "Government-grade systems"
       ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
+      "banner": "/projects/landlogic/banner.webp",
+      "gallery": [
+         {
+            "src": "/projects/landlogic/azure-login.png",
+            "label": "Azure Login",
+            "description": "Secure login interface for accessing the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/load-mapbox-layers.png",
+            "label": "Mapbox Layers",
+            "description": "Dynamic rendering of over 2,000 geospatial layers using Mapbox GL."
+         },
+         {
+            "src": "/projects/landlogic/show-layers-detail.png",
+            "label": "Mapbox Layers Detail",
+            "description": "Detailed view of individual geospatial layers within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/show-parcels.png",
+            "label": "Parcels View",
+            "description": "Interactive view of individual parcels within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/show-projects.png",
+            "label": "Projects View",
+            "description": "Interactive view of projects within the LandLogic platform."
+         }
+      ],
       "achievements": []
    },
    {
@@ -222,7 +248,6 @@
       "gallery": [],
       "achievements": []
    },
-
    {
       "slug": "marine",
       "title": "Marine Platform",
