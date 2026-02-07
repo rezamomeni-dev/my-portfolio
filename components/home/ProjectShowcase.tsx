@@ -39,9 +39,9 @@ const ProjectShowcase = () => {
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
                   >
                      <div
-                        className={`relative aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl group ${index % 2 === 1 ? "md:order-last" : ""}`}
+                        className={`relative aspect-video rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl group ${index % 2 === 1 ? "md:order-last" : ""}`}
                      >
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-indigo-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-indigo-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <Image
                            src={project.banner}
                            alt={project.title}

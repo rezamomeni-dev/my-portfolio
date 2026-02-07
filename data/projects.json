@@ -1,239 +1,227 @@
 [
-  {
-    "slug": "nexus",
-    "title": "Nexus",
-    "category": "Enterprise Communication Platform",
-    "description": "A real-time enterprise collaboration platform built to unify internal communication and workflows.",
-    "role": "Senior Frontend Engineer",
-    "timeline": "Mar 2024 – Present",
-    "startDate": "2024-03",
-    "endDate": "Present",
-    "about": "Nexus is a large-scale enterprise platform focused on real-time communication and productivity. The system heavily relies on WebSocket-based architecture to synchronize data across web and desktop clients.",
-    "responsibilities": [
-      "Designed and implemented real-time features using WebSockets",
-      "Led frontend architecture for web and Electron-based desktop applications",
-      "Built scalable state management for real-time data synchronization",
-      "Ensured performance and consistency across platforms",
-      "Collaborated closely with backend teams on real-time communication protocols"
-    ],
-    "technologies": [
-      "React",
-      "Next.js",
-      "Electron",
-      "Zustand",
-      "WebSockets",
-      "TypeScript"
-    ],
-    "highlights": [
-      "Enterprise-scale real-time system",
-      "WebSocket-driven architecture",
-      "Cross-platform (Web + Desktop)"
-    ],
-    "banner": "/projects/nexus/desktop-chat-light.png",
-    "gallery": [
-      {
-        "src": "/projects/nexus/desktop-chat-light.png",
-        "label": "Desktop Chat – Light Mode",
-        "description": "Primary desktop chat interface designed for seamless team communication."
-      },
-      {
-        "src": "/projects/nexus/desktop-chat-dark.png",
-        "label": "Desktop Chat – Dark Mode",
-        "description": "Dark mode variant of the desktop chat, optimized for prolonged usage."
-      }
-    ],
-    "achievements": [
-      {
-        "metric": "Real-time",
-        "title": "WebSocket Sync",
-        "description": "Synchronized data across web and desktop clients."
-      }
-    ]
-  },
-  {
-    "slug": "landlogic",
-    "title": "LandLogic",
-    "category": "GovTech / Geospatial Platform",
-    "description": "A geospatial web platform used by Canadian municipalities for land-use planning and permit issuance.",
-    "role": "Senior Frontend Developer",
-    "timeline": "Jul 2023 – Feb 2024",
-    "startDate": "2023-07",
-    "endDate": "2024-02",
-    "about": "Worked on a complex map-based system handling large-scale geospatial data and dynamic reporting.",
-    "responsibilities": [
-      "Implemented Mapbox GL to render over 2,000 geospatial layers",
-      "Developed parcel-based dynamic reporting pages",
-      "Optimized rendering and state management for large datasets",
-      "Collaborated with cross-functional teams in an Agile environment"
-    ],
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Mapbox GL",
-      "Redux Toolkit",
-      "Ant Design",
-      "Docker",
-      "Azure DevOps"
-    ],
-    "highlights": [
-      "Large-scale data visualization",
-      "Performance-critical frontend",
-      "Government-grade systems"
-    ],
-    "banner": "/projects/nexus/desktop-chat-light.png",
-    "gallery": [],
-    "achievements": []
-  },
-  {
-    "slug": "lastikforoosh",
-    "title": "Lastik Foroosh",
-    "category": "E-commerce Platform",
-    "description": "A performance-oriented e-commerce platform focused on SEO and server-side rendering.",
-    "role": "Frontend Engineer",
-    "timeline": "Mar 2023 – Mar 2024",
-    "startDate": "2023-03",
-    "endDate": "2024-03",
-    "about": "Responsible for end-to-end frontend development of an e-commerce platform using Next.js with a strong focus on SEO, performance, and maintainability.",
-    "responsibilities": [
-      "Developed the complete frontend architecture independently",
-      "Implemented SSR using Next.js to improve SEO and discoverability",
-      "Built reusable UI components with Material UI",
-      "Optimized Core Web Vitals and page performance"
-    ],
-    "liveLink": "https://www.lastikforoosh.com/",
-    "technologies": [
-      "Next.js",
-      "React",
-      "Material UI",
-      "TypeScript",
-      "SSR",
-      "SEO"
-    ],
-    "highlights": [
-      "Full frontend ownership",
-      "SEO-driven architecture",
-      "Production e-commerce platform"
-    ],
-    "banner": "/projects/artunity/banner.jpg",
-    "gallery": [],
-    "achievements": []
-  },
-  {
-    "slug": "alkafeel-hr",
-    "title": "Alkafeel HR Platform",
-    "category": "Enterprise HR System",
-    "description": "A modular HR management system built using a micro-frontend architecture.",
-    "role": "Frontend Developer",
-    "timeline": "Dec 2022 – Jun 2023",
-    "startDate": "2022-12",
-    "endDate": "2023-06",
-    "about": "Contributed to an enterprise HR system developed with Vue.js and micro-frontend architecture across multiple teams.",
-    "responsibilities": [
-      "Developed independent micro-frontend modules using Vue.js",
-      "Collaborated with three frontend teams on system integration",
-      "Implemented RTL-first layouts for Arabic users",
-      "Maintained UI consistency across distributed deployments"
-    ],
-    "liveLink": "https://alkafeel.net/?lang=pr",
-    "technologies": [
-      "Vue.js",
-      "Micro-Frontend Architecture",
-      "Module Federation",
-      "JavaScript"
-    ],
-    "highlights": [
-      "Vue.js at enterprise scale",
-      "Micro-frontend architecture",
-      "RTL & multilingual UX"
-    ],
-    "banner": "/projects/nexus/desktop-chat-light.png",
-    "gallery": [],
-    "achievements": []
-  },
-  {
-    "slug": "marine",
-    "title": "Marine Platform",
-    "category": "Enterprise Web Application",
-    "description": "A large-scale web application consolidating internal enterprise workflows.",
-    "role": "Frontend Developer",
-    "timeline": "Dec 2021 – Feb 2023",
-    "startDate": "2021-12",
-    "endDate": "2023-02",
-    "about": "Worked across multiple teams to build and customize complex form-driven workflows.",
-    "responsibilities": [
-      "Customized Alibaba Formily for enterprise-grade forms",
-      "Collaborated with cross-functional teams",
-      "Helped reduce manual paperwork by approximately 75%"
-    ],
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Redux Toolkit",
-      "LESS",
-      "Scrum"
-    ],
-    "banner": "/projects/nexus/desktop-chat-light.png",
-    "gallery": [],
-    "achievements": []
-  },
-  {
-    "slug": "artunity",
-    "title": "Artunity",
-    "category": "Content & Marketplace Platform",
-    "description": "A SEO-focused platform built with SSR capabilities.",
-    "role": "Frontend Developer",
-    "timeline": "Sep 2021 – Sep 2022",
-    "startDate": "2021-09",
-    "endDate": "2022-09",
-    "about": "Focused on frontend development and SEO optimization using React and Next.js.",
-    "responsibilities": [
-      "Developed and deployed 15+ production-ready pages",
-      "Migrated critical flows to Next.js with SSR",
-      "Doubled user acquisition through SEO improvements",
-      "Delivered stable, bug-free releases"
-    ],
-    "technologies": [
-      "React",
-      "Next.js",
-      "Redux Toolkit",
-      "Docker",
-      "SCSS"
-    ],
-    "banner": "/projects/artunity/banner.jpg",
-    "gallery": [],
-    "achievements": []
-  },
-  {
-    "slug": "jtradehelp",
-    "title": "Jtradehelp",
-    "category": "AI-Powered Trade Intelligence Platform",
-    "description": "An AI-driven platform for analyzing international trade data and discovering cross-border opportunities.",
-    "role": "Frontend Developer (Angular)",
-    "timeline": "Dec 2020 – Nov 2021",
-    "startDate": "2020-12",
-    "endDate": "2021-11",
-    "about": "Delivered Phase One of a data-intensive Angular application designed to explore global trade data using AI-assisted insights.",
-    "responsibilities": [
-      "Implemented Phase One of the frontend using Angular",
-      "Built scalable UI components for trade data analysis",
-      "Integrated large datasets into analytical dashboards",
-      "Worked closely with product and data teams"
-    ],
-    "liveLink": "https://jtradehelp.com/pages/home",
-    "technologies": [
-      "Angular",
-      "TypeScript",
-      "RxJS",
-      "REST APIs",
-      "Data Visualization"
-    ],
-    "highlights": [
-      "Angular in production",
-      "Data-heavy enterprise UI",
-      "AI-assisted trade analytics"
-    ],
-    "banner": "/projects/artunity/banner.jpg",
-    "gallery": [],
-    "achievements": []
-  }
+   {
+      "slug": "nexus",
+      "title": "Nexus",
+      "category": "Enterprise Communication Platform",
+      "description": "A real-time enterprise collaboration platform built to unify internal communication and workflows.",
+      "role": "Senior Frontend Engineer",
+      "timeline": "Mar 2024 – Present",
+      "startDate": "2024-03",
+      "endDate": "Present",
+      "about": "Nexus is a large-scale enterprise platform focused on real-time communication and productivity. The system heavily relies on WebSocket-based architecture to synchronize data across web and desktop clients.",
+      "responsibilities": [
+         "Designed and implemented real-time features using WebSockets",
+         "Led frontend architecture for web and Electron-based desktop applications",
+         "Built scalable state management for real-time data synchronization",
+         "Ensured performance and consistency across platforms",
+         "Collaborated closely with backend teams on real-time communication protocols"
+      ],
+      "technologies": [
+         "React",
+         "Next.js",
+         "Electron",
+         "Zustand",
+         "WebSockets",
+         "TypeScript"
+      ],
+      "highlights": [
+         "Enterprise-scale real-time system",
+         "WebSocket-driven architecture",
+         "Cross-platform (Web + Desktop)"
+      ],
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "gallery": [
+         {
+            "src": "/projects/nexus/desktop-chat-light.png",
+            "label": "Desktop Chat – Light Mode",
+            "description": "Primary desktop chat interface designed for seamless team communication."
+         },
+         {
+            "src": "/projects/nexus/desktop-chat-dark.png",
+            "label": "Desktop Chat – Dark Mode",
+            "description": "Dark mode variant of the desktop chat, optimized for prolonged usage."
+         }
+      ],
+      "achievements": [
+         {
+            "metric": "Real-time",
+            "title": "WebSocket Sync",
+            "description": "Synchronized data across web and desktop clients."
+         }
+      ]
+   },
+   {
+      "slug": "landlogic",
+      "title": "LandLogic",
+      "category": "GovTech / Geospatial Platform",
+      "description": "A geospatial web platform used by Canadian municipalities for land-use planning and permit issuance.",
+      "role": "Senior Frontend Developer",
+      "timeline": "Jul 2023 – Feb 2024",
+      "startDate": "2023-07",
+      "endDate": "2024-02",
+      "about": "Worked on a complex map-based system handling large-scale geospatial data and dynamic reporting.",
+      "responsibilities": [
+         "Implemented Mapbox GL to render over 2,000 geospatial layers",
+         "Developed parcel-based dynamic reporting pages",
+         "Optimized rendering and state management for large datasets",
+         "Collaborated with cross-functional teams in an Agile environment"
+      ],
+      "technologies": [
+         "React",
+         "TypeScript",
+         "Mapbox GL",
+         "Redux Toolkit",
+         "Ant Design",
+         "Docker",
+         "Azure DevOps"
+      ],
+      "highlights": [
+         "Large-scale data visualization",
+         "Performance-critical frontend",
+         "Government-grade systems"
+      ],
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "gallery": [],
+      "achievements": []
+   },
+   {
+      "slug": "lastikforoosh",
+      "title": "Lastik Foroosh",
+      "category": "E-commerce Platform",
+      "description": "A performance-oriented e-commerce platform focused on SEO and server-side rendering.",
+      "role": "Frontend Engineer",
+      "timeline": "Mar 2023 – Mar 2024",
+      "startDate": "2023-03",
+      "endDate": "2024-03",
+      "about": "Responsible for end-to-end frontend development of an e-commerce platform using Next.js with a strong focus on SEO, performance, and maintainability.",
+      "responsibilities": [
+         "Developed the complete frontend architecture independently",
+         "Implemented SSR using Next.js to improve SEO and discoverability",
+         "Built reusable UI components with Material UI",
+         "Optimized Core Web Vitals and page performance"
+      ],
+      "liveLink": "https://www.lastikforoosh.com/",
+      "technologies": [
+         "Next.js",
+         "React",
+         "Material UI",
+         "TypeScript",
+         "SSR",
+         "SEO"
+      ],
+      "highlights": [
+         "Full frontend ownership",
+         "SEO-driven architecture",
+         "Production e-commerce platform"
+      ],
+      "banner": "/projects/artunity/banner.jpg",
+      "gallery": [],
+      "achievements": []
+   },
+   {
+      "slug": "alkafeel-hr",
+      "title": "Alkafeel HR Platform",
+      "category": "Enterprise HR System",
+      "description": "A modular HR management system built using a micro-frontend architecture.",
+      "role": "Frontend Developer",
+      "timeline": "Dec 2022 – Jun 2023",
+      "startDate": "2022-12",
+      "endDate": "2023-06",
+      "about": "Contributed to an enterprise HR system developed with Vue.js and micro-frontend architecture across multiple teams.",
+      "responsibilities": [
+         "Developed independent micro-frontend modules using Vue.js",
+         "Collaborated with three frontend teams on system integration",
+         "Implemented RTL-first layouts for Arabic users",
+         "Maintained UI consistency across distributed deployments"
+      ],
+      "liveLink": "https://alkafeel.net/?lang=pr",
+      "technologies": [
+         "Vue.js",
+         "Micro-Frontend Architecture",
+         "Module Federation",
+         "JavaScript"
+      ],
+      "highlights": [
+         "Vue.js at enterprise scale",
+         "Micro-frontend architecture",
+         "RTL & multilingual UX"
+      ],
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "gallery": [],
+      "achievements": []
+   },
+   {
+      "slug": "marine",
+      "title": "Marine Platform",
+      "category": "Enterprise Web Application",
+      "description": "A large-scale web application consolidating internal enterprise workflows.",
+      "role": "Frontend Developer",
+      "timeline": "Dec 2021 – Feb 2023",
+      "startDate": "2021-12",
+      "endDate": "2023-02",
+      "about": "Worked across multiple teams to build and customize complex form-driven workflows.",
+      "responsibilities": [
+         "Customized Alibaba Formily for enterprise-grade forms",
+         "Collaborated with cross-functional teams",
+         "Helped reduce manual paperwork by approximately 75%"
+      ],
+      "technologies": ["React", "TypeScript", "Redux Toolkit", "LESS", "Scrum"],
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "gallery": [],
+      "achievements": []
+   },
+   {
+      "slug": "artunity",
+      "title": "Artunity",
+      "category": "Content & Marketplace Platform",
+      "description": "A SEO-focused platform built with SSR capabilities.",
+      "role": "Frontend Developer",
+      "timeline": "Sep 2021 – Sep 2022",
+      "startDate": "2021-09",
+      "endDate": "2022-09",
+      "about": "Focused on frontend development and SEO optimization using React and Next.js.",
+      "responsibilities": [
+         "Developed and deployed 15+ production-ready pages",
+         "Migrated critical flows to Next.js with SSR",
+         "Doubled user acquisition through SEO improvements",
+         "Delivered stable, bug-free releases"
+      ],
+      "technologies": ["React", "Next.js", "Redux Toolkit", "Docker", "SCSS"],
+      "banner": "/projects/artunity/banner.png",
+      "gallery": [],
+      "achievements": []
+   },
+   {
+      "slug": "jtradehelp",
+      "title": "Jtradehelp",
+      "category": "AI-Powered Trade Intelligence Platform",
+      "description": "An AI-driven platform for analyzing international trade data and discovering cross-border opportunities.",
+      "role": "Frontend Developer (Angular)",
+      "timeline": "Dec 2020 – Nov 2021",
+      "startDate": "2020-12",
+      "endDate": "2021-11",
+      "about": "Delivered Phase One of a data-intensive Angular application designed to explore global trade data using AI-assisted insights.",
+      "responsibilities": [
+         "Implemented Phase One of the frontend using Angular",
+         "Built scalable UI components for trade data analysis",
+         "Integrated large datasets into analytical dashboards",
+         "Worked closely with product and data teams"
+      ],
+      "liveLink": "https://jtradehelp.com/pages/home",
+      "technologies": [
+         "Angular",
+         "TypeScript",
+         "RxJS",
+         "REST APIs",
+         "Data Visualization"
+      ],
+      "highlights": [
+         "Angular in production",
+         "Data-heavy enterprise UI",
+         "AI-assisted trade analytics"
+      ],
+      "banner": "/projects/artunity/banner.jpg",
+      "gallery": [],
+      "achievements": []
+   }
 ]
