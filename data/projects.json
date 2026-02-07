@@ -107,6 +107,38 @@
       ]
    },
    {
+      "slug": "alkafeel-hr",
+      "title": "Alkafeel HR Platform",
+      "category": "Enterprise HR System",
+      "description": "A modular HR management system built using a micro-frontend architecture.",
+      "role": "Frontend Developer",
+      "timeline": "Mar 2025 - Nov 2025",
+      "startDate": "2025-03",
+      "endDate": "2025-11",
+      "about": "Contributed to an enterprise HR system developed with Vue.js and micro-frontend architecture across multiple teams.",
+      "responsibilities": [
+         "Developed independent micro-frontend modules using Vue.js",
+         "Collaborated with three frontend teams on system integration",
+         "Implemented RTL-first layouts for Arabic users",
+         "Maintained UI consistency across distributed deployments"
+      ],
+      "liveLink": "https://alkafeel.net/?lang=pr",
+      "technologies": [
+         "Vue.js",
+         "Micro-Frontend Architecture",
+         "Module Federation",
+         "JavaScript"
+      ],
+      "highlights": [
+         "Vue.js at enterprise scale",
+         "Micro-frontend architecture",
+         "RTL & multilingual UX"
+      ],
+      "banner": "/projects/nexus/desktop-chat-light.png",
+      "gallery": [],
+      "achievements": []
+   },
+   {
       "slug": "landlogic",
       "title": "LandLogic",
       "category": "GovTech / Geospatial Platform",
@@ -174,38 +206,7 @@
       "gallery": [],
       "achievements": []
    },
-   {
-      "slug": "alkafeel-hr",
-      "title": "Alkafeel HR Platform",
-      "category": "Enterprise HR System",
-      "description": "A modular HR management system built using a micro-frontend architecture.",
-      "role": "Frontend Developer",
-      "timeline": "Dec 2022 – Jun 2023",
-      "startDate": "2022-12",
-      "endDate": "2023-06",
-      "about": "Contributed to an enterprise HR system developed with Vue.js and micro-frontend architecture across multiple teams.",
-      "responsibilities": [
-         "Developed independent micro-frontend modules using Vue.js",
-         "Collaborated with three frontend teams on system integration",
-         "Implemented RTL-first layouts for Arabic users",
-         "Maintained UI consistency across distributed deployments"
-      ],
-      "liveLink": "https://alkafeel.net/?lang=pr",
-      "technologies": [
-         "Vue.js",
-         "Micro-Frontend Architecture",
-         "Module Federation",
-         "JavaScript"
-      ],
-      "highlights": [
-         "Vue.js at enterprise scale",
-         "Micro-frontend architecture",
-         "RTL & multilingual UX"
-      ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
-      "achievements": []
-   },
+
    {
       "slug": "marine",
       "title": "Marine Platform",
