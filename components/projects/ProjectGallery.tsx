@@ -9,8 +9,6 @@ import clsx from "clsx";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { ProjectGalleryProps } from "@/types/project";
 
-
-
 const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
       null,
@@ -39,16 +37,18 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                </p>
             </div>
 
-            <div className="grid gap-24">
+            <div className="grid gap-12 md:gap-20">
                {gallery.map((item, index) => {
-                  const isPdf = item.src.toLowerCase().endsWith(".pdf") || item.type === "pdf";
+                  const isPdf =
+                     item.src.toLowerCase().endsWith(".pdf") ||
+                     item.type === "pdf";
                   return (
                      <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
-                        className={`grid md:grid-cols-2 gap-12 items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                        className={`grid md:grid-cols-2 gap-6 md:gap-12 items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
                      >
                         <div
                            className={clsx(
@@ -59,10 +59,7 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                            <div
                               onClick={() => setSelectedImageIndex(index)}
                               className={clsx(
-                                 "relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group cursor-pointer",
-                                 item.isMobile
-                                    ? "aspect-9/18 max-w-75 max-h-140 mx-auto"
-                                    : "aspect-video",
+                                 "relative aspect-video rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-800 group cursor-pointer",
                               )}
                            >
                               {isPdf && !item.thumbnail ? (
@@ -77,7 +74,7 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                                     src={item.thumbnail || item.src}
                                     alt={item.label}
                                     fill
-                                    className={`${item.isMobile ? "object-contain" : "object-cover"} object-top group-hover:scale-105 transition-transform duration-700 `}
+                                    className={`object-cover object-top group-hover:scale-105 transition-transform duration-700 `}
                                  />
                               )}
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
@@ -99,9 +96,9 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                               {item.description}
                            </p>
                         </div>
-                  </motion.div>
-               );
-            })}
+                     </motion.div>
+                  );
+               })}
             </div>
          </SectionContainer>
 

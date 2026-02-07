@@ -74,7 +74,7 @@ const Lightbox = ({
                <div className="flex-1 relative flex items-center justify-center p-4 md:p-12 overflow-hidden">
                   <button
                      onClick={handlePrevious}
-                     className="absolute left-4 md:left-8 z-50 p-2 md:p-4 rounded-full bg-white/10 hover:bg-white/12 transition-colors text-white"
+                     className="absolute top-0 lg:top-auto left-4 md:left-8 z-50 p-2 md:p-4 rounded-full bg-white/10 hover:bg-white/12 transition-colors text-white"
                      aria-label="Previous Image"
                   >
                      <ChevronLeft className="w-8 h-8" />
@@ -90,31 +90,24 @@ const Lightbox = ({
                         damping: 25,
                         stiffness: 200,
                      }}
-                     className={`relative w-full h-full flex items-center justify-center ${currentImage.isMobile ? "max-w-md mx-auto" : ""}`}
+                     className={`relative w-full h-full flex items-center justify-center max-w-7xl ${currentImage.isMobile ? "max-w-md mx-auto" : ""}`}
                   >
                      {currentImage.src.toLowerCase().endsWith(".pdf") ||
                      currentImage.type === "pdf" ? (
-                        <object
-                           data={`${currentImage.src}#toolbar=0&navpanes=0&scrollbar=0`}
-                           type="application/pdf"
-                           className="w-full h-full rounded-lg bg-white"
-                           title={currentImage.label}
-                        >
-                           <div className="flex flex-col items-center justify-center p-8 text-center bg-white rounded-lg h-full w-full">
-                              <FileText className="w-16 h-16 text-zinc-400 mb-4" />
-                              <p className="text-zinc-900 font-medium mb-4">
-                                 PDF preview not available in this browser.
-                              </p>
-                              <a
-                                 href={currentImage.src}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
-                              >
-                                 Open PDF in new tab
-                              </a>
-                           </div>
-                        </object>
+                        <div className="flex flex-col items-center justify-center p-8 text-center bg-white rounded-lg h-full w-full">
+                           <FileText className="w-16 h-16 text-zinc-400 mb-4" />
+                           {/* <p className="text-zinc-900 font-medium mb-4">
+                              PDF preview not available in this browser.
+                           </p> */}
+                           <a
+                              href={currentImage.src}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+                           >
+                              Open PDF in new tab
+                           </a>
+                        </div>
                      ) : (
                         <Image
                            src={currentImage.src}
@@ -128,7 +121,7 @@ const Lightbox = ({
 
                   <button
                      onClick={handleNext}
-                     className="absolute right-4 md:right-8 z-50 p-2 md:p-4 rounded-full bg-white/10 hover:bg-white/12 transition-colors text-white"
+                     className="absolute top-0 lg:top-auto right-4 md:right-8 z-50 p-2 md:p-4 rounded-full bg-white/10 hover:bg-white/12 transition-colors text-white"
                      aria-label="Next Image"
                   >
                      <ChevronRight className="w-8 h-8" />
