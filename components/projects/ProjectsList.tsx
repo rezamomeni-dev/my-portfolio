@@ -47,7 +47,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
 
          <div className="grid lg:grid-cols-12 gap-16">
             {/* Left Side: Sticky Timeline */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-3">
                <ProjectTimeline
                   projects={projects}
                   activeProject={activeProject}
@@ -55,7 +55,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
             </div>
 
             {/* Right Side: Project Cards */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-9 grid gap-16">
                {projects.map((project, index) => (
                   <div key={project.slug} id={project.slug}>
                      <ProjectCard
