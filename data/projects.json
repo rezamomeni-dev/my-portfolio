@@ -106,7 +106,7 @@
       ]
    },
    {
-      "slug": "alkafeel-hr",
+      "slug": "alkafeel",
       "title": "Alkafeel HR Platform",
       "category": "Enterprise HR System",
       "description": "A modular HR management system built using a micro-frontend architecture.",
@@ -132,8 +132,24 @@
          "Micro-frontend architecture",
          "RTL & multilingual UX"
       ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
+      "banner": "/projects/alkafeel/banner.png",
+      "gallery": [
+         {
+            "src": "/projects/alkafeel/overview.png",
+            "label": "Overview Dashboard",
+            "description": "Overview dashboard for managing HR operations and employee data."
+         },
+         {
+            "src": "/projects/alkafeel/holiday-calendar-month.png",
+            "label": "Holiday Calendar",
+            "description": "Interactive holiday calendar view showing company-wide holidays and events."
+         },
+         {
+            "src": "/projects/alkafeel/employee-leaves.png",
+            "label": "Employee Leaves",
+            "description": "Employee leaves management interface for tracking and approving leave requests."
+         }
+      ],
       "achievements": []
    },
    {
@@ -165,9 +181,56 @@
          "Performance-critical frontend",
          "Government-grade systems"
       ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
-      "gallery": [],
-      "achievements": []
+      "banner": "/projects/landlogic/banner.webp",
+      "gallery": [
+         {
+            "src": "/projects/landlogic/azure-login.png",
+            "label": "Azure Login",
+            "description": "Secure login interface for accessing the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/load-mapbox-layers.png",
+            "label": "Mapbox Layers",
+            "description": "Dynamic rendering of over 2,000 geospatial layers using Mapbox GL."
+         },
+         {
+            "src": "/projects/landlogic/show-layers-detail.png",
+            "label": "Mapbox Layers Detail",
+            "description": "Detailed view of individual geospatial layers within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/show-parcels.png",
+            "label": "Parcels View",
+            "description": "Interactive view of individual parcels within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/show-projects.png",
+            "label": "Projects View",
+            "description": "Interactive view of projects within the LandLogic platform."
+         },
+         {
+            "src": "/projects/landlogic/LandLogic-ComprehensiveDueDiligenceReport.pdf",
+            "label": "Comprehensive Due Diligence Report",
+            "description": "PDF report showcasing the comprehensive due diligence work completed for the LandLogic platform."
+         }
+      ],
+      "achievements": [
+         {
+            "metric": "2,000+",
+            "title": "Geospatial Layers",
+            "description": "Successfully rendered over 2,000 geospatial layers with Mapbox GL."
+         },
+         {
+            "metric": "100%",
+            "title": "Reporting Accuracy",
+            "description": "Achieved 100% accuracy in dynamic reporting for land-use planning."
+         },
+         {
+            "metric": "Government-Grade",
+            "title": "Security & Compliance",
+            "description": "Ensured the platform met stringent government security and compliance standards."
+         }
+      ]
    },
    {
       "slug": "lastikforoosh",
@@ -216,13 +279,7 @@
          "Collaborated with cross-functional teams",
          "Helped reduce manual paperwork by approximately 75%"
       ],
-      "technologies": [
-         "React",
-         "TypeScript",
-         "Redux Toolkit",
-         "LESS",
-         "Scrum"
-      ],
+      "technologies": ["React", "TypeScript", "Redux Toolkit", "LESS", "Scrum"],
       "banner": "/projects/nexus/desktop-chat-light.png",
       "gallery": [],
       "achievements": []
@@ -242,13 +299,7 @@
          "Doubled user acquisition through SEO improvements",
          "Delivered stable, bug-free releases"
       ],
-      "technologies": [
-         "React",
-         "Next.js",
-         "Redux Toolkit",
-         "Docker",
-         "SCSS"
-      ],
+      "technologies": ["React", "Next.js", "Redux Toolkit", "Docker", "SCSS"],
       "logo": "/projects/artunity/banner.png",
       "banner": "/projects/artunity/home.jpg",
       "gallery": [
