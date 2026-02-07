@@ -8,35 +8,39 @@ import BackgroundBlobs from "@/components/resume/BackgroundBlobs";
 import resumeData from "@/data/resume.json";
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
+import SectionContainer from "@/components/SectionContainer";
 
 export const metadata: Metadata = {
-  title: `${resumeData.personalInfo.name} - Resume`,
-  description: resumeData.personalInfo.bio,
+   title: `${resumeData.personalInfo.name} - Resume`,
+   description: resumeData.personalInfo.bio,
 };
 
 export default function ResumePage() {
-  return (
-    <div className="selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300 relative">
-      <BackgroundBlobs />
-      <div className="max-w-screen-xl mx-auto px-4 relative z-10">
-        <Hero
-          name={resumeData.personalInfo.name}
-          role={resumeData.personalInfo.role}
-          bio={resumeData.personalInfo.bio}
-          image={resumeData.personalInfo.image}
-          email={resumeData.personalInfo.email}
-        />
+   return (
+      <div className="selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300 relative">
+         <BackgroundBlobs />
+         <SectionContainer>
+            <Hero
+               name={resumeData.personalInfo.name}
+               role={resumeData.personalInfo.role}
+               bio={resumeData.personalInfo.bio}
+               image={resumeData.personalInfo.image}
+               email={resumeData.personalInfo.email}
+            />
 
-        <About content={resumeData.personalInfo.aboutMe} />
+            <About content={resumeData.personalInfo.aboutMe} />
 
-        <Experience items={resumeData.experience} />
+            <Experience items={resumeData.experience} />
 
-        <Projects items={projectsData} />
+            <Projects items={projectsData} />
 
-        <Education items={resumeData.education} />
+            <Education items={resumeData.education} />
 
-        <Skills core={resumeData.skills.core} tools={resumeData.skills.tools} />
+            <Skills
+               core={resumeData.skills.core}
+               tools={resumeData.skills.tools}
+            />
+         </SectionContainer>
       </div>
-    </div>
-  );
+   );
 }

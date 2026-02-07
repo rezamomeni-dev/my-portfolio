@@ -2,22 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Info, Code2, UserCircle, Calendar } from "lucide-react";
+import SectionContainer from "@/components/SectionContainer";
+import { Project } from "@/types/project";
 
 interface ProjectDetailsProps {
-  project: {
-    about: string;
-    technologies: string[];
-    role: string;
-    roleDescription?: string;
-    timeline: string;
-    launchedDate?: string;
-  };
+  project: Project;
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6">
+      <SectionContainer>
         <div className="grid lg:grid-cols-3 gap-16">
           {/* Main Content */}
           <motion.div
@@ -35,6 +30,20 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             <div className="prose prose-lg dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">
               {project.about}
             </div>
+
+            {project.responsibilities && project.responsibilities.length > 0 && (
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Key Responsibilities</h3>
+                <ul className="grid md:grid-cols-2 gap-4">
+                  {project.responsibilities.map((resp, i) => (
+                    <li key={i} className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </motion.div>
 
           {/* Sidebar */}
@@ -91,7 +100,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

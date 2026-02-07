@@ -29,9 +29,9 @@ const ContactCTA = () => {
                <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                   <div>
                      <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
                         dangerouslySetInnerHTML={{ __html: contactCTA.title }}
                      />

@@ -1,17 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import homeData from "@/data/home.json";
 import resumeData from "@/data/resume.json";
+import SectionContainer from "@/components/SectionContainer";
 
 const Hero = () => {
    const { hero } = homeData;
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
-   const containerVariants = {
+   const containerVariants: Variants = {
       hidden: { opacity: 0 },
       visible: {
          opacity: 1,
@@ -21,7 +22,7 @@ const Hero = () => {
       },
    };
 
-   const itemVariants = {
+   const itemVariants: Variants = {
       hidden: { opacity: 0, y: 20 },
       visible: {
          opacity: 1,
@@ -45,12 +46,13 @@ const Hero = () => {
             <div className="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-indigo-500/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse delay-700" />
          </div>
 
-         <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="max-w-7xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10"
-         >
+         <SectionContainer>
+            <motion.div
+               variants={containerVariants}
+               initial="hidden"
+               animate="visible"
+               className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10"
+            >
             <div className="text-left w-full">
                <motion.div
                   variants={itemVariants}
@@ -234,7 +236,8 @@ const Hero = () => {
                   </motion.div>
                </div>
             </motion.div>
-         </motion.div>
+            </motion.div>
+         </SectionContainer>
       </section>
    );
 };

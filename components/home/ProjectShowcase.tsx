@@ -5,13 +5,14 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
+import SectionContainer from "@/components/SectionContainer";
 
 const ProjectShowcase = () => {
    const projects = projectsData;
 
    return (
       <section className="py-16 md:py-24 bg-white dark:bg-black">
-         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+         <SectionContainer>
             <div className="text-center mb-16 md:mb-20">
                <h2 className="text-4xl md:text-6xl font-bold mb-6">
                   Projects That{" "}
@@ -27,10 +28,10 @@ const ProjectShowcase = () => {
                {projects.map((project, index) => (
                   <motion.div
                      key={project.slug}
-                     initial={{ opacity: 0, y: 40 }}
+                     initial={{ opacity: 0, y: 20 }}
                      whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true, amount: 0.1 }}
-                     transition={{ duration: 0.8 }}
+                     viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
+                     transition={{ duration: 0.6 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
                   >
                      <div
@@ -83,7 +84,7 @@ const ProjectShowcase = () => {
                   <ArrowUpRight className="w-5 h-5" />
                </Link>
             </div>
-         </div>
+         </SectionContainer>
       </section>
    );
 };

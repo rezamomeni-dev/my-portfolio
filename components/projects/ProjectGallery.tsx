@@ -6,6 +6,7 @@ import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
 import clsx from "clsx";
+import SectionContainer from "@/components/SectionContainer";
 
 interface GalleryItem {
    src: string;
@@ -25,7 +26,7 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
 
    return (
       <section className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+         <SectionContainer>
             <div className="flex flex-col mb-16">
                <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
@@ -88,7 +89,7 @@ const ProjectGallery = ({ gallery }: ProjectGalleryProps) => {
                   </motion.div>
                ))}
             </div>
-         </div>
+         </SectionContainer>
 
          <Lightbox
             isOpen={selectedImageIndex !== null}

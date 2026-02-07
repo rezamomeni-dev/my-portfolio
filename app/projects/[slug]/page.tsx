@@ -7,28 +7,32 @@ import ProjectAchievements from "@/components/projects/ProjectAchievements";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 import ProjectNavigation from "@/components/projects/ProjectNavigation";
+import SectionContainer from "@/components/SectionContainer";
+import { Project } from "@/types/project";
+
+const projects = projectsData as unknown as Project[];
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return projectsData.map((project) => ({
+  return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const projectIndex = projectsData.findIndex((p) => p.slug === slug);
-  const project = projectsData[projectIndex];
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
+  const project = projects[projectIndex];
 
   if (!project) {
     notFound();
   }
 
-  const prevProject = projectIndex > 0 ? projectsData[projectIndex - 1] : null;
-  const nextProject = projectIndex < projectsData.length - 1 ? projectsData[projectIndex + 1] : null;
+  const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
+  const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -44,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Call to Action at the bottom */}
       <section className="py-24 bg-zinc-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-6">
+        <SectionContainer className="max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to streamline your enterprise?
           </h2>
@@ -71,7 +75,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                {project.liveLink ? "Return Home" : "Back to Home"}
              </Link>
           </div>
-        </div>
+        </SectionContainer>
       </section>
     </div>
   );
