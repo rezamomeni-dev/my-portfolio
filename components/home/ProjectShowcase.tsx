@@ -8,7 +8,7 @@ import projectsData from "@/data/projects.json";
 import SectionContainer from "@/components/shared/SectionContainer";
 
 const ProjectShowcase = () => {
-   const projects = projectsData;
+   const projects = projectsData.slice(0, 3);
 
    return (
       <section className="py-16 md:py-24 bg-white dark:bg-black">
@@ -81,11 +81,10 @@ const ProjectShowcase = () => {
 
             <div className="mt-16 text-center">
                <Link
-                  href="/my-resume#projects"
+                  href="/projects"
                   className="inline-flex items-center gap-2 text-zinc-500 hover:text-primary font-bold transition-colors"
                >
-                  See all projects in resume{" "}
-                  <ArrowUpRight className="w-5 h-5" />
+                  See all projects <ArrowUpRight className="w-5 h-5" />
                </Link>
             </div>
          </SectionContainer>
