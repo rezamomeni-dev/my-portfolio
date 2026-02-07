@@ -33,7 +33,7 @@
          "WebSocket-driven architecture",
          "Cross-platform (Web + Desktop)"
       ],
-      "banner": "/projects/nexus/desktop-chat-light.png",
+      "banner": "/projects/nexus/banner.png",
       "achievements": [
          {
             "metric": "35%",
