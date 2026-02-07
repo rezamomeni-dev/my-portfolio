@@ -212,7 +212,23 @@
             "description": "Interactive view of projects within the LandLogic platform."
          }
       ],
-      "achievements": []
+      "achievements": [
+         {
+            "metric": "2,000+",
+            "title": "Geospatial Layers",
+            "description": "Successfully rendered over 2,000 geospatial layers with Mapbox GL."
+         },
+         {
+            "metric": "100%",
+            "title": "Reporting Accuracy",
+            "description": "Achieved 100% accuracy in dynamic reporting for land-use planning."
+         },
+         {
+            "metric": "Government-Grade",
+            "title": "Security & Compliance",
+            "description": "Ensured the platform met stringent government security and compliance standards."
+         }
+      ]
    },
    {
       "slug": "lastikforoosh",
