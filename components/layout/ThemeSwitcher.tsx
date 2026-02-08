@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from "framer-motion";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -30,11 +30,11 @@ export function ThemeSwitcher() {
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>
-        <motion.div
+        <m.div
           key={isDark ? "dark" : "light"}
-          initial={{ y: -20, opacity: 0, rotate: -90 }}
-          animate={{ y: 0, opacity: 1, rotate: 0 }}
-          exit={{ y: 20, opacity: 0, rotate: 90 }}
+          initial={{ y: -20, rotate: -90 }}
+          animate={{ y: 0, rotate: 0 }}
+          exit={{ y: 20, rotate: 90 }}
           transition={{ duration: 0.2 }}
           className="flex items-center justify-center"
         >
@@ -43,7 +43,7 @@ export function ThemeSwitcher() {
           ) : (
             <Sun className="w-4 h-4 text-primary" />
           )}
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     </button>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import Image from "next/image";
 import { User } from "lucide-react";
 import Link from "next/link";
@@ -14,9 +14,9 @@ const Hero = ({ name, role, bio, image, email, location }: ResumeHeroProps) => {
    return (
       <SectionContainer>
          <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-            <motion.div
-               initial={{ opacity: 0, y: 10 }}
-               animate={{ opacity: 1, y: 0 }}
+            <m.div
+               initial={{ y: 10 }}
+               animate={{ y: 0 }}
                transition={{ duration: 0.4 }}
                className="flex-1 text-center md:text-left"
             >
@@ -41,14 +41,13 @@ const Hero = ({ name, role, bio, image, email, location }: ResumeHeroProps) => {
                      Contact Me
                   </a>
                </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
-               initial={{ opacity: 0, scale: 0.95 }}
+            <m.div
+               initial={{ scale: 0.95 }}
                animate={{
-                  opacity: 1,
                   scale: 1,
-                  y: [0, -20, 0],
+                  y: [0, -20, 0]
                }}
                transition={{
                   opacity: { duration: 0.4, delay: 0.1 },
@@ -56,8 +55,8 @@ const Hero = ({ name, role, bio, image, email, location }: ResumeHeroProps) => {
                   y: {
                      duration: 6,
                      repeat: Infinity,
-                     ease: "easeInOut",
-                  },
+                     ease: "easeInOut"
+                  }
                }}
                className="relative w-64 h-64 md:w-80 md:h-80"
             >
@@ -76,7 +75,7 @@ const Hero = ({ name, role, bio, image, email, location }: ResumeHeroProps) => {
                      </div>
                   )}
                </div>
-            </motion.div>
+            </m.div>
          </div>
       </SectionContainer>
    );

@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
             contentSnippet: item.contentSnippet || (item.content ? item.content.substring(0, 160) + '...' : ''),
             source: feed.name,
             category: feed.category,
-            isoDate: item.isoDate || new Date().toISOString(),
+            isoDate: item.isoDate || new Date().toISOString()
           }));
         } catch (error) {
           console.error(`Error fetching feed ${feed.name}:`, error);
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       posts: paginatedPosts,
       hasMore: offset + limit < cachedPosts.length,
-      total: cachedPosts.length,
+      total: cachedPosts.length
     });
   } catch (error) {
     console.error('Error in blog API:', error);

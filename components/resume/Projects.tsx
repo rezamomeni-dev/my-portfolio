@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ArrowUpRight, Palette, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,9 +15,9 @@ interface ProjectsProps {
 const Projects = ({ items }: ProjectsProps) => {
    return (
       <SectionContainer id="projects">
-         <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
@@ -28,7 +28,7 @@ const Projects = ({ items }: ProjectsProps) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                {items.map((project, index) => (
-                  <motion.div
+                  <m.div
                      key={index}
                      whileHover={{ y: -8 }}
                      transition={{ duration: 0.3 }}
@@ -107,13 +107,13 @@ const Projects = ({ items }: ProjectsProps) => {
                            </div>
                         )}
                      </div>
-                  </motion.div>
+                  </m.div>
                ))}
             </div>
 
-            <motion.div
-               initial={{ opacity: 0, y: 10 }}
-               whileInView={{ opacity: 1, y: 0 }}
+            <m.div
+               initial={{ y: 10 }}
+               whileInView={{ y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.5, delay: 0.2 }}
                className="mt-12 text-center"
@@ -124,8 +124,8 @@ const Projects = ({ items }: ProjectsProps) => {
                >
                   See More Projects <ArrowUpRight className="w-5 h-5" />
                </Link>
-            </motion.div>
-         </motion.div>
+            </m.div>
+         </m.div>
       </SectionContainer>
    );
 };

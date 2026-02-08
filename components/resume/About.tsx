@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
 import { AboutProps } from "@/types/resume";
 
 const About = ({ content }: AboutProps) => {
    return (
       <SectionContainer id="about">
-         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
          >
@@ -21,7 +21,7 @@ const About = ({ content }: AboutProps) => {
             <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl leading-relaxed">
                {content}
             </p>
-         </motion.div>
+         </m.div>
       </SectionContainer>
    );
 };

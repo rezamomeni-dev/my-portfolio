@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { m, Variants  } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,29 +23,27 @@ const Hero = () => {
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
    const containerVariants: Variants = {
-      hidden: { opacity: 0 },
+      ,
       visible: {
-         opacity: 1,
          transition: {
-            staggerChildren: 0.1,
-         },
-      },
+            staggerChildren: 0.1
+         }
+      }
    };
 
    const itemVariants: Variants = {
-      hidden: { opacity: 0, y: 10 },
+      hidden: { y: 10 },
       visible: {
-         opacity: 1,
          y: 0,
          transition: {
             duration: 0.6,
             rotate: {
                duration: 30,
                repeat: Infinity,
-               ease: "linear",
-            },
-         },
-      },
+               ease: "linear"
+            }
+         }
+      }
    };
 
    return (
@@ -57,14 +55,14 @@ const Hero = () => {
          </div>
 
          <SectionContainer>
-            <motion.div
+            <m.div
                variants={containerVariants}
                initial="hidden"
                animate="visible"
                className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10"
             >
                <div className="text-left w-full">
-                  <motion.div
+                  <m.div
                      variants={itemVariants}
                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 text-sm font-semibold mb-8 backdrop-blur-sm"
                   >
@@ -73,33 +71,33 @@ const Hero = () => {
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                      </span>
                      {hero.badge}
-                  </motion.div>
+                  </m.div>
 
-                  <motion.h1
+                  <m.h1
                      variants={itemVariants}
                      className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[1.1]"
                      dangerouslySetInnerHTML={{ __html: hero.headline }}
                   />
 
-                  <motion.p
+                  <m.p
                      variants={itemVariants}
                      className="text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium"
                   >
                      {hero.subheadline}
-                  </motion.p>
+                  </m.p>
 
-                  <motion.div
+                  <m.div
                      variants={itemVariants}
                      className="flex flex-col sm:flex-row items-center gap-10"
                   >
                      <div className="relative group">
                         {/* Circular "See My Resume" Motion */}
-                        <motion.div
+                        <m.div
                            animate={{ rotate: 360 }}
                            transition={{
                               duration: 10,
                               repeat: Infinity,
-                              ease: "linear",
+                              ease: "linear"
                            }}
                            className="absolute -inset-12 hidden sm:block pointer-events-none"
                         >
@@ -115,7 +113,7 @@ const Hero = () => {
                                  </textPath>
                               </text>
                            </svg>
-                        </motion.div>
+                        </m.div>
 
                         <Link
                            href="/my-resume"
@@ -152,51 +150,51 @@ const Hero = () => {
                            <Twitter className="w-6 h-6" />
                         </a>
                      </div>
-                  </motion.div>
+                  </m.div>
                </div>
 
-               <motion.div
+               <m.div
                   variants={itemVariants}
                   className="relative flex justify-center lg:justify-end w-full"
                >
                   <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem]">
                      {/* Animated Decorative Elements */}
-                     <motion.div
+                     <m.div
                         animate={{ rotate: 360 }}
                         transition={{
                            duration: 30,
                            repeat: Infinity,
-                           ease: "linear",
+                           ease: "linear"
                         }}
                         className="absolute -inset-8 border-2 border-dashed border-primary/20 rounded-[3rem]"
                      />
-                     <motion.div
+                     <m.div
                         animate={{ rotate: -360 }}
                         transition={{
                            duration: 40,
                            repeat: Infinity,
-                           ease: "linear",
+                           ease: "linear"
                         }}
                         className="absolute -inset-16 border border-indigo-500/10 rounded-full"
                      />
 
                      {/* Main Image Container */}
-                     <motion.div
+                     <m.div
                         animate={{
                            y: isMobile ? [0, -10, 0] : [0, -20, 0],
-                           rotate: isMobile ? [0, 1, 0, -1, 0] : [0, 2, 0, -2, 0],
+                           rotate: isMobile ? [0, 1, 0, -1, 0] : [0, 2, 0, -2, 0]
                         }}
                         transition={{
                            y: {
                               duration: 6,
                               repeat: Infinity,
-                              ease: "easeInOut",
+                              ease: "easeInOut"
                            },
                            rotate: {
                               duration: 10,
                               repeat: Infinity,
-                              ease: "easeInOut",
-                           },
+                              ease: "easeInOut"
+                           }
                         }}
                         style={{ willChange: "transform" }}
                         className="relative w-full h-full overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] rounded-[4rem] border-8 border-white dark:border-zinc-800 group"
@@ -210,15 +208,15 @@ const Hero = () => {
                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                     </motion.div>
+                     </m.div>
 
                      {/* Status Badge Overlays */}
-                     <motion.div
+                     <m.div
                         animate={{ y: [0, 15, 0], x: [0, 5, 0] }}
                         transition={{
                            duration: 5,
                            repeat: Infinity,
-                           ease: "easeInOut",
+                           ease: "easeInOut"
                         }}
                         className="absolute -top-10 -right-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                      >
@@ -228,14 +226,14 @@ const Hero = () => {
                         <div className="text-2xl font-black text-primary">
                            8+ Years
                         </div>
-                     </motion.div>
+                     </m.div>
 
-                     <motion.div
+                     <m.div
                         animate={{ y: [0, -15, 0], x: [0, -5, 0] }}
                         transition={{
                            duration: 6,
                            repeat: Infinity,
-                           ease: "easeInOut",
+                           ease: "easeInOut"
                         }}
                         className="absolute -bottom-10 -left-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                      >
@@ -245,10 +243,10 @@ const Hero = () => {
                         <div className="text-2xl font-black text-indigo-500">
                            Architecture
                         </div>
-                     </motion.div>
+                     </m.div>
                   </div>
-               </motion.div>
-            </motion.div>
+               </m.div>
+            </m.div>
          </SectionContainer>
       </div>
    );

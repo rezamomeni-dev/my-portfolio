@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
 import { EducationProps } from "@/types/resume";
 
 const Education = ({ items }: EducationProps) => {
    return (
       <SectionContainer id="education">
-         <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
@@ -45,7 +45,7 @@ const Education = ({ items }: EducationProps) => {
                   </div>
                ))}
             </div>
-         </motion.div>
+         </m.div>
       </SectionContainer>
    );
 };

@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 
 const BlogHeader = () => {
    return (
       <div className="mb-12 md:mb-16 text-center pt-16 md:pt-24">
-         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
          >
@@ -26,7 +26,7 @@ const BlogHeader = () => {
                top frontend engineering blogs. Stay ahead of the curve with
                curated content.
             </p>
-         </motion.div>
+         </m.div>
       </div>
    );
 };

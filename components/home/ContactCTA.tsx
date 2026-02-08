@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import resumeData from "@/data/resume.json";
@@ -28,9 +28,9 @@ const ContactCTA = () => {
 
                <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                     <motion.h2
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                     <m.h2
+                        initial={{ x: -10 }}
+                        whileInView={{ x: 0 }}
                         viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
                         dangerouslySetInnerHTML={{ __html: contactCTA.title }}
@@ -131,9 +131,9 @@ const ContactCTA = () => {
                            </button>
                         </form>
                      ) : (
-                        <motion.div
-                           initial={{ opacity: 0, scale: 0.9 }}
-                           animate={{ opacity: 1, scale: 1 }}
+                        <m.div
+                           initial={{ scale: 0.9 }}
+                           animate={{ scale: 1 }}
                            className="text-center space-y-4"
                         >
                            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -152,7 +152,7 @@ const ContactCTA = () => {
                            >
                               Send another message
                            </button>
-                        </motion.div>
+                        </m.div>
                      )}
                   </div>
                </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SectionContainer from "../shared/SectionContainer";
 
@@ -10,9 +10,9 @@ import { ExperienceProps } from "@/types/resume";
 const Experience = ({ items }: ExperienceProps) => {
    return (
       <SectionContainer id="experience" className="py-16 md:py-24">
-         <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
@@ -73,7 +73,7 @@ const Experience = ({ items }: ExperienceProps) => {
                   </div>
                ))}
             </div>
-         </motion.div>
+         </m.div>
       </SectionContainer>
    );
 };

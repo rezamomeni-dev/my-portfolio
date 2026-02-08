@@ -15,7 +15,7 @@ const BackgroundBlobs = dynamic(
 
 export const metadata: Metadata = {
    title: `${resumeData.personalInfo.name} - Resume`,
-   description: resumeData.personalInfo.bio,
+   description: resumeData.personalInfo.bio
 };
 
 export default function ResumePage() {

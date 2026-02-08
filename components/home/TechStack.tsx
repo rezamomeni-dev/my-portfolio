@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import resumeData from "@/data/resume.json";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -21,14 +21,14 @@ const TechStack = () => {
          </SectionContainer>
 
          <div className="flex overflow-hidden group">
-            <motion.div
+            <m.div
                animate={{
-                  x: ["0%", "-50%"],
+                  x: ["0%", "-50%"]
                }}
                transition={{
                   duration: 30,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: "linear"
                }}
                className="flex whitespace-nowrap gap-12 py-4"
             >
@@ -42,7 +42,7 @@ const TechStack = () => {
                      {skill}
                   </div>
                ))}
-            </motion.div>
+            </m.div>
          </div>
       </section>
    );

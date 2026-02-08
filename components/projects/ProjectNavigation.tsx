@@ -2,20 +2,20 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { ProjectNavigationProps } from "@/types/project";
 
 const ProjectNavigation = ({
    prevProject,
-   nextProject,
+   nextProject
 }: ProjectNavigationProps) => {
    return (
       <section className="bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800">
          <SectionContainer>
             <div className="flex flex-row justify-between gap-4 md:gap-12">
                {prevProject ? (
-                  <motion.div whileHover={{ x: -10 }} className="group flex-1 max-w-[50%]">
+                  <m.div whileHover={{ x: -10 }} className="group flex-1 max-w-[50%]">
                      <Link
                         href={`/projects/${prevProject.slug}`}
                         className="flex flex-col items-start gap-2 md:gap-4"
@@ -28,13 +28,13 @@ const ProjectNavigation = ({
                            {prevProject.title}
                         </span>
                      </Link>
-                  </motion.div>
+                  </m.div>
                ) : (
                   <div className="flex-1" />
                )}
 
                {nextProject ? (
-                  <motion.div
+                  <m.div
                      whileHover={{ x: 10 }}
                      className="group text-right flex-1 max-w-[50%]"
                   >
@@ -50,7 +50,7 @@ const ProjectNavigation = ({
                            {nextProject.title}
                         </span>
                      </Link>
-                  </motion.div>
+                  </m.div>
                ) : (
                   <div className="flex-1" />
                )}

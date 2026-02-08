@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ExternalLink, Github, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,9 +13,9 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
    return (
       <SectionContainer>
          {/* Breadcrumb */}
-         <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: -10 }}
+            animate={{ y: 0 }}
             className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 mb-8"
          >
             <Link
@@ -28,12 +28,12 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
             <span className="text-zinc-900 dark:text-zinc-200">
                {project.title}
             </span>
-         </motion.div>
+         </m.div>
 
          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-               initial={{ opacity: 0, x: -20 }}
-               animate={{ opacity: 1, x: 0 }}
+            <m.div
+               initial={{ x: -20 }}
+               animate={{ x: 0 }}
                transition={{ duration: 0.6 }}
             >
                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
@@ -68,11 +68,11 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                      </a>
                   ) : null}
                </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
-               initial={{ opacity: 0, scale: 0.9 }}
-               animate={{ opacity: 1, scale: 1 }}
+            <m.div
+               initial={{ scale: 0.9 }}
+               animate={{ scale: 1 }}
                transition={{ duration: 0.8 }}
                className="relative"
             >
@@ -99,7 +99,7 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
                {/* Background blobs for visual interest - reduced on mobile */}
                <div className="absolute -top-10 -right-10 w-32 md:w-64 h-32 md:h-64 bg-primary/10 md:bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
                <div className="absolute -bottom-10 -left-10 w-32 md:w-64 h-32 md:h-64 bg-indigo-500/10 md:bg-indigo-500/20 rounded-full blur-3xl -z-10 animate-pulse-slow" />
-            </motion.div>
+            </m.div>
          </div>
       </SectionContainer>
    );

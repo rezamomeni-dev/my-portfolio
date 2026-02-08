@@ -12,7 +12,7 @@ const projects = projectsData as unknown as Project[];
 export const metadata: Metadata = {
    title: "Projects | Senior Frontend Engineer",
    description:
-      "A showcase of technical excellence and business value through engineering scalable frontend solutions.",
+      "A showcase of technical excellence and business value through engineering scalable frontend solutions."
 };
 
 export default function ProjectsPage() {

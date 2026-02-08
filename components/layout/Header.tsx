@@ -1,13 +1,19 @@
 "use client";
 
 import * as React from "react";
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { FileText, User, Menu, X } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link";
 import resumeData from "@/data/resume.json";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
+import {
+   NavigationMenu,
+   NavigationMenuItem,
+   NavigationMenuLink,
+   NavigationMenuList
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
    const { name } = resumeData.personalInfo;
@@ -56,20 +62,23 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <NavigationMenu.Root className="relative hidden lg:flex">
-               <NavigationMenu.List className="flex items-center gap-2">
+            <NavigationMenu className="hidden lg:flex">
+               <NavigationMenuList className="gap-2">
                   {navItems.map((item) => (
-                     <NavigationMenu.Item key={item.name}>
-                        <NavigationMenu.Link
-                           asChild
-                           className="text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                        >
-                           <Link href={item.href}>{item.name}</Link>
-                        </NavigationMenu.Link>
-                     </NavigationMenu.Item>
+                     <NavigationMenuItem key={item.name}>
+                        <Link href={item.href} passHref legacyBehavior>
+                           <NavigationMenuLink
+                              className={cn(
+                                 "text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 block"
+                              )}
+                           >
+                              {item.name}
+                           </NavigationMenuLink>
+                        </Link>
+                     </NavigationMenuItem>
                   ))}
-               </NavigationMenu.List>
-            </NavigationMenu.Root>
+               </NavigationMenuList>
+            </NavigationMenu>
 
             <div className="flex items-center gap-2 z-50">
                <ThemeSwitcher />
@@ -98,10 +107,11 @@ const Header = () => {
             {/* Mobile Navigation Drawer */}
             <AnimatePresence>
                {isOpen && (
-                  <motion.div
-                     initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                     exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                  <m.div
+                     initial={{ y: -20, scale: 0.95 }}
+                     animate={{ y: 0, scale: 1 }}
+                     exit={{ y: -20, scale: 0.95 }}
+                     transition={{ duration: 0.2 }}
                      className="absolute top-full left-0 right-0 mt-4 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-2xl flex flex-col gap-4 lg:hidden z-40"
                   >
                      <div className="flex flex-col gap-1">
@@ -125,7 +135,7 @@ const Header = () => {
                      >
                         Download Resume <FileText className="w-6 h-6" />
                      </a>
-                  </motion.div>
+                  </m.div>
                )}
             </AnimatePresence>
          </div>
@@ -133,10 +143,7 @@ const Header = () => {
          {/* Backdrop for mobile menu */}
          <AnimatePresence>
             {isOpen && (
-               <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+               <m.div
                   onClick={() => setIsOpen(false)}
                   className="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-md -z-10 lg:hidden"
                />

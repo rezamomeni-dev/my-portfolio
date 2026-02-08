@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Info, Code2, UserCircle, Calendar } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { ProjectDetailsProps } from "@/types/project";
@@ -20,9 +20,9 @@ const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
          <SectionContainer>
             <div className="grid lg:grid-cols-3 gap-16">
                {/* Main Content */}
-               <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+               <m.div
+                  initial={{ y: 10 }}
+                  whileInView={{ y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   className="lg:col-span-2"
                >
@@ -57,12 +57,12 @@ const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
                            </ul>
                         </div>
                      )}
-               </motion.div>
+               </m.div>
 
                {/* Sidebar */}
-               <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+               <m.div
+                  initial={{ x: 20 }}
+                  whileInView={{ x: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   className="space-y-10"
                >
@@ -119,7 +119,7 @@ const ProjectDetails = ({ project, variant = "zinc" }: ProjectDetailsProps) => {
                         )}
                      </div>
                   </div>
-               </motion.div>
+               </m.div>
             </div>
          </SectionContainer>
       </section>

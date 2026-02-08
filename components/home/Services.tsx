@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Code, Layout, Zap, Users, LucideIcon } from "lucide-react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -9,7 +9,7 @@ const iconMap: Record<string, LucideIcon> = {
    "Frontend Architecture": Code,
    "UI/UX Development": Layout,
    "Performance Optimization": Zap,
-   "Technical Leadership": Users,
+   "Technical Leadership": Users
 };
 
 const stylesMap: Record<string, { bg: string; text: string }> = {
@@ -17,12 +17,12 @@ const stylesMap: Record<string, { bg: string; text: string }> = {
    "UI/UX Development": { bg: "bg-purple-500/10", text: "text-purple-500" },
    "Performance Optimization": {
       bg: "bg-amber-500/10",
-      text: "text-amber-500",
+      text: "text-amber-500"
    },
    "Technical Leadership": {
       bg: "bg-emerald-500/10",
-      text: "text-emerald-500",
-   },
+      text: "text-emerald-500"
+   }
 };
 
 const Services = () => {
@@ -51,18 +51,18 @@ const Services = () => {
                   const Icon = iconMap[service.title] || Code;
                   const styles = stylesMap[service.title] || {
                      bg: "bg-primary/10",
-                     text: "text-primary",
+                     text: "text-primary"
                   };
 
                   return (
-                     <motion.div
+                     <m.div
                         key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ y: 10 }}
+                        whileInView={{ y: 0 }}
                         viewport={{
                            once: true,
                            amount: 0.2,
-                           margin: "0px 0px -50px 0px",
+                           margin: "0px 0px -50px 0px"
                         }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ y: -5 }}
@@ -80,7 +80,7 @@ const Services = () => {
                            {service.description}
                         </p>
                         <div className="h-1 w-0 group-hover:w-full bg-primary transition-all duration-500" />
-                     </motion.div>
+                     </m.div>
                   );
                })}
             </div>
