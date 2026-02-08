@@ -30,22 +30,28 @@ const ProjectCard = ({
 
    return (
       <motion.div
+         key={index}
          ref={ref}
-         initial={{ opacity: 0, y: 20, scale: 0.95 }}
-         whileInView={{ opacity: 1, y: 0, scale: 1 }}
+         initial={{ opacity: 0, y: 10 }}
+         whileInView={{ opacity: 1, y: 0 }}
          viewport={{ once: true, amount: 0.2 }}
+         // transition={{ duration: 0.5 }}
+         // initial={{ opacity: 0, y: 20, scale: 0.95 }}
+         // whileInView={{ opacity: 1, y: 0, scale: 1 }}
+         // viewport={{ once: true, amount: 0.2 }}
          transition={{
             duration: 0.6,
-            delay: index * 0.1,
-            ease: [0.21, 0.47, 0.32, 0.98]
+            // delay: index * 0.1,
+            ease: [0.21, 0.47, 0.32, 0.98],
          }}
          className={clsx(
             "relative group mb-12 md:mb-24 last:mb-0 transition-all duration-700",
+            "opacity-100",
             {
-               "opacity-30 md:scale-95 md:blur-[2px]": !isActive,
-               "opacity-100 scale-100 blur-0": isActive,
+               "md:scale-95": !isActive,
+               " scale-100": isActive,
             },
-            "max-md:opacity-100 max-md:blur-0 max-md:scale-100"
+            "max-md:opacity-100 max-md:blur-0 max-md:scale-100",
          )}
       >
          <div className="grid lg:grid-cols-12 gap-6 md:gap-12 items-start">
@@ -102,7 +108,10 @@ const ProjectCard = ({
                   <div className="flex items-center gap-2">
                      <Calendar className="w-4 h-4 text-primary" />
                      <span className="text-sm font-medium">
-                        {formatProjectTimeline(project.startDate, project.endDate)}
+                        {formatProjectTimeline(
+                           project.startDate,
+                           project.endDate,
+                        )}
                      </span>
                   </div>
                </div>
