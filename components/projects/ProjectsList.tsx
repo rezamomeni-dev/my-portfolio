@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import ProjectTimeline from "./ProjectTimeline";
-import ProjectCard from "./ProjectCard";
+import dynamic from "next/dynamic";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { motion } from "framer-motion";
 import { ProjectsListProps } from "@/types/project";
 
-
+const ProjectTimeline = dynamic(
+   () => import("@/components/projects/ProjectTimeline"),
+);
+const ProjectCard = dynamic(() => import("@/components/projects/ProjectCard"));
 
 export default function ProjectsList({ projects }: ProjectsListProps) {
    const [activeProject, setActiveProject] = useState(projects[0].slug);

@@ -7,3 +7,12 @@ export interface BlogPost {
   category: string;
   isoDate: string;
 }
+
+export interface BlogGridProps {
+  posts: BlogPost[];
+}
+
+export interface BlogCardProps {
+  post: BlogPost;
+  index: number;
+}

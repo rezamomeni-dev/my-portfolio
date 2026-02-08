@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { BlogHeader } from "@/components/blog/BlogHeader";
-import { BlogGrid } from "@/components/blog/BlogGrid";
 import { BlogPost } from "@/types/blog";
 import { Loader2 } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
+import dynamic from "next/dynamic";
+
+const BlogGrid = dynamic(() => import("@/components/blog/BlogGrid"));
+const BlogHeader = dynamic(() => import("@/components/blog/BlogHeader"));
 
 export default function BlogPage() {
    const [posts, setPosts] = useState<BlogPost[]>([]);

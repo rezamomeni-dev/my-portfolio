@@ -1,12 +1,24 @@
 import { notFound } from "next/navigation";
 import projectsData from "@/data/projects.json";
-import ProjectHero from "@/components/projects/ProjectHero";
-import ProjectDetails from "@/components/projects/ProjectDetails";
-import ProjectAchievements from "@/components/projects/ProjectAchievements";
-import ProjectGallery from "@/components/projects/ProjectGallery";
-import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
-import ProjectNavigation from "@/components/projects/ProjectNavigation";
 import { Project } from "@/types/project";
+import dynamic from "next/dynamic";
+
+const ProjectHero = dynamic(() => import("@/components/projects/ProjectHero"));
+const ProjectDetails = dynamic(
+   () => import("@/components/projects/ProjectDetails"),
+);
+const ProjectAchievements = dynamic(
+   () => import("@/components/projects/ProjectAchievements"),
+);
+const ProjectGallery = dynamic(
+   () => import("@/components/projects/ProjectGallery"),
+);
+const ProjectArchitecture = dynamic(
+   () => import("@/components/projects/ProjectArchitecture"),
+);
+const ProjectNavigation = dynamic(
+   () => import("@/components/projects/ProjectNavigation"),
+);
 
 const projects = projectsData as unknown as Project[];
 

@@ -1,7 +1,11 @@
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
-import ProjectsList from "@/components/projects/ProjectsList";
 import { Project } from "@/types/project";
+import dynamic from "next/dynamic";
+
+const ProjectsList = dynamic(
+   () => import("@/components/projects/ProjectsList"),
+);
 
 const projects = projectsData as unknown as Project[];
 

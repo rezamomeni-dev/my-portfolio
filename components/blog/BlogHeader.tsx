@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export const BlogHeader = () => {
+const BlogHeader = () => {
    return (
       <div className="mb-12 md:mb-16 text-center pt-16 md:pt-24">
          <motion.div
@@ -30,3 +30,5 @@ export const BlogHeader = () => {
       </div>
    );
 };
+
+export default BlogHeader;

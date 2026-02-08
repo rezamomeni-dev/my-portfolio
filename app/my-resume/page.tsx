@@ -1,13 +1,17 @@
-import Hero from "@/components/resume/Hero";
-import About from "@/components/resume/About";
-import Experience from "@/components/resume/Experience";
-import Projects from "@/components/resume/Projects";
-import Education from "@/components/resume/Education";
-import Skills from "@/components/resume/Skills";
-import BackgroundBlobs from "@/components/resume/BackgroundBlobs";
 import resumeData from "@/data/resume.json";
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("@/components/resume/Hero"));
+const About = dynamic(() => import("@/components/resume/About"));
+const Experience = dynamic(() => import("@/components/resume/Experience"));
+const Projects = dynamic(() => import("@/components/resume/Projects"));
+const Education = dynamic(() => import("@/components/resume/Education"));
+const Skills = dynamic(() => import("@/components/resume/Skills"));
+const BackgroundBlobs = dynamic(
+   () => import("@/components/resume/BackgroundBlobs"),
+);
 
 export const metadata: Metadata = {
    title: `${resumeData.personalInfo.name} - Resume`,

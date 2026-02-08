@@ -2,12 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Calendar, Tag } from "lucide-react";
-import { BlogPost } from "@/types/blog";
-
-interface BlogCardProps {
-   post: BlogPost;
-   index: number;
-}
+import { BlogCardProps } from "@/types/blog";
 
 export const BlogCard = ({ post, index }: BlogCardProps) => {
    const date = new Date(post.isoDate).toLocaleDateString("en-US", {
