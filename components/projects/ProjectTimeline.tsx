@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
+import { m, useScroll, useSpring  } from "framer-motion";
 import { ProjectTimelineProps } from "@/types/project";
 import { formatProjectTimeline } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-zinc-800" />
 
         {/* Progress Line */}
-        <motion.div
+        <m.div
           className="absolute left-0 top-0 w-[2px] bg-primary origin-top h-full"
           style={{ scaleY }}
         />

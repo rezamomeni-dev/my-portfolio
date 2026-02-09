@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import SectionContainer from "../shared/SectionContainer";
 
 import { SkillsProps } from "@/types/resume";
@@ -9,9 +9,9 @@ import { SkillsProps } from "@/types/resume";
 const Skills = ({ core, tools }: SkillsProps) => {
    return (
       <SectionContainer id="skills">
-         <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+         <m.div
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
          >
@@ -53,7 +53,7 @@ const Skills = ({ core, tools }: SkillsProps) => {
                   </div>
                </div>
             </div>
-         </motion.div>
+         </m.div>
       </SectionContainer>
    );
 };

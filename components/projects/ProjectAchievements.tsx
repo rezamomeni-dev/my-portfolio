@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import {
    Trophy,
    Mail,
@@ -8,7 +8,7 @@ import {
    Users,
    TrendingUp,
    Zap,
-   DollarSign,
+   DollarSign
 } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { ProjectAchievementsProps } from "@/types/project";
@@ -39,7 +39,7 @@ const getIcon = (title: string) => {
 
 const ProjectAchievements = ({
    achievements,
-   variant = "light",
+   variant = "light"
 }: ProjectAchievementsProps) => {
    if (!achievements || achievements.length === 0) return null;
 
@@ -68,10 +68,10 @@ const ProjectAchievements = ({
 
             <div className="grid md:grid-cols-3 gap-8">
                {achievements.map((achievement, index) => (
-                  <motion.div
+                  <m.div
                      key={index}
-                     initial={{ opacity: 0, y: 20 }}
-                     whileInView={{ opacity: 1, y: 0 }}
+                     initial={{ y: 20 }}
+                     whileInView={{ y: 0 }}
                      viewport={{ once: true }}
                      transition={{ delay: index * 0.1 }}
                      className="p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-primary/50 transition-all group"
@@ -88,7 +88,7 @@ const ProjectAchievements = ({
                      <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                         {achievement.description}
                      </p>
-                  </motion.div>
+                  </m.div>
                ))}
             </div>
          </SectionContainer>

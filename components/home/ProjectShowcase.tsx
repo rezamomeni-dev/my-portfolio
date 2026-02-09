@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,14 +26,14 @@ const ProjectShowcase = () => {
 
             <div className="grid gap-16 md:gap-24">
                {projects.map((project, index) => (
-                  <motion.div
+                  <m.div
                      key={project.slug}
-                     initial={{ opacity: 0, y: 10 }}
-                     whileInView={{ opacity: 1, y: 0 }}
+                     initial={{ y: 10 }}
+                     whileInView={{ y: 0 }}
                      viewport={{
                         once: true,
                         amount: 0.2,
-                        margin: "0px 0px -50px 0px",
+                        margin: "0px 0px -50px 0px"
                      }}
                      transition={{ duration: 0.5 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
@@ -76,7 +76,7 @@ const ProjectShowcase = () => {
                            <ArrowUpRight className="w-6 h-6 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                         </Link>
                      </div>
-                  </motion.div>
+                  </m.div>
                ))}
             </div>
 

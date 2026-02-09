@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ExternalLink, Calendar, Tag } from "lucide-react";
 import { BlogCardProps } from "@/types/blog";
 
@@ -8,13 +8,13 @@ export const BlogCard = ({ post, index }: BlogCardProps) => {
    const date = new Date(post.isoDate).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
-      year: "numeric",
+      year: "numeric"
    });
 
    return (
-      <motion.div
-         initial={{ opacity: 0, y: 10 }}
-         whileInView={{ opacity: 1, y: 0 }}
+      <m.div
+         initial={{ y: 10 }}
+         whileInView={{ y: 0 }}
          viewport={{ once: true, amount: 0.2 }}
          transition={{ duration: 0.4, delay: index * 0.05 }}
          whileHover={{ y: -5 }}
@@ -56,6 +56,6 @@ export const BlogCard = ({ post, index }: BlogCardProps) => {
                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-primary transition-colors" />
             </div>
          </div>
-      </motion.div>
+      </m.div>
    );
 };

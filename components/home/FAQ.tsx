@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import homeData from "@/data/home.json";
@@ -13,7 +13,7 @@ const FAQItem = ({
    question,
    answer,
    isOpen,
-   onClick,
+   onClick
 }: FAQItemProps) => {
    return (
       <div className="border-b border-zinc-200 dark:border-zinc-800 last:border-0">
@@ -34,17 +34,17 @@ const FAQItem = ({
          </button>
          <AnimatePresence>
             {isOpen && (
-               <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
+               <m.div
+                  initial={{ height: 0 }}
+                  animate={{ height: "auto" }}
+                  exit={{ height: 0 }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                >
                   <p className="pb-8 text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-3xl">
                      {answer}
                   </p>
-               </motion.div>
+               </m.div>
             )}
          </AnimatePresence>
       </div>

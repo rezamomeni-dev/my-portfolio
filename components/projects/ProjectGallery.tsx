@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Image as ImageIcon, FileText } from "lucide-react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
@@ -43,10 +43,10 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                      item.src.toLowerCase().endsWith(".pdf") ||
                      item.type === "pdf";
                   return (
-                     <motion.div
+                     <m.div
                         key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         className={`grid lg:grid-cols-2 gap-6 md:gap-12 items-center justify-between`}
                      >
@@ -97,7 +97,7 @@ const ProjectGallery = ({ gallery, variant = "zinc" }: ProjectGalleryProps) => {
                               {item.description}
                            </p>
                         </div>
-                     </motion.div>
+                     </m.div>
                   );
                })}
             </div>

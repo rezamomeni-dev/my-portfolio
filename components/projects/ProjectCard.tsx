@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { ArrowUpRight, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,12 +14,12 @@ const ProjectCard = ({
    project,
    index,
    isActive,
-   onInView,
+   onInView
 }: ProjectCardProps) => {
    const ref = useRef(null);
    const isInView = useInView(ref, {
       amount: 0.2,
-      margin: "-10% 0px -40% 0px",
+      margin: "-10% 0px -40% 0px"
    });
 
    useEffect(() => {
@@ -29,27 +29,27 @@ const ProjectCard = ({
    }, [isInView, project.slug, onInView]);
 
    return (
-      <motion.div
+      <m.div
          key={index}
          ref={ref}
-         initial={{ opacity: 0, y: 10 }}
-         whileInView={{ opacity: 1, y: 0 }}
+         initial={{ y: 10 }}
+         whileInView={{ y: 0 }}
          viewport={{ once: true, amount: 0.2 }}
          // transition={{ duration: 0.5 }}
-         // initial={{ opacity: 0, y: 20, scale: 0.95 }}
-         // whileInView={{ opacity: 1, y: 0, scale: 1 }}
+         // initial={{ y: 20, scale: 0.95 }}
+         // whileInView={{ y: 0, scale: 1 }}
          // viewport={{ once: true, amount: 0.2 }}
          transition={{
             duration: 0.6,
             // delay: index * 0.1,
-            ease: [0.21, 0.47, 0.32, 0.98],
+            ease: [0.21, 0.47, 0.32, 0.98]
          }}
          className={clsx(
             "relative group mb-12 md:mb-24 last:mb-0 transition-all duration-700",
             "opacity-100",
             {
                "md:scale-95": !isActive,
-               " scale-100": isActive,
+               " scale-100": isActive
             },
             "max-md:opacity-100 max-md:blur-0 max-md:scale-100",
          )}
@@ -178,7 +178,7 @@ const ProjectCard = ({
                ) : null}
             </div>
          </div>
-      </motion.div>
+      </m.div>
    );
 };
 

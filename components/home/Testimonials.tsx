@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -23,14 +23,14 @@ const Testimonials = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                {testimonials.items.map((t, index) => (
-                  <motion.div
+                  <m.div
                      key={index}
-                     initial={{ opacity: 0, scale: 0.95 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
+                     initial={{ scale: 0.95 }}
+                     whileInView={{ scale: 1 }}
                      viewport={{
                         once: true,
                         amount: "some",
-                        margin: "0px 0px -50px 0px",
+                        margin: "0px 0px -50px 0px"
                      }}
                      transition={{ duration: 0.5, delay: index * 0.1 }}
                      className="p-8 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-sm relative overflow-hidden group"
@@ -60,7 +60,7 @@ const Testimonials = () => {
                            </p>
                         </div>
                      </div>
-                  </motion.div>
+                  </m.div>
                ))}
             </div>
          </SectionContainer>

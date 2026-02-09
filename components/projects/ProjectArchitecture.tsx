@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m  } from "framer-motion";
 import { Server, Layout, Database, ShieldCheck, Cpu } from "lucide-react";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { ProjectArchitectureProps } from "@/types/project";
@@ -22,7 +22,7 @@ const getIcon = (label: string) => {
 
 const ProjectArchitecture = ({
    architecture,
-   variant = "light",
+   variant = "light"
 }: ProjectArchitectureProps) => {
    if (!architecture || architecture.length === 0) return null;
 
@@ -52,10 +52,10 @@ const ProjectArchitecture = ({
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
                {architecture.map((item, index) => (
-                  <motion.div
+                  <m.div
                      key={index}
-                     initial={{ opacity: 0, y: 20 }}
-                     whileInView={{ opacity: 1, y: 0 }}
+                     initial={{ y: 20 }}
+                     whileInView={{ y: 0 }}
                      viewport={{ once: true }}
                      transition={{ delay: index * 0.1 }}
                      className="flex flex-col gap-4"
@@ -68,7 +68,7 @@ const ProjectArchitecture = ({
                      <div className="text-xl font-bold text-zinc-900 dark:text-white">
                         {item.value}
                      </div>
-                  </motion.div>
+                  </m.div>
                ))}
             </div>
          </SectionContainer>

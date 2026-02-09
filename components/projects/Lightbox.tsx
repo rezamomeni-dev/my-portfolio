@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
@@ -11,7 +11,7 @@ const Lightbox = ({
    onClose,
    images,
    currentIndex,
-   onNavigate,
+   onNavigate
 }: LightboxProps) => {
    const handlePrevious = useCallback(() => {
       onNavigate((currentIndex - 1 + images.length) % images.length);
@@ -47,10 +47,10 @@ const Lightbox = ({
    return (
       <AnimatePresence>
          {isOpen && (
-            <motion.div
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               exit={{ opacity: 0 }}
+            <m.div
+               initial={{ }}
+               animate={{ }}
+               exit={{ }}
                className="fixed top-0 left-0 inset-0 z-100 flex flex-col bg-black/95 backdrop-blur-sm w-screen h-screen"
             >
                {/* Header */}
@@ -80,15 +80,15 @@ const Lightbox = ({
                      <ChevronLeft className="w-8 h-8" />
                   </button>
 
-                  <motion.div
+                  <m.div
                      key={currentIndex}
-                     initial={{ opacity: 0, scale: 0.9, x: 20 }}
-                     animate={{ opacity: 1, scale: 1, x: 0 }}
-                     exit={{ opacity: 0, scale: 0.9, x: -20 }}
+                     initial={{ scale: 0.9, x: 20 }}
+                     animate={{ scale: 1, x: 0 }}
+                     exit={{ scale: 0.9, x: -20 }}
                      transition={{
                         type: "spring",
                         damping: 25,
-                        stiffness: 200,
+                        stiffness: 200
                      }}
                      className={`relative w-full h-full flex items-center justify-center max-w-7xl ${currentImage.isMobile ? "max-w-md mx-auto" : ""}`}
                   >
@@ -118,7 +118,7 @@ const Lightbox = ({
                            priority
                         />
                      )}
-                  </motion.div>
+                  </m.div>
 
                   <button
                      onClick={handleNext}
@@ -135,7 +135,7 @@ const Lightbox = ({
                      {currentImage.description}
                   </p>
                </div>
-            </motion.div>
+            </m.div>
          )}
       </AnimatePresence>
    );

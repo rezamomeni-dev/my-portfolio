@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView, motion } from "framer-motion";
+import { useInView, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -13,7 +13,7 @@ const StatItem = ({ label, valueString, index }: StatItemProps) => {
    const isInView = useInView(ref, {
       once: true,
       amount: "some",
-      margin: "0px 0px -50px 0px",
+      margin: "0px 0px -50px 0px"
    });
    const [displayValue, setDisplayValue] = useState(0);
 
@@ -56,30 +56,30 @@ const StatItem = ({ label, valueString, index }: StatItemProps) => {
    }, [isInView, value]);
 
    return (
-      <motion.div
+      <m.div
          ref={ref}
-         initial={{ opacity: 0, y: 10, scale: 0.95 }}
-         whileInView={{ opacity: 1, y: 0, scale: 1 }}
+         initial={{ y: 10, scale: 0.95 }}
+         whileInView={{ y: 0, scale: 1 }}
          viewport={{ once: true, amount: "some", margin: "0px 0px -50px 0px" }}
          transition={{
             duration: 0.4,
             delay: index * 0.05,
-            ease: [0.21, 1.11, 0.81, 0.99],
+            ease: [0.21, 1.11, 0.81, 0.99]
          }}
          className="flex flex-col items-center justify-center p-6 border-zinc-200 dark:border-zinc-800 odd:border-r md:odd:border-r md:border-r md:last:border-r-0 group hover:bg-white dark:hover:bg-zinc-800/50 transition-colors duration-300 rounded-2xl"
       >
-         <motion.div
+         <m.div
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
          >
             {displayValue}
             {suffix}
-         </motion.div>
+         </m.div>
          <div className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base text-center font-medium uppercase tracking-wider group-hover:text-zinc-900 dark:group-hover:text-zinc-200 transition-colors">
             {label}
          </div>
-      </motion.div>
+      </m.div>
    );
 };
 
