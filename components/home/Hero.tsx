@@ -1,6 +1,6 @@
 "use client";
 
-import { m, Variants  } from "framer-motion";
+import { m, Variants } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,12 +23,11 @@ const Hero = () => {
    const { linkedin, github, twitter } = resumeData.personalInfo;
 
    const containerVariants: Variants = {
-      ,
       visible: {
          transition: {
-            staggerChildren: 0.1
-         }
-      }
+            staggerChildren: 0.1,
+         },
+      },
    };
 
    const itemVariants: Variants = {
@@ -40,10 +39,10 @@ const Hero = () => {
             rotate: {
                duration: 30,
                repeat: Infinity,
-               ease: "linear"
-            }
-         }
-      }
+               ease: "linear",
+            },
+         },
+      },
    };
 
    return (
@@ -97,7 +96,7 @@ const Hero = () => {
                            transition={{
                               duration: 10,
                               repeat: Infinity,
-                              ease: "linear"
+                              ease: "linear",
                            }}
                            className="absolute -inset-12 hidden sm:block pointer-events-none"
                         >
@@ -164,7 +163,7 @@ const Hero = () => {
                         transition={{
                            duration: 30,
                            repeat: Infinity,
-                           ease: "linear"
+                           ease: "linear",
                         }}
                         className="absolute -inset-8 border-2 border-dashed border-primary/20 rounded-[3rem]"
                      />
@@ -173,7 +172,7 @@ const Hero = () => {
                         transition={{
                            duration: 40,
                            repeat: Infinity,
-                           ease: "linear"
+                           ease: "linear",
                         }}
                         className="absolute -inset-16 border border-indigo-500/10 rounded-full"
                      />
@@ -182,19 +181,21 @@ const Hero = () => {
                      <m.div
                         animate={{
                            y: isMobile ? [0, -10, 0] : [0, -20, 0],
-                           rotate: isMobile ? [0, 1, 0, -1, 0] : [0, 2, 0, -2, 0]
+                           rotate: isMobile
+                              ? [0, 1, 0, -1, 0]
+                              : [0, 2, 0, -2, 0],
                         }}
                         transition={{
                            y: {
                               duration: 6,
                               repeat: Infinity,
-                              ease: "easeInOut"
+                              ease: "easeInOut",
                            },
                            rotate: {
                               duration: 10,
                               repeat: Infinity,
-                              ease: "easeInOut"
-                           }
+                              ease: "easeInOut",
+                           },
                         }}
                         style={{ willChange: "transform" }}
                         className="relative w-full h-full overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] rounded-[4rem] border-8 border-white dark:border-zinc-800 group"
@@ -216,7 +217,7 @@ const Hero = () => {
                         transition={{
                            duration: 5,
                            repeat: Infinity,
-                           ease: "easeInOut"
+                           ease: "easeInOut",
                         }}
                         className="absolute -top-10 -right-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                      >
@@ -233,7 +234,7 @@ const Hero = () => {
                         transition={{
                            duration: 6,
                            repeat: Infinity,
-                           ease: "easeInOut"
+                           ease: "easeInOut",
                         }}
                         className="absolute -bottom-10 -left-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-700 z-20"
                      >
