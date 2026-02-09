@@ -47,7 +47,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
 
          <div className="grid lg:grid-cols-12 gap-16">
             {/* Left Side: Sticky Timeline */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 sticky top-32 self-start">
                <ProjectTimeline
                   projects={projects}
                   activeProject={activeProject}

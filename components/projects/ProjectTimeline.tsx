@@ -29,7 +29,7 @@ const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
   };
 
   return (
-    <div className="sticky top-32 self-start hidden lg:block">
+    <div className="hidden lg:block">
       <div className="relative pl-8">
         {/* Vertical Line */}
         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-zinc-800" />
