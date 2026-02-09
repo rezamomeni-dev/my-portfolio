@@ -1,13 +1,22 @@
 "use client";
 
-import { m  } from "framer-motion";
+import { m } from "framer-motion";
 import resumeData from "@/data/resume.json";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { useMemo } from "react";
+import { ResumeData } from "@/types/resume";
 
 const TechStack = () => {
    const { techStack } = homeData;
-   const allSkills = [...resumeData.skills.core, ...resumeData.skills.tools];
+   const allSkills = useMemo(() => {
+      const skillsSet = new Set<string>();
+      const { skills } = resumeData as ResumeData;
+      skills.forEach((category) => {
+         category.items.forEach((skill) => skillsSet.add(skill));
+      });
+      return Array.from(skillsSet);
+   }, []);
 
    return (
       <section className="py-24 overflow-hidden bg-white dark:bg-black">
@@ -23,12 +32,12 @@ const TechStack = () => {
          <div className="flex overflow-hidden group">
             <m.div
                animate={{
-                  x: ["0%", "-50%"]
+                  x: ["0%", "-50%"],
                }}
                transition={{
                   duration: 30,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                }}
                className="flex whitespace-nowrap gap-12 py-4"
             >
