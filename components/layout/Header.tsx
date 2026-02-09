@@ -77,7 +77,7 @@ const Header = () => {
                                     "px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full block",
                                     isActive
                                        ? "text-primary bg-zinc-100/50 dark:bg-zinc-800/50"
-                                       : "text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                                       : "text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800",
                                  )}
                               >
                                  {item.name}
@@ -127,8 +127,15 @@ const Header = () => {
                            {navItems.map((item) => {
                               const isActive = pathname === item.href;
                               return (
-                                 <NavigationMenuItem key={item.name} className="w-full">
-                                    <NavigationMenuLink asChild active={isActive}>
+                                 <NavigationMenuItem
+                                    key={item.name}
+                                    className="w-full"
+                                 >
+                                    <NavigationMenuLink
+                                       asChild
+                                       active={isActive}
+                                       className="w-full"
+                                    >
                                        <Link
                                           href={item.href}
                                           onClick={() => setIsOpen(false)}
@@ -136,7 +143,7 @@ const Header = () => {
                                              "px-6 py-4 text-xl font-semibold transition-all rounded-2xl block w-full",
                                              isActive
                                                 ? "text-primary bg-zinc-50 dark:bg-zinc-800/50"
-                                                : "text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                                : "text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50",
                                           )}
                                        >
                                           {item.name}
