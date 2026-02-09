@@ -40,45 +40,6 @@
          "technologies": ["React", "Redux", "REST API"]
       }
    ],
-   "projects": [
-      {
-         "id": "nexus",
-         "title": "Nexus",
-         "description": "Communication service",
-         "technologies": ["React", "Next.js", "DDD"],
-         "achievements": [
-            "Engineered 10+ responsive web applications and admin dashboards using React/Redux and Angular, incorporating 100+ reusable components alongside valuable development tools like plugins, mixins, and directives.",
-            "Spearheaded improvements in development, code review, release, and bug-fi xing methodologies within the team, leveraging Scrum/agile best practices for over 1000+ hours."
-         ],
-         "banner": "/projects/nexus/desktop-chat-light.png",
-         "images": [
-            {
-               "src": "/projects/nexus/desktop-chat-light.png",
-               "alt": "Nexus Chat Module - Light Theme"
-            },
-            {
-               "src": "/projects/nexus/desktop-chat-dark.png",
-               "alt": "Nexus Chat Module - Dark Theme"
-            },
-            {
-               "src": "/projects/nexus/mobile-overview-light.png",
-               "alt": "Nexus Chat Module - Mobile - Light Theme"
-            },
-            {
-               "src": "/projects/nexus/mobile-overview-dark.png",
-               "alt": "Nexus Chat Module - Mobile - Dark Theme"
-            },
-            {
-               "src": "/projects/nexus/mobile-chat-light.png",
-               "alt": "Nexus Chat Module - Mobile - Light Theme"
-            },
-            {
-               "src": "/projects/nexus/mobile-chat-dark.png",
-               "alt": "Nexus Chat Module - Mobile - Dark Theme"
-            }
-         ]
-      }
-   ],
    "education": [
       {
          "institution": "University of Isfahan",
@@ -87,31 +48,100 @@
          "location": "Isfahan, Iran"
       }
    ],
-   "skills": {
-      "core": [
-         "React.js",
-         "Next.js",
-         "Vue.js",
-         "ASP.Net",
-         "Angular",
-         "JavaScript (ES6+)",
-         "TypeScript",
-         "HTML5",
-         "CSS3"
-      ],
-      "tools": [
-         "Clean Architecture",
-         "TDD",
-         "Git",
-         "Zustand",
-         "Redux",
-         "Tailwind CSS",
-         "Jest",
-         "Storybook",
-         "Tanstack react query",
-         "Tanstack router",
-         "MUI",
-         "Antd"
-      ]
-   }
+   "skills": [
+      {
+         "id": "frontend-core",
+         "title": "Frontend Core",
+         "priority": 1,
+         "variant": "primary",
+         "items": [
+            "React.js (Advanced)",
+            "Next.js (Advanced – SSR, SEO, App Router)",
+            "Vue.js (Professional)",
+            "Angular (Working knowledge)"
+         ]
+      },
+      {
+         "id": "architecture-state",
+         "title": "Architecture & State Management",
+         "priority": 2,
+         "variant": "primary",
+         "items": [
+            "Clean Architecture",
+            "SOLID Principles",
+            "Domain-Driven Design (DDD)",
+            "Test-Driven Development (TDD)",
+            "TanStack Query (React Query)",
+            "Redux Toolkit",
+            "Zustand",
+            "Scalable frontend architecture"
+         ]
+      },
+      {
+         "id": "tooling-quality",
+         "title": "Tooling & Quality",
+         "priority": 3,
+         "variant": "secondary",
+         "items": [
+            "Git",
+            "GitHub (Pull Requests & Code Reviews)",
+            "Jest",
+            "Storybook",
+            "TanStack Router",
+            "CI/CD"
+         ]
+      },
+      {
+         "id": "performance",
+         "title": "Performance & Optimization",
+         "priority": 4,
+         "variant": "secondary",
+         "items": [
+            "Performance optimization",
+            "Code splitting",
+            "Lazy loading",
+            "Memoization",
+            "Real-time data handling"
+         ]
+      },
+      {
+         "id": "backend",
+         "title": "Backend Exposure",
+         "priority": 5,
+         "variant": "secondary",
+         "items": [
+            "ASP.NET Core",
+            "ASP.NET MVC",
+            "C#",
+            "SQL",
+            "RESTful API development"
+         ]
+      },
+      {
+         "id": "workflow",
+         "title": "Workflow & Collaboration",
+         "priority": 6,
+         "variant": "secondary",
+         "items": [
+            "Agile / Scrum",
+            "Kanban",
+            "Pair programming",
+            "Cross-functional collaboration"
+         ]
+      },
+      {
+         "id": "ai",
+         "title": "AI-Assisted Development",
+         "priority": 7,
+         "variant": "secondary",
+         "items": ["GitHub Copilot", "Gemini", "Claude.ai", "Jules"]
+      },
+      {
+         "id": "specialized",
+         "title": "Specialized & Domain Tools",
+         "priority": 8,
+         "variant": "secondary",
+         "items": ["Shopify", "Mapbox", "Leaflet"]
+      }
+   ]
 }

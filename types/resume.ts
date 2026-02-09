@@ -28,16 +28,12 @@ export interface EducationItem {
    location: string;
 }
 
-export interface Skills {
-   core: string[];
-   tools: string[];
-}
 
 export interface ResumeData {
    personalInfo: PersonalInfo;
    experience: ExperienceItem[];
    education: EducationItem[];
-   skills: Skills;
+   skills: SkillCategory[];
 }
 
 export interface EducationProps {
@@ -48,11 +44,18 @@ export interface ExperienceProps {
    items: ExperienceItem[];
 }
 
-export interface SkillsProps {
-   core: string[];
-   tools: string[];
+
+export interface SkillCategory {
+   id: string;
+   title: string;
+   priority: number;
+   variant: "primary" | "secondary";
+   items: string[];
 }
 
+export interface SkillsProps {
+   categories: SkillCategory[];
+}
 export interface AboutProps {
    content: string;
 }

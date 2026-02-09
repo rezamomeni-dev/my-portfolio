@@ -2,6 +2,8 @@ import resumeData from "@/data/resume.json";
 import projectsData from "@/data/projects.json";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { useMemo } from "react";
+import { SkillCategory } from "@/types/resume";
 
 const Hero = dynamic(() => import("@/components/resume/Hero"));
 const About = dynamic(() => import("@/components/resume/About"));
@@ -15,10 +17,18 @@ const BackgroundBlobs = dynamic(
 
 export const metadata: Metadata = {
    title: `${resumeData.personalInfo.name} - Resume`,
-   description: resumeData.personalInfo.bio
+   description: resumeData.personalInfo.bio,
 };
 
 export default function ResumePage() {
+   const skills = useMemo(() => {
+      const sortedSkills = [...resumeData.skills].sort(
+         (a, b) => a.priority - b.priority,
+      );
+
+      return sortedSkills as SkillCategory[];
+   }, []);
+
    return (
       <div className="selection:bg-primary selection:text-primary-foreground font-sans transition-colors duration-300 relative">
          <BackgroundBlobs />
@@ -39,10 +49,7 @@ export default function ResumePage() {
 
          <Education items={resumeData.education} />
 
-         <Skills
-            core={resumeData.skills.core}
-            tools={resumeData.skills.tools}
-         />
+         <Skills categories={skills} />
       </div>
    );
 }
