@@ -1,6 +1,6 @@
 "use client";
 
-import { m  } from "framer-motion";
+import { m } from "framer-motion";
 import { Code, Layout, Zap, Users, LucideIcon } from "lucide-react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -9,7 +9,7 @@ const iconMap: Record<string, LucideIcon> = {
    "Frontend Architecture": Code,
    "UI/UX Development": Layout,
    "Performance Optimization": Zap,
-   "Technical Leadership": Users
+   "Technical Leadership": Users,
 };
 
 const stylesMap: Record<string, { bg: string; text: string }> = {
@@ -17,19 +17,19 @@ const stylesMap: Record<string, { bg: string; text: string }> = {
    "UI/UX Development": { bg: "bg-purple-500/10", text: "text-purple-500" },
    "Performance Optimization": {
       bg: "bg-amber-500/10",
-      text: "text-amber-500"
+      text: "text-amber-500",
    },
    "Technical Leadership": {
       bg: "bg-emerald-500/10",
-      text: "text-emerald-500"
-   }
+      text: "text-emerald-500",
+   },
 };
 
 const Services = () => {
    const { services } = homeData;
 
    return (
-      <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/50">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50">
          <SectionContainer>
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                <div className="max-w-2xl">
@@ -51,7 +51,7 @@ const Services = () => {
                   const Icon = iconMap[service.title] || Code;
                   const styles = stylesMap[service.title] || {
                      bg: "bg-primary/10",
-                     text: "text-primary"
+                     text: "text-primary",
                   };
 
                   return (
@@ -62,7 +62,7 @@ const Services = () => {
                         viewport={{
                            once: true,
                            amount: 0.2,
-                           margin: "0px 0px -50px 0px"
+                           margin: "0px 0px -50px 0px",
                         }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ y: -5 }}

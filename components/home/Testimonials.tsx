@@ -1,6 +1,6 @@
 "use client";
 
-import { m  } from "framer-motion";
+import { m } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import homeData from "@/data/home.json";
 import SectionContainer from "@/components/shared/SectionContainer";
@@ -9,7 +9,7 @@ const Testimonials = () => {
    const { testimonials } = homeData;
 
    return (
-      <section className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/30">
+      <section className="bg-zinc-50 dark:bg-zinc-900/30">
          <SectionContainer>
             <div className="text-center mb-16">
                <h2
@@ -30,7 +30,7 @@ const Testimonials = () => {
                      viewport={{
                         once: true,
                         amount: "some",
-                        margin: "0px 0px -50px 0px"
+                        margin: "0px 0px -50px 0px",
                      }}
                      transition={{ duration: 0.5, delay: index * 0.1 }}
                      className="p-8 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-sm relative overflow-hidden group"

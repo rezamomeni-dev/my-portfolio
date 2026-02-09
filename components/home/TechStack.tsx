@@ -19,15 +19,15 @@ const TechStack = () => {
    }, []);
 
    return (
-      <section className="py-24 overflow-hidden bg-white dark:bg-black">
-         <SectionContainer className="mb-12 text-center">
+      <SectionContainer className="overflow-hidden px-0! max-w-full bg-white dark:bg-black">
+         <div className="text-center mb-12 ">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
                {techStack.title}
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400">
                {techStack.subtitle}
             </p>
-         </SectionContainer>
+         </div>
 
          <div className="flex overflow-hidden group">
             <m.div
@@ -48,12 +48,14 @@ const TechStack = () => {
                      className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-zinc-300 dark:text-zinc-800 hover:text-primary transition-colors cursor-default"
                   >
                      <span className="w-3 h-3 bg-primary rounded-full" />
-                     {skill}
+                     <div className="max-w-60 overflow-hidden text-ellipsis whitespace-nowrap">
+                        {skill}
+                     </div>
                   </div>
                ))}
             </m.div>
          </div>
-      </section>
+      </SectionContainer>
    );
 };
 

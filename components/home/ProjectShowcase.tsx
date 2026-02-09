@@ -1,6 +1,6 @@
 "use client";
 
-import { m  } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +11,7 @@ const ProjectShowcase = () => {
    const projects = projectsData.slice(0, 3);
 
    return (
-      <section className="py-16 md:py-24 bg-white dark:bg-black">
+      <div className="bg-white dark:bg-black">
          <SectionContainer>
             <div className="text-center mb-16 md:mb-20">
                <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -33,7 +33,7 @@ const ProjectShowcase = () => {
                      viewport={{
                         once: true,
                         amount: 0.2,
-                        margin: "0px 0px -50px 0px"
+                        margin: "0px 0px -50px 0px",
                      }}
                      transition={{ duration: 0.5 }}
                      className="group relative grid md:grid-cols-2 gap-12 items-center"
@@ -89,7 +89,7 @@ const ProjectShowcase = () => {
                </Link>
             </div>
          </SectionContainer>
-      </section>
+      </div>
    );
 };
 

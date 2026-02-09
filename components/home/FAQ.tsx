@@ -1,6 +1,6 @@
 "use client";
 
-import { m, AnimatePresence  } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import homeData from "@/data/home.json";
@@ -9,12 +9,7 @@ import { FAQItemProps, HomeData } from "@/types/home";
 
 const typedHomeData = homeData as HomeData;
 
-const FAQItem = ({
-   question,
-   answer,
-   isOpen,
-   onClick
-}: FAQItemProps) => {
+const FAQItem = ({ question, answer, isOpen, onClick }: FAQItemProps) => {
    return (
       <div className="border-b border-zinc-200 dark:border-zinc-800 last:border-0">
          <button
@@ -56,7 +51,7 @@ const FAQ = () => {
    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
    return (
-      <section className="py-16 md:py-24 bg-white dark:bg-black">
+      <section className="bg-white dark:bg-black">
          <SectionContainer>
             <div className="text-center mb-12 md:mb-16">
                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-zinc-900 dark:text-white">
