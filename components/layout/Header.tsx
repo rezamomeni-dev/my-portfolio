@@ -6,6 +6,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link";
 import resumeData from "@/data/resume.json";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { m, AnimatePresence } from "framer-motion";
 import {
    NavigationMenu,
@@ -18,6 +19,7 @@ import { cn } from "@/lib/utils";
 const Header = () => {
    const { name } = resumeData.personalInfo;
    const [isOpen, setIsOpen] = useState(false);
+   const pathname = usePathname();
 
    // Close menu on resize
    useEffect(() => {
@@ -64,19 +66,25 @@ const Header = () => {
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden lg:flex">
                <NavigationMenuList className="gap-2">
-                  {navItems.map((item) => (
-                     <NavigationMenuItem key={item.name}>
-                        <Link href={item.href} passHref>
-                           <NavigationMenuLink
-                              className={cn(
-                                 "text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 block",
-                              )}
-                           >
-                              {item.name}
-                           </NavigationMenuLink>
-                        </Link>
-                     </NavigationMenuItem>
-                  ))}
+                  {navItems.map((item) => {
+                     const isActive = pathname === item.href;
+                     return (
+                        <NavigationMenuItem key={item.name}>
+                           <Link href={item.href} passHref legacyBehavior>
+                              <NavigationMenuLink
+                                 className={cn(
+                                    "px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full block",
+                                    isActive
+                                       ? "text-primary bg-zinc-100/50 dark:bg-zinc-800/50"
+                                       : "text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                                 )}
+                              >
+                                 {item.name}
+                              </NavigationMenuLink>
+                           </Link>
+                        </NavigationMenuItem>
+                     );
+                  })}
                </NavigationMenuList>
             </NavigationMenu>
 
@@ -113,18 +121,30 @@ const Header = () => {
                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
                      className="absolute top-full left-0 right-0 mt-4 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-2xl flex flex-col gap-4 lg:hidden z-40"
                   >
-                     <div className="flex flex-col gap-1">
-                        {navItems.map((item) => (
-                           <Link
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => setIsOpen(false)}
-                              className="px-6 py-4 text-xl font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50 rounded-2xl transition-all"
-                           >
-                              {item.name}
-                           </Link>
-                        ))}
-                     </div>
+                     <NavigationMenu className="max-w-none w-full justify-start">
+                        <NavigationMenuList className="flex-col items-stretch gap-1 w-full space-x-0">
+                           {navItems.map((item) => {
+                              const isActive = pathname === item.href;
+                              return (
+                                 <NavigationMenuItem key={item.name} className="w-full">
+                                    <Link href={item.href} passHref legacyBehavior>
+                                       <NavigationMenuLink
+                                          onClick={() => setIsOpen(false)}
+                                          className={cn(
+                                             "px-6 py-4 text-xl font-semibold transition-all rounded-2xl block w-full",
+                                             isActive
+                                                ? "text-primary bg-zinc-50 dark:bg-zinc-800/50"
+                                                : "text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-primary hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                          )}
+                                       >
+                                          {item.name}
+                                       </NavigationMenuLink>
+                                    </Link>
+                                 </NavigationMenuItem>
+                              );
+                           })}
+                        </NavigationMenuList>
+                     </NavigationMenu>
                      <div className="h-px bg-zinc-100 dark:bg-zinc-800 mx-2" />
                      <a
                         href="/MohammadTaghimomeni_Resume.pdf"
