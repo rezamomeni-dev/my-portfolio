@@ -70,8 +70,9 @@ const Header = () => {
                      const isActive = pathname === item.href;
                      return (
                         <NavigationMenuItem key={item.name}>
-                           <Link href={item.href} passHref legacyBehavior>
-                              <NavigationMenuLink
+                           <NavigationMenuLink asChild active={isActive}>
+                              <Link
+                                 href={item.href}
                                  className={cn(
                                     "px-4 py-2 text-sm font-medium transition-colors cursor-pointer rounded-full block",
                                     isActive
@@ -80,8 +81,8 @@ const Header = () => {
                                  )}
                               >
                                  {item.name}
-                              </NavigationMenuLink>
-                           </Link>
+                              </Link>
+                           </NavigationMenuLink>
                         </NavigationMenuItem>
                      );
                   })}
@@ -127,8 +128,9 @@ const Header = () => {
                               const isActive = pathname === item.href;
                               return (
                                  <NavigationMenuItem key={item.name} className="w-full">
-                                    <Link href={item.href} passHref legacyBehavior>
-                                       <NavigationMenuLink
+                                    <NavigationMenuLink asChild active={isActive}>
+                                       <Link
+                                          href={item.href}
                                           onClick={() => setIsOpen(false)}
                                           className={cn(
                                              "px-6 py-4 text-xl font-semibold transition-all rounded-2xl block w-full",
@@ -138,8 +140,8 @@ const Header = () => {
                                           )}
                                        >
                                           {item.name}
-                                       </NavigationMenuLink>
-                                    </Link>
+                                       </Link>
+                                    </NavigationMenuLink>
                                  </NavigationMenuItem>
                               );
                            })}
