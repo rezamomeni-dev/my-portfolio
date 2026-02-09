@@ -13,7 +13,7 @@ const TechStack = () => {
       const skillsSet = new Set<string>();
       const { skills } = resumeData as ResumeData;
       skills.forEach((category) => {
-         category.items.forEach((skill) => skillsSet.add(skill));
+         category.items.forEach((skill) => skillsSet.add(skill.split(" ")[0])); // Add only the main skill name, ignoring versions or details
       });
       return Array.from(skillsSet);
    }, []);
@@ -48,9 +48,7 @@ const TechStack = () => {
                      className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-zinc-300 dark:text-zinc-800 hover:text-primary transition-colors cursor-default"
                   >
                      <span className="w-3 h-3 bg-primary rounded-full" />
-                     <div className="max-w-60 overflow-hidden text-ellipsis whitespace-nowrap">
-                        {skill}
-                     </div>
+                     {skill}
                   </div>
                ))}
             </m.div>

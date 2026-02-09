@@ -69,8 +69,8 @@
          "items": [
             "Clean Architecture",
             "SOLID Principles",
-            "Domain-Driven Design (DDD)",
-            "Test-Driven Development (TDD)",
+            "DDD (Domain-Driven Design)",
+            "TDD (Test-Driven Development)",
             "TanStack Query (React Query)",
             "Redux Toolkit",
             "Zustand",
@@ -109,13 +109,7 @@
          "title": "Backend Exposure",
          "priority": 5,
          "variant": "secondary",
-         "items": [
-            "ASP.NET Core",
-            "ASP.NET MVC",
-            "C#",
-            "SQL",
-            "RESTful API development"
-         ]
+         "items": ["ASP.NET MVC", "SQL", "RESTful API development"]
       },
       {
          "id": "workflow",
@@ -125,7 +119,7 @@
          "items": [
             "Agile / Scrum",
             "Kanban",
-            "Pair programming",
+            "Pair-programming",
             "Cross-functional collaboration"
          ]
       },
