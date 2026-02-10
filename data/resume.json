@@ -1,14 +1,14 @@
 {
    "personalInfo": {
-      "name": "Mohammad Reza Taghimomeni",
+      "name": "Reza Taghimomeni",
       "role": "Senior Frontend Developer",
       "bio": "Specializing in creating high-quality, scalable web applications with modern frontend technologies.",
       "aboutMe": "I am a Senior Frontend Developer with extensive experience in React.js and Next.js, and a strong advocate for Clean Architecture and Test-Driven Development (TDD). My passion lies in building scalable, maintainable, and high-performance web applications. I thrive in collaborative environments, mentoring junior developers, and continuously learning new technologies to deliver the best user experiences.",
       "email": "mrm.tm95@gmail.com",
       "phone": "+98 913 698 3056",
       "location": "Isfahan, Iran (Open to Relocate)",
-      "linkedin": "https://www.linkedin.com/in/mohammadreza-taghimomeni",
-      "github": "https://github.com/mohammadreza-taghimomeni",
+      "linkedin": "https://www.linkedin.com/in/rezamomeni-dev",
+      "github": "https://github.com/rezamomeni-dev",
       "twitter": "https://www.threads.com/@mrm.tm95?igshid=NTc4MTIwNjQ2YQ==",
       "image": "/images/my-image.png"
    },

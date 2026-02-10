@@ -1,4 +1,4 @@
-# Mohammad Reza Taghimomeni - Senior Frontend Developer Portfolio
+# Reza Taghimomeni - Senior Frontend Developer Portfolio
 
 A high-performance, professional portfolio website built with the latest web technologies. This project showcases technical excellence, design precision, and business value through a modern, responsive interface.
 
@@ -18,28 +18,28 @@ A high-performance, professional portfolio website built with the latest web tec
 
 - **Data-Driven Architecture**: Entire site content is managed via centralized JSON files in the `/data` directory, ensuring a single source of truth.
 - **Project Showcase**: Detailed project listings with:
-  - Categorized gallery support (Images & PDFs)
-  - Interactive Lightbox for media viewing
-  - Dynamic, sticky timelines synchronizing with project content
-  - Detailed project pages with architecture and achievement breakdowns
+   - Categorized gallery support (Images & PDFs)
+   - Interactive Lightbox for media viewing
+   - Dynamic, sticky timelines synchronizing with project content
+   - Detailed project pages with architecture and achievement breakdowns
 - **Aggregated Blog**: A dynamic blog page that pulls content from multiple RSS feeds with:
-  - Server-side caching for performance
-  - Infinite scroll implementation
-  - Smooth staggered entry animations
+   - Server-side caching for performance
+   - Infinite scroll implementation
+   - Smooth staggered entry animations
 - **Interactive Resume**: Professional resume with:
-  - Animated profile sections
-  - ATS-friendly PDF download/print support
-  - Responsive layout for all devices
+   - Animated profile sections
+   - ATS-friendly PDF download/print support
+   - Responsive layout for all devices
 - **Optimized Performance**:
-  - Lazy loading for below-the-fold components
-  - Optimized Framer Motion animations (LazyMotion & domAnimation)
-  - Responsive image delivery using `next/image`
-  - Reduced layout shifts and fast LCP
+   - Lazy loading for below-the-fold components
+   - Optimized Framer Motion animations (LazyMotion & domAnimation)
+   - Responsive image delivery using `next/image`
+   - Reduced layout shifts and fast LCP
 - **Modern UI/UX**:
-  - Dark/Light mode support with system preference detection
-  - Glassmorphism effects and custom gradient text
-  - Responsive navigation using Radix UI
-  - Accessible components following WAI-ARIA standards
+   - Dark/Light mode support with system preference detection
+   - Glassmorphism effects and custom gradient text
+   - Responsive navigation using Radix UI
+   - Accessible components following WAI-ARIA standards
 
 ## 📁 Project Structure
 

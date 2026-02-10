@@ -9,21 +9,21 @@ import "./globals.css";
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
-   subsets: ["latin"]
+   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
    variable: "--font-geist-mono",
-   subsets: ["latin"]
+   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-   title: "Mohammad Reza Taghimomeni - Senior Frontend Developer",
-   description: "Mohammad Reza Taghimomeni's personal portfolio website."
+   title: "Reza Taghimomeni - Senior Frontend Developer",
+   description: "Reza Taghimomeni's personal portfolio website.",
 };
 
 export default function RootLayout({
-   children
+   children,
 }: Readonly<{
    children: React.ReactNode;
 }>) {

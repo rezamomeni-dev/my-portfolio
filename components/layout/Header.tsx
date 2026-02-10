@@ -92,7 +92,7 @@ const Header = () => {
             <div className="flex items-center gap-2 z-50">
                <ThemeSwitcher />
                <a
-                  href="/MohammadTaghimomeni_Resume.pdf"
+                  href="/RezaMomeni.pdf"
                   download
                   className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105 active:scale-95 hidden sm:flex shadow-sm"
                >
@@ -156,7 +156,7 @@ const Header = () => {
                      </NavigationMenu>
                      <div className="h-px bg-zinc-100 dark:bg-zinc-800 mx-2" />
                      <a
-                        href="/MohammadTaghimomeni_Resume.pdf"
+                        href="/RezaMomeni.pdf"
                         download
                         onClick={() => setIsOpen(false)}
                         className="bg-primary text-primary-foreground px-6 py-5 rounded-2xl text-center font-bold text-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
