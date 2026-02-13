@@ -3,16 +3,32 @@
 import { m, useScroll, useSpring  } from "framer-motion";
 import { ProjectTimelineProps } from "@/types/project";
 import { formatProjectTimeline } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 
 
-const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
-  const { scrollYProgress } = useScroll();
+const ProjectTimeline = ({ projects, activeProject, containerRef }: ProjectTimelineProps) => {
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
+
+  const activeItemRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (activeItemRef.current) {
+      activeItemRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+  }, [activeProject]);
 
   const scrollToProject = (slug: string) => {
     const element = document.getElementById(slug);
@@ -30,7 +46,7 @@ const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
 
   return (
     <div className="hidden lg:block">
-      <div className="relative pl-8">
+      <div className="relative pl-8 max-h-[calc(100vh-12rem)] overflow-y-auto scrollbar-none py-2">
         {/* Vertical Line */}
         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-zinc-800" />
 
@@ -47,12 +63,13 @@ const ProjectTimeline = ({ projects, activeProject }: ProjectTimelineProps) => {
         </div>
 
         {/* Timeline Items */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           {projects.map((project) => {
             const isActive = activeProject === project.slug;
             return (
               <button
                 key={project.slug}
+                ref={isActive ? activeItemRef : null}
                 onClick={() => scrollToProject(project.slug)}
                 className="group flex flex-col items-start text-left relative"
               >

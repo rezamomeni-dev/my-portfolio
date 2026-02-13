@@ -18,8 +18,8 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
    const ref = useRef(null);
    const isInView = useInView(ref, {
-      amount: 0.2,
-      margin: "-10% 0px -40% 0px"
+      amount: 0.1,
+      margin: "-30% 0px -30% 0px"
    });
 
    useEffect(() => {

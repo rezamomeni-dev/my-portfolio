@@ -87,6 +87,7 @@ export interface ProjectNavigationProps {
 export interface ProjectTimelineProps {
   projects: Project[];
   activeProject: string;
+  containerRef?: React.RefObject<HTMLElement | null>;
 }
 
 export interface ProjectsListProps {

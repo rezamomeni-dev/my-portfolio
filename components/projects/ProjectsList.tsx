@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { m  } from "framer-motion";
@@ -13,6 +13,7 @@ const ProjectCard = dynamic(() => import("@/components/projects/ProjectCard"));
 
 export default function ProjectsList({ projects }: ProjectsListProps) {
    const [activeProject, setActiveProject] = useState(projects[0].slug);
+   const projectsGridRef = useRef<HTMLDivElement>(null);
 
    return (
       <SectionContainer>
@@ -45,13 +46,16 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
             </m.p>
          </div>
 
-         <div className="grid lg:grid-cols-12 gap-16">
-            {/* Left Side: Sticky Timeline */}
-            <div className="lg:col-span-3 sticky top-32 self-start">
-               <ProjectTimeline
-                  projects={projects}
-                  activeProject={activeProject}
-               />
+         <div className="grid lg:grid-cols-12 gap-16" ref={projectsGridRef}>
+            {/* Left Side: Sticky Timeline container */}
+            <div className="lg:col-span-3">
+               <div className="sticky top-32">
+                  <ProjectTimeline
+                     projects={projects}
+                     activeProject={activeProject}
+                     containerRef={projectsGridRef}
+                  />
+               </div>
             </div>
 
             {/* Right Side: Project Cards */}
