@@ -10,6 +10,7 @@ const About = dynamic(() => import("@/components/resume/About"));
 const Experience = dynamic(() => import("@/components/resume/Experience"));
 const Projects = dynamic(() => import("@/components/resume/Projects"));
 const Education = dynamic(() => import("@/components/resume/Education"));
+const Certificates = dynamic(() => import("@/components/resume/Certificates"));
 const Skills = dynamic(() => import("@/components/resume/Skills"));
 const BackgroundBlobs = dynamic(
    () => import("@/components/resume/BackgroundBlobs"),
@@ -48,6 +49,8 @@ export default function ResumePage() {
          <Projects items={projectsData.slice(0, 2)} />
 
          <Education items={resumeData.education} />
+
+         <Certificates items={resumeData.certificates} />
 
          <Skills categories={skills} />
       </div>

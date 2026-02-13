@@ -28,16 +28,30 @@ export interface EducationItem {
    location: string;
 }
 
+export interface CertificateItem {
+   title: string;
+   organization: string;
+   date: string;
+   credentialId?: string;
+   credentialUrl?: string;
+   skills?: string[];
+}
+
 
 export interface ResumeData {
    personalInfo: PersonalInfo;
    experience: ExperienceItem[];
    education: EducationItem[];
+   certificates: CertificateItem[];
    skills: SkillCategory[];
 }
 
 export interface EducationProps {
    items: EducationItem[];
+}
+
+export interface CertificatesProps {
+   items: CertificateItem[];
 }
 
 export interface ExperienceProps {

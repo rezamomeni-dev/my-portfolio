@@ -48,6 +48,16 @@
          "location": "Isfahan, Iran"
       }
    ],
+   "certificates": [
+      {
+         "title": "Front-end for Beginners",
+         "organization": "Sololearn",
+         "date": "Feb 2026",
+         "credentialId": "CC-TEFDRAYG",
+         "credentialUrl": "https://www.sololearn.com/certificates/CC-TEFDRAYG",
+         "skills": ["Angular", "HTML5", "CSS3", "JavaScript"]
+      }
+   ],
    "skills": [
       {
          "id": "frontend-core",
