@@ -1,9 +1,9 @@
 {
    "personalInfo": {
       "name": "Reza Taghimomeni",
-      "role": "Senior Frontend Developer",
-      "bio": "Specializing in creating high-quality, scalable web applications with modern frontend technologies.",
-      "aboutMe": "I am a Senior Frontend Developer with extensive experience in React.js and Next.js, and a strong advocate for Clean Architecture and Test-Driven Development (TDD). My passion lies in building scalable, maintainable, and high-performance web applications. I thrive in collaborative environments, mentoring junior developers, and continuously learning new technologies to deliver the best user experiences.",
+      "role": "Senior Frontend Engineer",
+      "bio": "Senior Frontend Engineer with 8+ years of experience specializing in React, Next.js, and Vue.js.",
+      "aboutMe": "Senior Frontend Engineer with 8+ years of experience specializing in React, Next.js, and Vue.js. Led technical architecture for a 20+ engineer team at Nexus, scaling enterprise messaging solutions to support 100,000+ active users. Expert in Micro-Frontends and CI/CD optimization, with a focus on delivering high-performance, accessible web infrastructures that align technical velocity with business growth.",
       "email": "mrm.tm95@gmail.com",
       "phone": "+98 913 698 3056",
       "location": "Isfahan, Iran (Open to Relocate)",
@@ -14,38 +14,55 @@
    },
    "experience": [
       {
-         "role": "Senior Frontend Developer",
-         "company": "Today",
-         "location": "Tehran, Iran (Hybrid)",
-         "period": "Sep 2023 — Present",
+         "role": "Senior Frontend Engineer",
+         "company": "Nexus",
+         "location": "Isfahan, Iran",
+         "period": "Apr 2023 — Present",
          "description": [
-            "Architected and implemented a comprehensive component library using React, TypeScript, and Storybook, improving development speed by 40% and ensuring UI consistency across multiple projects.",
-            "Led the migration of a legacy AngularJS application to Next.js, resulting in a 60% improvement in initial load time and significantly better SEO performance.",
-            "Mentored junior developers, conducting code reviews and pair programming sessions to foster best practices and improve code quality.",
-            "Collaborated with product managers and designers to translate requirements into technical specifications and user-friendly interfaces."
+            "Spearheaded the re-architecture of the core messaging platform utilizing Zustand, React Query, and IndexedDB; built an offline-first capability that reduced data fetch latency by 40%.",
+            "Managed and mentored a diverse team of 20+ engineers, implementing tailored development plans that increased team velocity by 35%.",
+            "Established 25+ CI/CD pipelines and Dockerized micro-services, reducing build failures by 60%.",
+            "Orchestrated the development of an enterprise-grade ticketing system, decreasing internal email volume by 60% through real-time chat integration.",
+            "Championed the adoption of Clean Architecture and reusable design systems, accelerating onboarding time by 30%."
          ],
-         "technologies": ["React", "Next.js", "TypeScript", "Storybook"]
+         "technologies": [
+            "React",
+            "Zustand",
+            "React Query",
+            "Docker",
+            "CI/CD",
+            "IndexedDB"
+         ]
       },
       {
          "role": "Frontend Developer",
          "company": "Kasra",
          "location": "Isfahan, Iran",
-         "period": "Mar 2021 — Sep 2023",
+         "period": "Apr 2018 — May 2023",
          "description": [
-            "Developed and maintained features for a high-traffic enterprise application using React and Redux, handling complex state management and data synchronization.",
-            "Optimized application performance by implementing code splitting, lazy loading, and memoization techniques.",
-            "Integrated RESTful APIs and WebSockets for real-time data updates and interactive user experiences.",
-            "Participated in agile development processes, including daily stand-ups, sprint planning, and retrospectives."
+            "Engineered a suite of 10+ mission-critical admin dashboards using React and Angular, supporting workforce management for over 100,000 global users.",
+            "Optimized frontend infrastructure through strategic code-splitting, boosting initial load speeds by 25% and achieving 'Green' status in Core Web Vitals.",
+            "Pioneered a GEO-fence attendance module using Leaflet and Mapbox, resulting in a 30% increase in user adoption.",
+            "Facilitated Agile transformation for 5+ years, instituting rigorous code review protocols and unit testing (Jest/RTL) that mitigated post-deployment bugs by 20%.",
+            "Modernized legacy systems by migrating monolithic structures to Redux Toolkit and TypeScript."
          ],
-         "technologies": ["React", "Redux", "REST API"]
+         "technologies": [
+            "React",
+            "Angular",
+            "Redux Toolkit",
+            "TypeScript",
+            "Leaflet",
+            "Jest"
+         ]
       }
    ],
    "education": [
       {
          "institution": "University of Isfahan",
-         "degree": "Bachelor's Degree in Computer Engineering",
-         "period": "2017 — 2021",
-         "location": "Isfahan, Iran"
+         "degree": "Bachelor of Science in Computer Engineering",
+         "period": "2014 — 2018",
+         "location": "Isfahan, Iran",
+         "details": "Capstone Project: Implementation of a real-time autoclave monitoring system focusing on IoT data visualization."
       }
    ],
    "certificates": [
@@ -60,92 +77,110 @@
    ],
    "skills": [
       {
-         "id": "frontend-core",
-         "title": "Frontend Core",
+         "id": "core-tech",
+         "title": "Core Frontend & Languages",
          "priority": 1,
          "variant": "primary",
          "items": [
             "React.js (Advanced)",
-            "Next.js (Advanced – SSR, SEO, App Router)",
-            "Vue.js (Professional)",
-            "Angular (Working knowledge)"
+            "Next.js (App Router, SSR)",
+            "TypeScript (Strict Typing)",
+            "Vue.js (Composition API)",
+            "JavaScript (ES6+)",
+            "HTML5 / CSS3 / SCSS"
          ]
       },
       {
-         "id": "architecture-state",
-         "title": "Architecture & State Management",
+         "id": "architecture",
+         "title": "Architecture & Scalability",
          "priority": 2,
          "variant": "primary",
          "items": [
+            "Micro-Frontends (Module Federation)",
             "Clean Architecture",
             "SOLID Principles",
-            "DDD (Domain-Driven Design)",
-            "TDD (Test-Driven Development)",
-            "TanStack Query (React Query)",
-            "Redux Toolkit",
-            "Zustand",
-            "Scalable frontend architecture"
+            "Domain-Driven Design (DDD)",
+            "Design Systems",
+            "Scalable Application Structure"
          ]
       },
       {
-         "id": "tooling-quality",
-         "title": "Tooling & Quality",
+         "id": "state-async",
+         "title": "State Management & Async Data",
          "priority": 3,
-         "variant": "secondary",
+         "variant": "primary",
          "items": [
-            "Git",
-            "GitHub (Pull Requests & Code Reviews)",
-            "Jest",
-            "Storybook",
-            "TanStack Router",
-            "CI/CD"
+            "TanStack Query (React Query)",
+            "Zustand",
+            "Redux Toolkit",
+            "Context API",
+            "Restful APIs",
+            "GraphQL"
          ]
       },
       {
-         "id": "performance",
-         "title": "Performance & Optimization",
+         "id": "quality-testing",
+         "title": "Quality Engineering & Testing",
          "priority": 4,
          "variant": "secondary",
          "items": [
-            "Performance optimization",
-            "Code splitting",
-            "Lazy loading",
-            "Memoization",
-            "Real-time data handling"
+            "TDD (Test-Driven Development)",
+            "Jest & React Testing Library",
+            "Storybook (UI Documentation)",
+            "Sentry (Error Monitoring)",
+            "Code Review & Best Practices"
          ]
       },
       {
-         "id": "backend",
-         "title": "Backend Exposure",
+         "id": "devops-tooling",
+         "title": "Build Tools & DevOps",
          "priority": 5,
          "variant": "secondary",
-         "items": ["ASP.NET MVC", "SQL", "RESTful API development"]
+         "items": [
+            "Docker & Containerization",
+            "CI/CD Pipelines (GitHub Actions, Jenkins)",
+            "Vite",
+            "Webpack",
+            "Git & Gitflow Workflow",
+            "NPM / Yarn / PNPM"
+         ]
       },
       {
-         "id": "workflow",
-         "title": "Workflow & Collaboration",
+         "id": "ui-styling",
+         "title": "UI Engineering",
          "priority": 6,
          "variant": "secondary",
          "items": [
-            "Agile / Scrum",
-            "Kanban",
-            "Pair-programming",
-            "Cross-functional collaboration"
+            "Tailwind CSS",
+            "Material UI (MUI)",
+            "Ant Design",
+            "Styled Components",
+            "Responsive & Accessible Design (a11y)"
          ]
       },
       {
-         "id": "ai",
-         "title": "AI-Assisted Development",
+         "id": "backend-integration",
+         "title": "Backend Exposure",
          "priority": 7,
          "variant": "secondary",
-         "items": ["GitHub Copilot", "Gemini", "Claude.ai", "Jules"]
+         "items": [
+            "ASP.NET Core",
+            "C#",
+            "SQL Server",
+            "WebSocket (Real-time Communication)"
+         ]
       },
       {
-         "id": "specialized",
-         "title": "Specialized & Domain Tools",
+         "id": "specialized-tools",
+         "title": "Specialized & Productivity",
          "priority": 8,
          "variant": "secondary",
-         "items": ["Shopify", "Mapbox", "Leaflet"]
+         "items": [
+            "Agile / Scrum / Kanban",
+            "Mapbox & Leaflet (GIS)",
+            "Shopify",
+            "AI-Assisted Dev (Copilot, Gemini)"
+         ]
       }
    ]
 }
