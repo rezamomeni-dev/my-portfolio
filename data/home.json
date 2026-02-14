@@ -1,96 +1,102 @@
 {
    "hero": {
-      "badge": "Open to Relocate & Senior Frontend Positions",
-      "headline": "Engineering <span class=\"text-primary italic\">Scalable</span> Frontend",
-      "subheadline": "Senior Frontend Engineer specializing in building high-performance web applications with React, Next.js, and Vue.js. Focused on performance, accessibility, and clean architecture.",
-      "cta": "Explore My Work",
+      "badge": "Open to Relocate & Remote Roles",
+      "headline": "Engineering <span class=\"text-primary italic\">Scalable</span> Frontend Solutions",
+      "subheadline": "Senior Frontend Engineer with 8+ years of experience. I help ambitious companies build high-performance, accessible, and maintainable web applications using React, Next.js, and Modern Architecture.",
+      "cta": "View My Portfolio",
       "image": "/images/home-banner.png"
    },
    "stats": [
-      { "label": "Years Experience", "value": "8+" },
-      { "label": "Projects Delivered", "value": "40+" },
-      { "label": "Performance Gain", "value": "60%" },
-      { "label": "Team Mentorship", "value": "15+" }
+      {
+         "label": "Years Experience",
+         "value": "8+"
+      },
+      {
+         "label": "Projects Delivered",
+         "value": "40+"
+      },
+      {
+         "label": "Performance Gain",
+         "value": "~60%"
+      },
+      {
+         "label": "Engineers Mentored",
+         "value": "20+"
+      }
    ],
    "services": {
-      "title": "What I Bring to the Table",
-      "subtitle": "Leveraging deep technical expertise to solve complex business problems.",
+      "title": "Value Proposition",
+      "subtitle": "Bridging the gap between complex engineering and seamless user experience.",
       "items": [
          {
-            "title": "Frontend Architecture",
-            "description": "Designing scalable, maintainable, and testable frontend architectures for large-scale applications."
+            "title": "Scalable Architecture",
+            "description": "Architecting robust frontend foundations using Micro-Frontends and Clean Architecture to support long-term growth."
          },
          {
-            "title": "Performance Optimization",
-            "description": "Drastically improving Core Web Vitals and load times through advanced optimization techniques."
+            "title": "Performance Engineering",
+            "description": "Optimizing Core Web Vitals, reducing bundle sizes, and implementing advanced caching for lightning-fast user experiences."
          },
          {
-            "title": "UI/UX Development",
-            "description": "Translating complex designs into pixel-perfect, accessible, and responsive interfaces."
+            "title": "Design Systems & UI",
+            "description": "Building consistent, accessible (a11y), and documented component libraries (Storybook) that accelerate team velocity."
          },
          {
-            "title": "Technical Leadership",
-            "description": "Mentoring engineers, establishing coding standards, and leading cross-functional teams."
+            "title": "Team Leadership",
+            "description": "Mentoring developers, conducting code reviews, and establishing best practices to foster a high-performance engineering culture."
          }
       ]
    },
    "techStack": {
-      "title": "My Tech Ecosystem",
-      "subtitle": "Always pushing the boundaries with the latest and most efficient technologies."
-   },
-   "projectShowcase": {
-      "title": "Featured <span class=\"text-primary italic\">Impact</span>",
-      "subtitle": "A showcase of technical excellence and business value.",
-      "project": {
-         "title": "Enterprise Design System",
-         "description": "Led the development of a multi-brand design system used by 50+ engineers, reducing UI development time by 40%.",
-         "tags": ["React", "Storybook", "Tailwind CSS", "TypeScript"],
-         "link": "/projects/design-system"
-      }
+      "title": "Tech Ecosystem",
+      "subtitle": "A curated stack of modern tools focused on efficiency and stability."
    },
    "testimonials": {
-      "title": "Professional <span class=\"text-primary italic\">Endorsements</span>",
-      "subtitle": "What engineering leaders and peers say about my work.",
+      "title": "Trusted by <span class=\"text-primary italic\">Leaders</span>",
+      "subtitle": "Feedback from CTOs, Team Leads, and Senior Engineers I've collaborated with.",
       "items": [
          {
             "name": "Amin Shahnazari",
-            "role": "Co-Founder & CTO@NexusWorkpace",
-            "content": "I was particularly impressed by Reza’s ability to handle even the toughest problems. I’ve had the pleasure of knowing reza for 4 years, during which he lead one of our Front-End team in Kasra co. His wide experices in modern technologies such as Angular, React and generaly JavaScript helps us in developing enterprise level products. Any company would be lucky to have Reza as a Software Developer.\n It was a pleasure to work with Reza."
+            "role": "Co-Founder & CTO @ NexusWorkspace",
+            "content": "I was particularly impressed by Reza’s ability to handle even the toughest problems. I’ve had the pleasure of knowing Reza for 4 years, during which he led one of our Front-End teams at Kasra. His wide experience in modern technologies helps us in developing enterprise-level products. Any company would be lucky to have Reza as a Senior Engineer."
          },
          {
             "name": "Mahdi Forghani",
-            "role": "Platform Team Lead @ Nexus Workplace",
-            "content": "Energetic, Good Natured, Committed! These three words are everything that I needed to describe Mohammadreza. As a co-worker, I enjoy working with him and I am sure that employers also enjoy working with him."
+            "role": "Platform Team Lead @ NexusWorkspace",
+            "content": "Energetic, good-natured, and committed! These three words describe Reza perfectly. As a co-worker, I enjoyed working with him immensely, and I am confident that any future employer will value his dedication and technical insight."
          },
          {
             "name": "Rana Yavari",
             "role": "Android Engineer @ Trivago",
-            "content": "Reza is very good-natured, supportive and responsible.\n Has a lot of perseverance in solving challenges and problems. And being energetic and his positive vibe improve the atmosphere of the team.\n I am happy and enjoy working with him"
+            "content": "Reza is incredibly supportive and responsible. He demonstrates immense perseverance in solving complex challenges. His energetic and positive vibe significantly improves the team atmosphere. I genuinely enjoyed working alongside him."
          },
          {
             "name": "Fatemeh Yousefi",
-            "role": "Junior iOS Developer | UX Specialist at adidas",
-            "content": "There is no funniest colleague than Reza. He is one of the most dedicated professionals I’ve worked with and is willing to put that extra help whenever you need it. His expertise as a developer is considerable, He is positive and energetic person and I highly recommend Reza."
+            "role": "UX Specialist @ adidas",
+            "content": "There is no funnier colleague than Reza, but he is also one of the most dedicated professionals I’ve worked with. He is always willing to go the extra mile to help. His expertise as a developer is considerable. I highly recommend him."
          }
       ]
    },
    "faq": {
       "title": "Common Questions",
-      "subtitle": "Insight into my workflow and technical philosophy.",
+      "subtitle": "Insights into my working style and technical philosophy.",
       "items": [
          {
-            "question": "How do you approach frontend performance?",
-            "answer": "I focus on minimizing bundle sizes, optimizing critical rendering paths, and implementing efficient caching strategies."
+            "question": "Are you open to relocation or remote work?",
+            "answer": "Yes. I am actively looking for opportunities in Europe and am fully open to relocation. I am also experienced in working effectively in remote/hybrid setups."
          },
          {
-            "question": "What is your experience with mentorship?",
-            "answer": "I have mentored over 15 junior and mid-level developers, helping them level up their technical and soft skills."
+            "question": "How do you handle performance optimization?",
+            "answer": "I take a data-driven approach: using Lighthouse and performance profilers to identify bottlenecks, then applying techniques like code-splitting, memoization, and server-side rendering to improve metrics."
+         },
+         {
+            "question": "What is your approach to mentorship?",
+            "answer": "I believe in 'leading by doing'. I support junior developers through pair programming, constructive code reviews, and knowledge-sharing sessions to help them level up their skills."
          }
       ]
    },
    "contactCTA": {
       "title": "Ready to build something <span class=\"opacity-80 italic\">exceptional</span>?",
-      "subtitle": "I'm currently looking for new opportunities to lead and innovate.",
-      "cta": "Get In Touch"
+      "subtitle": "I'm currently available for interviews and looking for new challenges.",
+      "cta": "Let's Talk"
    }
 }
