@@ -67,6 +67,16 @@
    ],
    "certificates": [
       {
+         "title": "AI-Powered AB Testing",
+         "organization": "Sololearn",
+         "date": "Feb 2026",
+         "credentialId": "CC-7Q02IAQE",
+         "credentialUrl": "https://www.sololearn.com/certificates/CC-7Q02IAQE",
+         "skills": [
+            "A/B Testing"
+         ]
+      },
+      {
          "title": "Front-end for Beginners",
          "organization": "Sololearn",
          "date": "Feb 2026",
