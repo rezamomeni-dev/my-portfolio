@@ -33,20 +33,16 @@ const ProjectTimeline = ({ projects, activeProject, containerRef }: ProjectTimel
   const scrollToProject = (slug: string) => {
     const element = document.getElementById(slug);
     if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
       });
     }
   };
 
   return (
     <div className="hidden lg:block">
-      <div className="relative pl-8 max-h-[calc(100vh-12rem)] overflow-y-auto scrollbar-none py-2">
+      <div className="relative pl-8 max-h-[calc(100vh-12rem)] overflow-y-auto scrollbar-custom py-2">
         {/* Vertical Line */}
         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-zinc-800" />
 
