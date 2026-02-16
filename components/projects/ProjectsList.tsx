@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import SectionContainer from "@/components/shared/SectionContainer";
-import { m  } from "framer-motion";
+import { m } from "framer-motion";
 import { ProjectsListProps } from "@/types/project";
 
 const ProjectTimeline = dynamic(
@@ -59,7 +59,7 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
             </div>
 
             {/* Right Side: Project Cards */}
-            <div className="lg:col-span-9 grid gap-16">
+            <div className="lg:col-span-9 grid gap-16 pb-[20vh]">
                {projects.map((project, index) => (
                   <div key={project.slug} id={project.slug}>
                      <ProjectCard

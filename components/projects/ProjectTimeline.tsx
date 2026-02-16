@@ -35,7 +35,7 @@ const ProjectTimeline = ({
    const scrollToProject = (slug: string) => {
       const element = document.getElementById(slug);
       if (element) {
-         const offset = 100;
+         const offset = 50;
          const elementPosition = element.getBoundingClientRect().top;
          const offsetPosition = elementPosition + window.pageYOffset - offset;
 
