@@ -30,7 +30,7 @@ export default function RootLayout({
    return (
       <html lang="en" suppressHydrationWarning>
          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
             suppressHydrationWarning
          >
             <ThemeProvider
@@ -40,7 +40,7 @@ export default function RootLayout({
                disableTransitionOnChange
             >
                <FramerMotionProvider>
-                  <div className="flex flex-col min-h-screen overflow-x-hidden">
+                  <div className="flex flex-col min-h-screen">
                      <Header />
                      <main className="flex-grow pt-20">{children}</main>
                      <Footer />

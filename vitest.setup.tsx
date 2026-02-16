@@ -10,6 +10,9 @@ global.IntersectionObserver = vi.fn().mockImplementation(function() {
   };
 });
 
+// Mock scrollIntoView
+window.HTMLElement.prototype.scrollIntoView = vi.fn();
+
 // Mock ResizeObserver
 global.ResizeObserver = vi.fn().mockImplementation(function() {
   return {

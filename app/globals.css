@@ -48,6 +48,26 @@
   -webkit-text-fill-color: transparent;
 }
 
+@utility scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+}
+
 .dark {
   --background: #09090b;
   --foreground: #fafafa;
