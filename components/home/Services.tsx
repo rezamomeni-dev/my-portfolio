@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { m, useReducedMotion, type Variants } from "framer-motion";
 import { Code, Layout, Zap, Users, LucideIcon, Rocket } from "lucide-react";
 import homeData from "@/data/home.json";
@@ -41,8 +42,16 @@ const getStylesByTitle = (title: string) => {
  * touchscreen). Used to conditionally apply hover-only animations.
  */
 const useIsHoverDevice = () => {
-   if (typeof window === "undefined") return true;
-   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+   const [isHover, setIsHover] = useState(true);
+
+   useEffect(() => {
+      if (typeof window === "undefined") return;
+      setIsHover(
+         window.matchMedia("(hover: hover) and (pointer: fine)").matches
+      );
+   }, []);
+
+   return isHover;
 };
 
 const Services = () => {
