@@ -3,20 +3,30 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuLink
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuViewport
 } from './navigation-menu';
 import { expect, test } from 'vitest';
 
-test('NavigationMenu renders correctly', () => {
+test('NavigationMenu renders all components', () => {
   render(
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/">Home</NavigationMenuLink>
+          <NavigationMenuTrigger>Trigger</NavigationMenuTrigger>
+          <NavigationMenuContent>Content</NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink>Link</NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
+      <NavigationMenuIndicator />
+      <NavigationMenuViewport />
     </NavigationMenu>
   );
-
-  expect(screen.getByText('Home')).toBeDefined();
+  expect(screen.getByText('Link')).toBeDefined();
+  expect(screen.getByText('Trigger')).toBeDefined();
 });

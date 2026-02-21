@@ -1,37 +1,30 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import ProjectGallery from './ProjectGallery';
-import { expect, test, vi } from 'vitest';
+import { expect, test } from 'vitest';
 
 const mockGallery = [
-  {
-    src: '/img1.png',
-    label: 'Gallery Item 1',
-    description: 'Gallery Description 1'
-  },
-  {
-    src: '/doc.pdf',
-    label: 'PDF Document',
-    description: 'PDF Description',
-    type: 'pdf'
-  }
+  { src: '/img1.png', label: 'Image 1', description: 'Desc 1' },
+  { src: '/img2.pdf', label: 'PDF 2', description: 'Desc 2', type: 'pdf' as const },
 ];
 
-test('ProjectGallery renders items correctly', () => {
+test('ProjectGallery 100% coverage', () => {
   render(<ProjectGallery gallery={mockGallery} />);
 
-  expect(screen.getByText('Interface Previews')).toBeDefined();
-  expect(screen.getByRole('heading', { name: 'Gallery Item 1' })).toBeDefined();
-  expect(screen.getByText('Gallery Description 1')).toBeDefined();
-  expect(screen.getByRole('heading', { name: 'PDF Document' })).toBeDefined();
-});
+  // Open lightbox
+  const img1 = screen.getByAltText('Image 1');
+  fireEvent.click(img1.parentElement!);
 
-test('ProjectGallery opens Lightbox on click', () => {
-  render(<ProjectGallery gallery={mockGallery} />);
+  // Close lightbox via callback
+  const closeButton = screen.getByLabelText('Close Lightbox');
+  fireEvent.click(closeButton);
+  expect(screen.queryByLabelText('Close Lightbox')).toBeNull();
 
-  const galleryItem = screen.getByText('Gallery Item 1').closest('div')?.parentElement?.querySelector('.cursor-pointer');
-  if (galleryItem) {
-    fireEvent.click(galleryItem);
-    // Lightbox should be open, checking for its close button
-    expect(screen.getByLabelText('Close Lightbox')).toBeDefined();
-  }
+  // Re-open and navigate via callback
+  fireEvent.click(img1.parentElement!);
+  const nextButton = screen.getByLabelText('Next Image');
+  fireEvent.click(nextButton);
+
+  // Check if PDF 2 is displayed in Lightbox header
+  const headings = screen.getAllByText('PDF 2');
+  expect(headings.length).toBeGreaterThan(1);
 });

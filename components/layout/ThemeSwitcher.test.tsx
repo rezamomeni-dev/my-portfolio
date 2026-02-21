@@ -3,28 +3,23 @@ import { ThemeSwitcher } from './ThemeSwitcher';
 import { expect, test, vi } from 'vitest';
 import { useTheme } from 'next-themes';
 
-// Mock next-themes
-vi.mock('next-themes', () => {
+vi.mock('next-themes', () => ({
+  useTheme: vi.fn()
+}));
+
+test('ThemeSwitcher toggles theme and handles mounting', () => {
   const setTheme = vi.fn();
-  return {
-    useTheme: () => ({
-      theme: 'light',
-      setTheme
-    }),
-    ThemeProvider: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
-  };
-});
+  (useTheme as any).mockReturnValue({ theme: 'light', setTheme });
 
-test('ThemeSwitcher renders correctly after mounting', () => {
-  render(<ThemeSwitcher />);
+  const { rerender } = render(<ThemeSwitcher />);
+
   expect(screen.getByLabelText('Toggle theme')).toBeDefined();
-});
 
-test('ThemeSwitcher calls setTheme on click', () => {
-  render(<ThemeSwitcher />);
+  fireEvent.click(screen.getByLabelText('Toggle theme'));
+  expect(setTheme).toHaveBeenCalledWith('dark');
 
-  const button = screen.getByLabelText('Toggle theme');
-  fireEvent.click(button);
-
-  expect(useTheme().setTheme).toHaveBeenCalled();
+  (useTheme as any).mockReturnValue({ theme: 'dark', setTheme });
+  rerender(<ThemeSwitcher />);
+  fireEvent.click(screen.getByLabelText('Toggle theme'));
+  expect(setTheme).toHaveBeenCalledWith('light');
 });
