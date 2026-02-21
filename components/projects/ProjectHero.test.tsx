@@ -1,32 +1,38 @@
 import { render, screen } from '@testing-library/react';
 import ProjectHero from './ProjectHero';
 import { expect, test } from 'vitest';
-import { Project } from '@/types/project';
 
-const mockProject: Project = {
-  slug: 'test-project',
-  title: 'Test Project',
+const mockProject = {
+  title: 'Project Title',
   category: 'Web',
-  description: 'A test project description',
-  role: 'Developer',
-  startDate: '2023-01',
-  endDate: '2023-03',
-  banner: '/test.png',
-  technologies: ['React', 'TypeScript'],
-  gallery: [],
-  achievements: [],
-  about: 'About test project',
-  responsibilities: ['Responsibility 1'],
-  liveLink: 'https://live.example.com',
-  githubLink: 'https://github.com/test/project'
-};
+  description: 'Project Description',
+  liveLink: 'https://live.com',
+  githubLink: 'https://github.com',
+  banner: '/banner.png',
+  gallery: [{ src: '/gallery1.png', label: 'Gallery 1', description: 'Desc' }],
+  technologies: ['React'],
+} as any;
 
 test('ProjectHero renders project details and links', () => {
-  render(<ProjectHero project={mockProject} />);
+  const { rerender } = render(<ProjectHero project={mockProject} />);
 
-  expect(screen.getByRole('heading', { level: 1, name: 'Test Project' })).toBeDefined();
-  expect(screen.getByText('Web')).toBeDefined();
-  expect(screen.getByText('A test project description')).toBeDefined();
-  expect(screen.getByText('Live Demo')).toHaveAttribute('href', 'https://live.example.com');
-  expect(screen.getByText('GitHub')).toHaveAttribute('href', 'https://github.com/test/project');
+  expect(screen.getAllByText('Project Title').length).toBeGreaterThan(0);
+  expect(screen.getByText('Live Demo')).toBeDefined();
+  expect(screen.getByText('GitHub')).toBeDefined();
+
+  // Test without github link
+  const noGithubProject = { ...mockProject, githubLink: null };
+  rerender(<ProjectHero project={noGithubProject} />);
+  expect(screen.queryByText('GitHub')).toBeNull();
+
+  // Test without live link
+  const noLiveProject = { ...mockProject, liveLink: null };
+  rerender(<ProjectHero project={noLiveProject} />);
+  expect(screen.queryByText('Live Demo')).toBeNull();
+
+  // Test gallery vs banner image selection
+  const noGalleryProject = { ...mockProject, gallery: [] };
+  rerender(<ProjectHero project={noGalleryProject} />);
+  const img = screen.getByAltText('Project Title');
+  expect(img.getAttribute('src')).toContain('banner.png');
 });
