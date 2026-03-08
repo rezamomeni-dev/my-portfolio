@@ -67,19 +67,20 @@
    ],
    "certificates": [
       {
+         "title": "Responsive Web Design",
+         "organization": "freeCodeCamp",
+         "date": "Mar 2026",
+         "credentialId": "reza-momeni-rwdv9",
+         "credentialUrl": "https://www.freecodecamp.org/certification/reza-momeni/responsive-web-design-v9",
+         "skills": ["JavaScript", "HTML", "Cascading Style Sheets (CSS)"]
+      },
+      {
          "title": "B1 English for Developers",
          "organization": "freeCodeCamp",
          "date": "Mar 2026",
          "credentialId": "reza-momeni-b1efd",
-         "credentialUrl": "https://freecodecamp.org/certification/reza-momeni/b1-english-for-developers"
-      },
-      {
-         "title": "Responsive Web Design",
-         "organization": "freeCodeCamp",
-         "date": "",
-         "credentialId": "reza-momeni-rwdv9",
-         "credentialUrl": "https://www.freecodecamp.org/certification/reza-momeni/responsive-web-design-v9",
-         "skills": ["JavaScript", "HTML", "Cascading Style Sheets (CSS)"]
+         "credentialUrl": "https://freecodecamp.org/certification/reza-momeni/b1-english-for-developers",
+         "skills": ["English Language Proficiency", "Technical Communication"]
       },
       {
          "title": "AI-Powered AB Testing",
@@ -87,9 +88,7 @@
          "date": "Feb 2026",
          "credentialId": "CC-7Q02IAQE",
          "credentialUrl": "https://www.sololearn.com/certificates/CC-7Q02IAQE",
-         "skills": [
-            "A/B Testing"
-         ]
+         "skills": ["A/B Testing"]
       },
       {
          "title": "Front-end for Beginners",
